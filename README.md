@@ -1,1 +1,1 @@
-# NossLock
+# Script Has Been Released.
