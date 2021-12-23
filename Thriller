@@ -457,15 +457,10 @@ coroutine.wrap(HBGXS_fake_script)()
 --Void Old Cam, New Cam:
 local function NilCam()
 	local OldFov = game:GetService("Workspace").CurrentCamera.FieldOfView
-	game:GetService("Workspace").Camera:Destroy() task.wait(.08)
+	game:GetService("Workspace").Camera:Destroy() task.wait(.07)
 	game:GetService("Workspace").Camera.CameraType = "Custom"
 	game:GetService("Workspace").Camera.CameraSubject = LocalPlayer.Character task.wait()
 	game:GetService("Workspace").Camera.FieldOfView = OldFov
-end
-local function ForceFirstPerson()
-	game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 0
-	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0
-	game:GetService("Players").LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
 end
 if game.PlaceId == Playing.Dahood then
 	game.StarterGui:SetCore("SendNotification", {Title = "Playing: DaHood ."; Text = "Anti-Cheat: Poor."; Duration = 5;});
@@ -800,5 +795,10 @@ end)
 if ReBreak then
 	while ReBreak do task.wait(30)
 		NilCam()
+		if game:GetService("Workspace").Camera.CameraSubject ~= LocalPlayer.Character:FindFirstChild("Humanoid") then
+			local OldFov = game:GetService("Workspace").CurrentCamera.FieldOfView
+			game:GetService("Workspace").Camera.CameraSubject = LocalPlayer.Character task.wait()
+			game:GetService("Workspace").Camera.FieldOfView = OldFov 
+		end
 	end
 end task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "Script Loaded. Click Open To Adjust Settings."; Duration = 5;}); task.wait(6) SupersedeAndGetPing()
