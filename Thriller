@@ -464,6 +464,10 @@ local function NilCam()
 end
 if game.PlaceId == Playing.Dahood then
 	game.StarterGui:SetCore("SendNotification", {Title = "Playing: DaHood ."; Text = "Anti-Cheat: Poor."; Duration = 5;});
+	AntiAimButton_ON:Destroy()
+	AntiAimButton_OFF:Destroy()
+	AntiAim.Text = "Disabled"
+	AntiAim.TextColor3 = Color3.fromRGB(255, 0, 0)
 elseif game.PlaceId == Playing.Modded then
 	AntiAimButton_ON:Destroy()
 	AntiAimButton_OFF:Destroy()
