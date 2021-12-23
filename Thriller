@@ -78,7 +78,7 @@ local isToggled = false
 local isToggled2 = false
 local ExtraSensor = false
 local EyeContactMade = false
-local ForceNoZoom_Duels = false
+local ReBreak = false
 
 --AimLock Settings:
 local Options = {
@@ -457,7 +457,7 @@ coroutine.wrap(HBGXS_fake_script)()
 --Void Old Cam, New Cam:
 local function NilCam()
 	local OldFov = game:GetService("Workspace").CurrentCamera.FieldOfView
-	game:GetService("Workspace").Camera:Destroy() task.wait(.125)
+	game:GetService("Workspace").Camera:Destroy() task.wait(.08)
 	game:GetService("Workspace").Camera.CameraType = "Custom"
 	game:GetService("Workspace").Camera.CameraSubject = LocalPlayer.Character task.wait()
 	game:GetService("Workspace").Camera.FieldOfView = OldFov
@@ -477,8 +477,7 @@ elseif game.PlaceId == Playing.Modded then
 	game.StarterGui:SetCore("SendNotification", {Title = "Playing: DaHood (MODDED)."; Text = "Anti-Cheat: Modest. No Cam Fix Needed."; Duration = 5;});
 elseif game.PlaceId == Playing.Duels then
 	NilCam()
-	ForceFirstPerson()
-	ForceNoZoom_Duels = true
+	ReBreak = true
 	AntiAimButton_ON:Destroy()
 	AntiAimButton_OFF:Destroy()
 	AntiAim.Text = "Disabled"
@@ -585,7 +584,7 @@ local function BypassLock()
 				TorsoWasHere.Position = Target[Options.Torso].Position
 				local ChangeInDisplacement = Target[Options.Torso].Position - Initial_PartPos --Displacement = (PositionF - PositionI)
 				local Real_Velocity = (ChangeInDisplacement / .5) --Velocity = (Displacement / Time)
-				local Predicted_Position = Target[Options.Torso].Position + (Real_Velocity * tonumber(PredictionBox.Text * GetPing / 1.01) + Vector3.new(0, Stronger.Text, 0))
+				local Predicted_Position = Target[Options.Torso].Position + (Real_Velocity * tonumber(PredictionBox.Text * GetPing / 1.015) + Vector3.new(0, Stronger.Text, 0))
 				Area.CurrentCamera.CFrame = CFrame.lookAt(Area.CurrentCamera.CFrame.Position, Predicted_Position)
 			end
 		end
@@ -798,8 +797,8 @@ Mouse.KeyDown:Connect(function(KeyPressed2)
 		end
 	end
 end)
-if ForceNoZoom_Duels then
-	while ForceNoZoom_Duels do task.wait(5)
-		ForceFirstPerson()
+if ReBreak then
+	while ReBreak do task.wait(30)
+		NilCam()
 	end
 end task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "Script Loaded. Click Open To Adjust Settings."; Duration = 5;}); task.wait(6) SupersedeAndGetPing()
