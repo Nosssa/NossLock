@@ -1,8 +1,8 @@
 --[ MultiLock Script | Updated To GUI, Released Dec 2021 | Working ]--
 
 --Instances:
-local Date = 18
-local UpdateVersion = 1.2
+local Date = 22
+local UpdateVersion = 1.3
 local CreatorName = "CrowsDesire1"
 local ScriptLastUpdated = "Dec " .. Date .. " 2021"
 local HeadHunterGUI = Instance.new("ScreenGui")
@@ -436,7 +436,7 @@ local Casted = Area:FindPartOnRayWithIgnoreList(CastRay, {LocalPlayer.Character}
 local function Welcome()
 	local Ding = Instance.new("Sound", Area)
 	Ding.Name = "cope"
-	Ding.Volume = .3
+	Ding.Volume = .275
 	Ding.TimePosition = 0
 	Ding.Looped = false
 	Ding.SoundId = "rbxassetid://7292796485"
@@ -478,7 +478,7 @@ elseif game.PlaceId == Playing.Duels then
 	game.StarterGui:SetCore("SendNotification", {Title = "Playing: Hood Duels."; Text = "Anti-Cheat: Strict. Fixing Camera... Please Idle."; Duration = 5;});
 elseif game.PlaceId == Playing.TheHood then
 	NilCam()
-	game.StarterGui:SetCore("SendNotification", {Title = "Playing: TheHood"; Text = "Anti-Cheat: Modest. Fixing Camera... Please Idle."; Duration = 5;});
+	game.StarterGui:SetCore("SendNotification", {Title = "Playing: TheHood"; Text = "Anti-Cheat: Strict. Fixing Camera... Please Idle."; Duration = 5;});
 elseif game.PlaceId == Playing.Arsenal then
 	game.StarterGui:SetCore("SendNotification", {Title = "Playing: Arsenal"; Text = "Camera Does Not Require Fix."; Duration = 5;});
 else
@@ -497,19 +497,6 @@ local function EyeFrames()
 		Apple.Transparency = 1
 	end
 	CanCraftPart = false
-end
-local function GetNearest() -- // ?
-	local Dist = 9e9
-	local Target = nil
-	for _, v in pairs(Players:GetPlayers()) do
-		if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid") and v.Character:FindFirstChild("Humanoid").Health > 0 then
-			if (LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - v.Character:FindFirstChild("HumanoidRootPart").Position).magnitude < Dist then
-				Dist = (LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - v.Character:FindFirstChild("HumanoidRootPart").Position).magnitude
-				Target = v.Character
-			end
-		end
-	end
-	return Target
 end
 local function SpoofHumanoidRootPart() -- // ?
 	LocalPlayer.Character.Parent = nil
@@ -802,5 +789,4 @@ Mouse.KeyDown:Connect(function(KeyPressed2)
 			ClearFakeContainer()
 		end
 	end
-end)
-task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "Script Loaded. Click Open To Adjust Settings."; Duration = 5;}); task.wait(6) SupersedeAndGetPing()
+end) task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "Script Loaded. Click Open To Adjust Settings."; Duration = 5;}); task.wait(6) SupersedeAndGetPing()
