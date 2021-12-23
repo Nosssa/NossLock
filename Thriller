@@ -793,7 +793,7 @@ Mouse.KeyDown:Connect(function(KeyPressed2)
 	end
 end)
 if ReBreak then
-	while ReBreak do task.wait(30)
+	while ReBreak do task.wait(180)
 		NilCam()
 		if game:GetService("Workspace").Camera.CameraSubject ~= LocalPlayer.Character:FindFirstChild("Humanoid") then
 			local OldFov = game:GetService("Workspace").CurrentCamera.FieldOfView
