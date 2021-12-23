@@ -85,7 +85,7 @@ local Options = {
 	Holding_Closely = false;
 	Holding_Ranged = false;
 	FOV_VisibleOrNot = false;
-	FOV_RADIUS = 120;
+	FOV_RADIUS = 170;
 	FOV_Color = Color3.fromRGB(0, 255, 255) 
 }
 
