@@ -1,8 +1,8 @@
 --[ MultiLock Script | Updated To GUI, Released Dec 2021 | Working ]--
 
 --Instances:
-local Date = 22
-local UpdateVersion = 1.3
+local Date = 23
+local UpdateVersion = 1.4
 local CreatorName = "CrowsDesire1"
 local ScriptLastUpdated = "Dec " .. Date .. " 2021"
 local HeadHunterGUI = Instance.new("ScreenGui")
@@ -78,6 +78,7 @@ local isToggled = false
 local isToggled2 = false
 local ExtraSensor = false
 local EyeContactMade = false
+local ForceNoZoom_Duels = false
 
 --AimLock Settings:
 local Options = {
@@ -196,7 +197,7 @@ Average.Size = UDim2.new(0, 177, 0, 40)
 Average.Font = Enum.Font.Gotham
 Average.PlaceholderColor3 = Color3.fromRGB(125, 125, 125)
 Average.PlaceholderText = "(Aim Height)"
-Average.Text = ".15"
+Average.Text = ".1"
 Average.TextColor3 = Color3.fromRGB(0, 0, 0)
 Average.TextSize = 18.000
 Average.TextWrapped = true
@@ -461,6 +462,11 @@ local function NilCam()
 	game:GetService("Workspace").Camera.CameraSubject = LocalPlayer.Character task.wait()
 	game:GetService("Workspace").Camera.FieldOfView = OldFov
 end
+local function ForceFirstPerson()
+	game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 0
+	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0
+	game:GetService("Players").LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson
+end
 if game.PlaceId == Playing.Dahood then
 	game.StarterGui:SetCore("SendNotification", {Title = "Playing: DaHood ."; Text = "Anti-Cheat: Poor."; Duration = 5;});
 elseif game.PlaceId == Playing.Modded then
@@ -471,6 +477,8 @@ elseif game.PlaceId == Playing.Modded then
 	game.StarterGui:SetCore("SendNotification", {Title = "Playing: DaHood (MODDED)."; Text = "Anti-Cheat: Modest. No Cam Fix Needed."; Duration = 5;});
 elseif game.PlaceId == Playing.Duels then
 	NilCam()
+	ForceFirstPerson()
+	ForceNoZoom_Duels = true
 	AntiAimButton_ON:Destroy()
 	AntiAimButton_OFF:Destroy()
 	AntiAim.Text = "Disabled"
@@ -516,7 +524,7 @@ local function NormalLock()
 				local Enemy = v.Character
 				local CastingFrom = CFrame.new(Area.CurrentCamera.CFrame.Position, Enemy[Options.Torso].CFrame.Position) * CFrame.new(0, 0, -4)
 				local RayCast = Ray.new(CastingFrom.Position, CastingFrom.LookVector * 9000)
-				local World, ToSpace = Area:FindPartOnRayWithIgnoreList(RayCast,  {LocalPlayer.Character.Head})
+				local World, ToSpace = Area:FindPartOnRayWithIgnoreList(RayCast,  {LocalPlayer.Character:FindFirstChild("Head")})
 				local RootWorld = (Enemy[Options.Torso].CFrame.Position - ToSpace).magnitude
 				if RootWorld < 4 then
 					EyeContactMade = true
@@ -552,7 +560,7 @@ local function BypassLock()
 				local Enemy = v.Character
 				local CastingFrom = CFrame.new(Area.CurrentCamera.CFrame.Position, Enemy[Options.Torso].CFrame.Position) * CFrame.new(0, 0, -4)
 				local RayCast = Ray.new(CastingFrom.Position, CastingFrom.LookVector * 9000)
-				local World, ToSpace = Area:FindPartOnRayWithIgnoreList(RayCast,  {LocalPlayer.Character.Head})
+				local World, ToSpace = Area:FindPartOnRayWithIgnoreList(RayCast,  {LocalPlayer.Character:FindFirstChild("Head")})
 				local RootWorld = (Enemy[Options.Torso].CFrame.Position - ToSpace).magnitude
 				if RootWorld < 4 then
 					EyeContactMade = true
@@ -592,7 +600,7 @@ local function DodgeBullets()
 		Mom.P = 9e9
 		Mom.MaxTorque = Vector3.new(0, 9e9, 0)
 		Mom.Parent = LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-		Mom.CFrame = CFrame.new(Mom.Parent.Position, FakeAngles) task.wait()
+		Mom.CFrame = CFrame.new(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position, FakeAngles) task.wait()
 		Mom:Destroy()
 	end
 	--game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,-math.rad(90),0) task.wait(.05)
@@ -789,4 +797,9 @@ Mouse.KeyDown:Connect(function(KeyPressed2)
 			ClearFakeContainer()
 		end
 	end
-end) task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "Script Loaded. Click Open To Adjust Settings."; Duration = 5;}); task.wait(6) SupersedeAndGetPing()
+end)
+if ForceNoZoom_Duels then
+	while ForceNoZoom_Duels do task.wait(5)
+		ForceFirstPerson()
+	end
+end task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "Script Loaded. Click Open To Adjust Settings."; Duration = 5;}); task.wait(6) SupersedeAndGetPing()
