@@ -1,7 +1,7 @@
---[ MultiLock Script | Updated To GUI, Released Dec 2021 | Working ]--
+--[ MultiLock Script | Updated To GUI, Released Dec 2021 | PATCHED ON: THE HOOD, HOOD DUELS ]--
 
 --Instances:
-local Date = 23
+local Date = 24
 local UpdateVersion = 1.4
 local CreatorName = "CrowsDesire1"
 local ScriptLastUpdated = "Dec " .. Date .. " 2021"
