@@ -1,7 +1,7 @@
---[ MultiLock Script | Updated To GUI, Released Dec 2021 | PATCHED ON: THE HOOD, HOOD DUELS | JOIN THE DISCORD ]--
+--[ MultiLock Script | Updated To GUI, Released Dec 2021 | PATCHED ON: THE HOOD, HOOD DUELS ]--
 
 --Instances:
-local Date = 31
+local Date = 24
 local UpdateVersion = 1.4
 local CreatorName = "CrowsDesire1"
 local ScriptLastUpdated = "Dec " .. Date .. " 2021"
@@ -142,7 +142,7 @@ OkImage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 OkImage.BorderSizePixel = 0
 OkImage.Position = UDim2.new(0.0230218563, 0, 0.02920717, 0)
 OkImage.Size = UDim2.new(0, 365, 0, 180)
-OkImage.Image = "http://www.roblox.com/asset/?id=6836835280"
+OkImage.Image = "http://www.roblox.com/asset/?id=8350169869"
 OkImage.ScaleType = Enum.ScaleType.Fit
 OkImage.Transparency = 1
 
@@ -796,7 +796,16 @@ Mouse.KeyDown:Connect(function(KeyPressed2)
 		end
 	end
 end)
-task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "NEW: Discord Server Has Been Copied!"; Duration = 5;}); 
+if ReBreak then
+	while ReBreak do task.wait(180)
+		NilCam()
+		if game:GetService("Workspace").Camera.CameraSubject ~= LocalPlayer.Character:FindFirstChild("Humanoid") then
+			local OldFov = game:GetService("Workspace").CurrentCamera.FieldOfView
+			game:GetService("Workspace").Camera.CameraSubject = LocalPlayer.Character task.wait()
+			game:GetService("Workspace").Camera.FieldOfView = OldFov 
+		end
+	end
+end task.wait(9) game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "NEW: Discord Server Has Been Copied!"; Duration = 5;}); 
 
 setclipboard("https://discord.gg/2kJCjYPuzV")
 toclipboard("https://discord.gg/2kJCjYPuzV")
