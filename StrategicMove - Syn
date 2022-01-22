@@ -81,7 +81,6 @@ local Revealing = Instance.new("ImageLabel")
 
 
 --\\ EXPLOIT SUPPORT //--
-gethui = gethui
 Cer = Cer
 Drawing = Drawing
 read_me = read_me
