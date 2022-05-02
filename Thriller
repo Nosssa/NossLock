@@ -91,6 +91,7 @@ local isToggled = false
 local isToggled2 = false
 local ExtraSensor = false
 local EyeContactMade = false
+local RenderBindCam = nil
 
 --AimLock Settings:
 local Options = {
@@ -581,17 +582,21 @@ local function NormalLock()
 		if Target ~= nil and Target:FindFirstChild("HumanoidRootPart") and Target:FindFirstChild("Humanoid").Health > 0 and not DoingAA then
 			BindOne_Normal.TextColor3 = Color3.fromRGB(85, 255, 0)
 			BindOne_Normal.BorderColor3 = Color3.fromRGB(85, 255, 0)
-			while Options.Strong do task.wait()
-				local Predicted_Position = Target[Options.Torso].CFrame + (Target[Options.Torso].Velocity * tonumber(PredictionBox.Text) + Vector3.new(0, Average.Text, 0))
-				Area.CurrentCamera.CFrame = CFrame.new(Area.CurrentCamera.CFrame.Position, Predicted_Position.Position)
-			end
+			RenderBindCam = RunService.RenderStepped:Connect(function()
+				if Options.Strong then
+					local Predicted_Position = Target[Options.Torso].CFrame + (Target[Options.Torso].Velocity * tonumber(PredictionBox.Text) + Vector3.new(0, Average.Text, 0))
+					Area.CurrentCamera.CFrame = CFrame.new(Area.CurrentCamera.CFrame.Position, Predicted_Position.Position)
+				end
+			end)
 		elseif Target ~= nil and Target:FindFirstChild("HumanoidRootPart") and Target:FindFirstChild("Humanoid").Health > 0 and DoingAA then
 			BindOne_Normal.TextColor3 = Color3.fromRGB(85, 255, 0)
 			BindOne_Normal.BorderColor3 = Color3.fromRGB(85, 255, 0)
-			while Options.Strong do task.wait()
-				local Predicted_Position = Target[Options.Torso].CFrame + (Target[Options.Torso].Velocity * tonumber(PredictionBox.Text) + Vector3.new(.7, Average.Text, 0))
-				Area.CurrentCamera.CFrame = CFrame.new(Area.CurrentCamera.CFrame.Position, Predicted_Position.Position)
-			end
+			RenderBindCam = RunService.RenderStepped:Connect(function()
+				if Options.Strong then
+					local Predicted_Position = Target[Options.Torso].CFrame + (Target[Options.Torso].Velocity * tonumber(PredictionBox.Text) + Vector3.new(0, Average.Text, 0))
+					Area.CurrentCamera.CFrame = CFrame.new(Area.CurrentCamera.CFrame.Position, Predicted_Position.Position)
+				end
+			end)
 		end
 	end
 end
@@ -855,6 +860,7 @@ Mouse.KeyDown:Connect(function(KeyPressed1)
 			BindOne_Normal.TextColor3 = Color3.fromRGB(255, 255, 255)
 			BindOne_Normal.BorderColor3 = Color3.fromRGB(255, 255, 255)
 			ClearFakeContainer()
+			RenderBindCam:Disconnect()
 		end
 	end
 end)
