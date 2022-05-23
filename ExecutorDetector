@@ -6,6 +6,7 @@ LP = game:GetService("Players").LocalPlayer
 if syn and not is_sirhurt_closure and not pebc_execute then
 	IdentifyExecutor = true
 	_G.StopSynapseTempK = true
+	LP:Kick("ERROR: Sorry lol Synapse is broken again, use a different Executor.")
 elseif	WrapGlobal then
 	IdentifyExecutor = false
 	LP:Kick("ERROR: TRASH EXPLOIT DETECTED!")
