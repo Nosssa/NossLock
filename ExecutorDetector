@@ -1,11 +1,11 @@
 --_Function_Log_exploit_finder_)
 IdentifyExecutor = false
-StopSynapseTempK = false
+_G.StopSynapseTempK = false
 LP = game:GetService("Players").LocalPlayer
 
 if syn and not is_sirhurt_closure and not pebc_execute then
 	IdentifyExecutor = true
-	StopSynapseTempK = true
+	_G.StopSynapseTempK = true
 elseif	WrapGlobal then
 	IdentifyExecutor = false
 	LP:Kick("ERROR: TRASH EXPLOIT DETECTED!")
