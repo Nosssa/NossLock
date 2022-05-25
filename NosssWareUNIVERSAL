@@ -1,10 +1,8 @@
 --_Function_Log_exploit_finder_)
 READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
 
-if not syn and IdentifyExecutor == true then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareMAIN"))()
-end
-
 if syn and not is_sirhurt_closure and not pebc_execute and _G.StopSynapseTempK == false then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareSYNAPSE"))()
+else
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareMAIN"))()
 end
