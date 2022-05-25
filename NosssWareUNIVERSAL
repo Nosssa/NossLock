@@ -1,35 +1,5 @@
 --_Function_Log_exploit_finder_)
-IdentifyExecutor = false
-_G.StopSynapseTempK = false
-LP = game:GetService("Players").LocalPlayer
-
-if syn and not is_sirhurt_closure and not pebc_execute then
-	IdentifyExecutor = true
-	_G.StopSynapseTempK = false
-elseif	WrapGlobal then
-	IdentifyExecutor = false
-	LP:Kick("ERROR: TRASH EXPLOIT DETECTED!")
-	return
-elseif KRNL_LOADED then
-	IdentifyExecutor = true
-elseif is_sirhurt_closure then
-	IdentifyExecutor = true
-elseif secure_load then
-	IdentifyExecutor = true
-elseif jit then
-	IdentifyExecutor = false
-	LP:Kick("ERROR: STOP USING JJSPLOIT PLS.")
-	return
-elseif getscriptenvs then
-	IdentifyExecutor = true
-elseif OXYGEN_LOADED then
-	IdentifyExecutor = true
-elseif IsElectron then
-	IdentifyExecutor = true
-else
-	IdentifyExecutor = false
-	return
-end
+READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
 
 if not syn and IdentifyExecutor == true then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareMAIN"))()
