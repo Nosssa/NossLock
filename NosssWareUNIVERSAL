@@ -2,7 +2,7 @@
 READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
 
 if syn and not is_sirhurt_closure and not pebc_execute and _G.StopSynapseTempK == false then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareSYNAPSE", true))();
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareSYNAPSE"))()
 else
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareMAIN", true))();
-end;
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareMAIN"))()
+end
