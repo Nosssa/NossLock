@@ -8,7 +8,7 @@ if syn and not is_sirhurt_closure and not pebc_execute then
 	_G.StopSynapseTempK = false
 elseif  WrapGlobal then
 	IdentifyExecutor = false
-	LP:Kick("ERROR: TRASH EXPLOIT DETECTED!")
+	LP:Kick("ERROR: BAD EXPLOIT DETECTED!")
 	return
 elseif KRNL_LOADED then
 	IdentifyExecutor = true
@@ -28,5 +28,5 @@ elseif IsElectron then
 	IdentifyExecutor = true
 else
 	IdentifyExecutor = false
-	return
+	LP:Kick("ERROR: EXPLOIT NOT SUPPORTED!")
 end
