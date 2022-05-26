@@ -27,6 +27,5 @@ elseif OXYGEN_LOADED then
 elseif IsElectron then
 	IdentifyExecutor = true
 else
-	IdentifyExecutor = false
-	LP:Kick("ERROR: EXPLOIT NOT SUPPORTED!")
+	IdentifyExecutor = true
 end
