@@ -9,17 +9,18 @@ if syn and not is_sirhurt_closure and not pebc_execute then
 elseif  WrapGlobal then
 	IdentifyExecutor = false
 	LP:Kick("ERROR: BAD EXPLOIT DETECTED!")
-	return
+	return task.wait(9e9)
 elseif KRNL_LOADED then
 	IdentifyExecutor = true
 elseif is_sirhurt_closure then
 	IdentifyExecutor = true
+	_G.StopSynapseTempK = false
 elseif secure_load then
 	IdentifyExecutor = true
 elseif jit then
 	IdentifyExecutor = false
 	LP:Kick("ERROR: STOP USING JJSPLOIT PLS.")
-	return
+	return task.wait(9e9)
 elseif getscriptenvs then
 	IdentifyExecutor = true
 elseif OXYGEN_LOADED then
