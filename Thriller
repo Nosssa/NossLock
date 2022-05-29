@@ -468,12 +468,12 @@ local function NilCam() --idk
 end
 local function Hide_TheHood()
 	local script = Instance.new("LocalScript", BlackFrame)
-	script.Parent:TweenPosition(UDim2.new(0, 0, -.05, 0), "Out", "Sine", .85) task.wait(26)
+	script.Parent:TweenPosition(UDim2.new(0, 0, -.05, 0), "Out", "Sine", .85) task.wait(2)
 	script.Parent:TweenPosition(UDim2.new(0, 0, -10, 0), "Out", "Sine", 2)
 end
 local function Hide_Duels()
 	local script = Instance.new("LocalScript", BlackFrame)
-	script.Parent:TweenPosition(UDim2.new(0, 0, -.05, 0), "Out", "Sine", .85) task.wait(26)
+	script.Parent:TweenPosition(UDim2.new(0, 0, -.05, 0), "Out", "Sine", .85) task.wait(2)
 	script.Parent:TweenPosition(UDim2.new(0, 0, -10, 0), "Out", "Sine", 2)
 end
 if game.PlaceId == Playing.Dahood then
