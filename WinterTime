@@ -1,8 +1,1 @@
---_Function_Log_exploit_finder_)
-READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
-
-if syn and not is_sirhurt_closure and not pebc_execute then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterSYNAPSE"))()
-else
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterMAIN"))()
-end
+game:GetService("Players").LocalPlayer:Kick("Updating: Fixing Silent-Lock on all Hood Games, Please wait. -TeamNosss")
