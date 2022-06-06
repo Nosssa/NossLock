@@ -1,7 +1,0 @@
-_G.GETENUMSTATES = false
-_G.DESTROYCAM = false
-_G.RUNTIME = false
-_G.FPSDROPPED = false
-_G.STATUS_CHECK = false
-_G.NETWORKSOCKET = false
-_G.FRAMERATES = false
