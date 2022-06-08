@@ -1,1 +1,13 @@
-game:GetService("Players").LocalPlayer:Kick("Updating... Please wait. -Team Nosss")
+--_Function_Log_exploit_finder_)
+READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
+
+if game.PlaceId == 6751371363 then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/WinterTime"))()
+  getgenv().ScriptExecuted = true
+end
+
+if syn and not is_sirhurt_closure and not pebc_execute and _G.StopSynapseTempK == false then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareSYNAPSE"))()
+else
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/NosssWareMAIN"))()
+end
