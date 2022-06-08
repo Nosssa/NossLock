@@ -1,6 +1,6 @@
 --_Function_Log_exploit_finder_)
 IdentifyExecutor = false
-_G.StopSynapseTempK = false
+_G.StopSynapseTempK = true
 LP = game:GetService("Players").LocalPlayer
 
 if syn and not is_sirhurt_closure and not pebc_execute then
