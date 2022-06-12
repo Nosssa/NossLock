@@ -1,1 +1,9 @@
-game:GetService("Players").LocalPlayer:Kick("Updating... Please wait. -Team Nosss")
+--_Function_Log_exploit_finder_)
+READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
+
+local RetrieveExecutor = identifyexecutor()
+if RetrieveExecutor == "Synapse X" or "Synapse" or "S^X" then
+    	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterSYNAPSE"))()
+      else
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterMAIN"))()
+end
