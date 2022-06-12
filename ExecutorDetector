@@ -10,7 +10,7 @@ end
 local RetrieveExecutor = identifyexecutor()
 
 pcall(function()
-	if RetrieveExecutor == "Synapse X" or "Synapse" or "S^X" then
+	if RetrieveExecutor == "Synapse X" then
 
 		IdentifyExecutor = true
 
@@ -18,7 +18,7 @@ pcall(function()
 
 		IdentifyExecutor = true
 
-	elseif RetrieveExecutor == "Krnl" or "KRNL" or "KRNL_LOADED" then
+	elseif RetrieveExecutor == "Krnl" then
 
 		IdentifyExecutor = true
 
@@ -26,15 +26,15 @@ pcall(function()
 
 		IdentifyExecutor = true
 
-	elseif RetrieveExecutor == "Oxygen U" or "Oxygen" or "OXYGEN_LOADED" then
+	elseif RetrieveExecutor == "Oxygen U" then
 
 		IdentifyExecutor = true
 		
-	elseif RetrieveExecutor == "Coco Z" or "Coco Z2" then
+	elseif RetrieveExecutor == "Coco Z" then
 
 		IdentifyExecutor = true
 		
-	elseif RetrieveExecutor == "Kiwi X" or "Kiwi" then
+	elseif RetrieveExecutor == "Kiwi X" then
 
 		IdentifyExecutor = false
 		
