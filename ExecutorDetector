@@ -1,30 +1,66 @@
 --_Function_Log_exploit_finder_)
-IdentifyExecutor = false
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local IdentifyExecutor = false
 _G.StopSynapseTempK = true
-LP = game:GetService("Players").LocalPlayer
 
-if syn and not is_sirhurt_closure and not pebc_execute then
-	IdentifyExecutor = true
-elseif  WrapGlobal then
-	IdentifyExecutor = false
-	LP:Kick("ERROR: BAD EXPLOIT DETECTED!")
-	return task.wait(9e9)
-elseif KRNL_LOADED then
-	IdentifyExecutor = true
-elseif is_sirhurt_closure then
-	IdentifyExecutor = true
-elseif secure_load then
-	IdentifyExecutor = true
-elseif jit then
-	IdentifyExecutor = false
-	LP:Kick("ERROR: STOP USING JJSPLOIT PLS.")
-	return task.wait(9e9)
-elseif getscriptenvs then
-	IdentifyExecutor = true
-elseif OXYGEN_LOADED then
-	IdentifyExecutor = true
-elseif IsElectron then
-	IdentifyExecutor = true
-else
-	IdentifyExecutor = true
+if not identifyexecutor() then
+	LocalPlayer:Kick("Error: Bad Exploit.") task.wait(9e9)
 end
+
+local RetrieveExecutor = identifyexecutor()
+
+pcall(function()
+	if RetrieveExecutor == "Synapse X" or "Synapse" or "S^X" then
+
+		IdentifyExecutor = true
+
+	elseif RetrieveExecutor == "ScriptWare" then
+
+		IdentifyExecutor = true
+
+	elseif RetrieveExecutor == "Krnl" or "KRNL" or "KRNL_LOADED" then
+
+		IdentifyExecutor = true
+
+	elseif RetrieveExecutor == "Fluxus" then
+
+		IdentifyExecutor = true
+
+	elseif RetrieveExecutor == "Oxygen U" or "Oxygen" or "OXYGEN_LOADED" then
+
+		IdentifyExecutor = true
+		
+	elseif RetrieveExecutor == "Coco Z" or "Coco Z2" then
+
+		IdentifyExecutor = true
+		
+	elseif RetrieveExecutor == "Kiwi X" or "Kiwi" then
+
+		IdentifyExecutor = false
+		
+		LocalPlayer:Kick("Error: Bad Exploit.")
+
+		task.wait(9e9)
+	elseif RetrieveExecutor == "WrapGlobal" then
+
+		IdentifyExecutor = false
+
+		LocalPlayer:Kick("Error: Bad Exploit.")
+
+		task.wait(9e9)
+	elseif RetrieveExecutor == "jit" then
+
+		IdentifyExecutor = false
+
+		LocalPlayer:Kick("Error: Bad Exploit.")
+
+		task.wait(9e9)
+	else
+
+		IdentifyExecutor = false
+
+		LocalPlayer:Kick("Error: Bad Exploit.")
+
+		task.wait(9e9)
+	end
+end)
