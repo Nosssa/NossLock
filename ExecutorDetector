@@ -59,7 +59,7 @@ pcall(function()
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
 
 		task.wait(9e9)
 	end
