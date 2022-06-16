@@ -20,6 +20,7 @@ _G.WinterTimeVIP = {
 	163948872;
 	2989323679; -- tester
 	2903318543;
-	2364367535; -- temporary btw
+	--2364367535; -- temporary btw, removed.
+	
 
 };
