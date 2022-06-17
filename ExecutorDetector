@@ -32,29 +32,36 @@ pcall(function()
 		
 	elseif RetrieveExecutor == "Coco Z" then
 
-		IdentifyExecutor = true
+		IdentifyExecutor = false
+		
+		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
+
+		task.wait(9e9)
 		
 	elseif RetrieveExecutor == "Kiwi X" then
 
 		IdentifyExecutor = false
 		
-		LocalPlayer:Kick("Error: Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
 
 		task.wait(9e9)
+		
 	elseif RetrieveExecutor == "WrapGlobal" then
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
 
 		task.wait(9e9)
+		
 	elseif RetrieveExecutor == "jit" then
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
 
 		task.wait(9e9)
+		
 	else
 
 		IdentifyExecutor = false
@@ -62,5 +69,6 @@ pcall(function()
 		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
 
 		task.wait(9e9)
+		
 	end
 end)
