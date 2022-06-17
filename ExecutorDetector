@@ -4,7 +4,7 @@ local IdentifyExecutor = false
 _G.StopSynapseTempK = true
 
 if not identifyexecutor() then
-	LocalPlayer:Kick("Error: Bad Exploit.") task.wait(9e9)
+	LocalPlayer:Kick("Error: Unsupported Executor.") task.wait(9e9)
 end
 
 local RetrieveExecutor = identifyexecutor()
@@ -38,7 +38,7 @@ pcall(function()
 
 		IdentifyExecutor = false
 		
-		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Unsupported Executor.")
 
 		task.wait(9e9)
 		
@@ -46,7 +46,7 @@ pcall(function()
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Unsupported Executor.")
 
 		task.wait(9e9)
 		
@@ -54,7 +54,7 @@ pcall(function()
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Unsupported Executor.")
 
 		task.wait(9e9)
 		
@@ -62,7 +62,7 @@ pcall(function()
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
+		LocalPlayer:Kick("Error: Uknown / Unsupported Executor.")
 
 		task.wait(9e9)
 		
