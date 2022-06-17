@@ -32,11 +32,7 @@ pcall(function()
 		
 	elseif RetrieveExecutor == "Coco Z" then
 
-		IdentifyExecutor = false
-		
-		LocalPlayer:Kick("Error: Uknown / Bad Exploit.")
-
-		task.wait(9e9)
+		IdentifyExecutor = true
 		
 	elseif RetrieveExecutor == "Kiwi X" then
 
