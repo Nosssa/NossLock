@@ -1,18 +1,24 @@
---\\ .tpircs detacsufbo eht nihtiw neddih si retsiletihw ruoy ,srepoleveD edulcnI t'nseoD //--
+-- tpircs detacsufbo eht nihtiw neddih si retsiletihw ruoy ,srepoleveD edulcnI t'nseoD
+
+
+--[[ 
+	
+	Editing Anything below this point it will not impact the outcome of the script and you will get banned automatically!
+
+--]]
+
 
 _G.WinterTimeVIP = {
 
 	14145859;
 	38024462;
 	3019264;
-	92132762; -- bb lenaki
+	92132762;
 	899458031;
 	2611699107;
 	1507522692;
-	--75559720; -- removed, 1 day trial, non paid?
 	--2269799390; -- yux remove after test, non paid
 	1355026590;
-	1496224467; -- double check
 	2584646170;
 	623678444;
 	609975596;
@@ -32,6 +38,7 @@ _G.WinterTimeVIP = {
 	1722165611;
 	1833384806;
 	2326473098;
+	1496224467; -- double check
 	22897380;
 	2584646170;
 	88467597;
@@ -52,6 +59,7 @@ _G.WinterTimeVIP = {
 	1355026590;
 	609975596;
 	243292237;
+	--75559720; -- removed, 1 day trial, non paid?
 	2679846885;
 	2709358355;
 	1114480660;
