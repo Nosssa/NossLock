@@ -1,4 +1,5 @@
--- Created by Nosss
+--Created By Nosss
+
 
 _G.InvisiblityKey = "x"
 
@@ -98,12 +99,12 @@ local JumpScareScreams = {
 
 local ScareNoise1 = {
 	[1] = "Boombox",
-	[2] = 8280196339,
+	[2] = JumpScareScreams[1],
 }
 
 local ScareNoise2 = {
 	[1] = "Boombox",
-	[2] = 7588947168,
+	[2] = JumpScareScreams[2],
 }
 
 
