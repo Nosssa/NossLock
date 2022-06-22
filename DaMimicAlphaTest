@@ -98,12 +98,12 @@ local JumpScareScreams = {
 
 local ScareNoise1 = {
 	[1] = "Boombox",
-	[2] = JumpScareScreams[1],
+	[2] = 8280196339,
 }
 
 local ScareNoise2 = {
 	[1] = "Boombox",
-	[2] = JumpScareScreams[2],
+	[2] = 7588947168,
 }
 
 
@@ -113,7 +113,7 @@ local StopPlayBack = {
 
 
 
-local Whispers = Instance.new("Sound", LocalPlayer.PlayerGui)
+local Whispers = Instance.new("Sound", game:GetService("SoundService"))
 Whispers.Name = "TimeErase"
 Whispers.SoundId = "rbxassetid://8776429995"
 Whispers.TimePosition = 0
