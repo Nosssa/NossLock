@@ -3,6 +3,10 @@
 --_Function_Log_exploit_finder_)
 local READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
 
+if game.PlaceId == 5602055394 then -- 0_Nil_AC_FPS_SAVER
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterHoodModded"))()
+end
+
 local RetrieveExecutor = identifyexecutor()
 if RetrieveExecutor == "Synapse X" then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterSYNAPSE"))()
