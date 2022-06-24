@@ -1,0 +1,20 @@
+-- Built-in Auto Pred
+
+getgenv().Toggle_Key = "c"
+
+
+getgenv().Rejoin_Key = "="
+
+
+getgenv().ChangeFovSettings = {
+
+	FOV_Filled = false;
+	FOV_VisibleOrNot = true;
+	FOV_Transparency = .35;
+	FOV_Thickness = 1;
+	FOV_RADIUS = 250;
+	FOV_Color = Color3.fromRGB(200, 200, 255);
+
+};
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/HoodCustomsSilentAim"))()
