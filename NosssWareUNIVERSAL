@@ -1,2 +1,1 @@
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATING", Text = "Sorry it doesn't take this long normally.", Duration = 15,}) task.wait(5)
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATING", Text = "Sorry it doesn't take this long normally.", Duration = 15,})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "ISSUE FIXED", Text = "WAIT FOR THE UPDATE TO REFRESH", Duration = 15,})
