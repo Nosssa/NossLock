@@ -28,11 +28,7 @@ pcall(function()
 		
 	elseif RetrieveExecutor == "Fluxus" then
 
-		IdentifyExecutor = false
-		
-		LocalPlayer:Kick("Error: Uknown / Unsupported Executor.")
-
-		task.wait(9e9)
+		IdentifyExecutor = true
 		
 	elseif RetrieveExecutor == "Coco Z" then
 
