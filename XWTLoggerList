@@ -72,7 +72,7 @@ _G.WinterTimeVIP = {
 	163948872;
 	1384186116;
 	487366910; -- Purchased 1k shirt
-	--288672800; -- temporary, youtube showcase
+	--288672800; -- temporary, youtube showcase, removed
 	309447114;
 	297968031;
 	101538788;
@@ -85,6 +85,6 @@ _G.WinterTimeVIP = {
 	2817836624;
 	42074213;
 	834137939;
-	1639218381; -- temporary, 2 day whitelist.
+	1639218381; -- temporary, 2 day whitelist
 
 };
