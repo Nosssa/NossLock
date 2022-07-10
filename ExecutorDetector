@@ -50,7 +50,7 @@ pcall(function()
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Uknown / Unsupported Executor.")
+		LocalPlayer:Kick("Error: Shitty Exploit.")
 
 		task.wait(9e9)
 		
@@ -58,7 +58,7 @@ pcall(function()
 
 		IdentifyExecutor = false
 
-		LocalPlayer:Kick("Error: Uknown / Unsupported Executor.")
+		LocalPlayer:Kick("Error: Stop Using JJSploit.")
 
 		task.wait(9e9)
 		
