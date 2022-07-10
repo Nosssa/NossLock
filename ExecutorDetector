@@ -2,6 +2,7 @@
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local IdentifyExecutor = false
 _G.StopSynapseTempK = true
+_G.UsingSynapse = false
 
 if not identifyexecutor() then
 	LocalPlayer:Kick("Error: Unsupported Executor or Use Old Krnl not Beta.") task.wait(9e9)
@@ -13,6 +14,8 @@ pcall(function()
 	if RetrieveExecutor == "Synapse X" then
 
 		IdentifyExecutor = true
+		
+		_G.UsingSynapse = true
 
 	elseif RetrieveExecutor == "ScriptWare" then
 
