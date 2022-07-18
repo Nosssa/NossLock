@@ -5,8 +5,6 @@ local READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com
 
 if game.PlaceId == 5602055394 then -- 0_Nil_AC_FPS_SAVER_ScrfcesSilntAimplzfixthis
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterHoodModded"))()
-
-	getgenv().ScriptExecuted = true
 end
 
 local RetrieveExecutor = identifyexecutor()
