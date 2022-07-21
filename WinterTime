@@ -1,15 +1,2 @@
--- Stop attempting to execute this raw script you're just going to get banned when I update it, your choice pal.
-
---_Function_Log_exploit_finder_)
-local READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
-
-if game.PlaceId == 5602055394 then -- 0_Nil_AC_FPS_SAVER_ScrfcesSilntAimplzfixthis
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterHoodModded"))()
-end
-
-local RetrieveExecutor = identifyexecutor()
-if RetrieveExecutor == "Synapse X" then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterSYNAPSE"))()
-else
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterMAIN"))()
-end
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATING", Text = "Fixing Silent Crosshair wait 1-2 minutes -TeamNosss", Duration = 15,}) task.wait(5)
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATING", Text = "Fixing Silent Crosshair wait 1-2 minutes -TeamNosss", Duration = 15,})
