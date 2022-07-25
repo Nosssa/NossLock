@@ -72,13 +72,9 @@ pcall(function()
 		
 	else
 
-		IdentifyExecutor = false
+		IdentifyExecutor = true
 
 		_G.UsingOther = true
-
-		LocalPlayer:Kick("Error: Uknown / Unsupported Executor or use Old Krnl not Beta.")
-
-		task.wait(9e9)
 		
 	end
 end)
