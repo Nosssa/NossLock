@@ -3,6 +3,7 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local IdentifyExecutor = false
 _G.StopSynapseTempK = true
 _G.UsingSynapse = false
+_G.UsingOther = false
 
 if not identifyexecutor() then
 	LocalPlayer:Kick("Error: Unsupported Executor or Use Old Krnl not Beta.") task.wait(9e9)
@@ -29,9 +30,13 @@ pcall(function()
 
 		IdentifyExecutor = true
 		
+		_G.UsingOther = true
+		
 	elseif RetrieveExecutor == "Fluxus" then
 
 		IdentifyExecutor = true
+		
+		_G.UsingOther = true
 		
 	elseif RetrieveExecutor == "Coco Z" then
 
@@ -68,6 +73,8 @@ pcall(function()
 	else
 
 		IdentifyExecutor = false
+
+		_G.UsingOther = true
 
 		LocalPlayer:Kick("Error: Uknown / Unsupported Executor or use Old Krnl not Beta.")
 
