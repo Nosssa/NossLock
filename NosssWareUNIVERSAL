@@ -3,6 +3,8 @@
 --_Function_Log_exploit_finder_)
 local READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
 
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Attention", Text = "This script will update in 5 minutes -TeamNosss", Duration = 15,})
+
 local RetrieveExecutor = identifyexecutor()
 if RetrieveExecutor == "Synapse X" then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterSYNAPSE"))()
