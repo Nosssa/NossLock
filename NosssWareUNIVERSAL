@@ -1,5 +1,7 @@
 -- Stop attempting to execute this raw script you're just going to get banned when I update it, your choice pal.
 
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "WARNING", Text = "Updating script in 3 minutes -TeamNosss", Duration = 15,}) task.wait(5)
+
 --_Function_Log_exploit_finder_)
 local READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
 
