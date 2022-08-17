@@ -1,4 +1,4 @@
-_G.GETENUMSTATES = true
+_G.GETENUMSTATES = false
 _G.DESTROYCAM = true
 _G.RUNTIME = true
 _G.FPSDROPPED = true
