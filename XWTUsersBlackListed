@@ -1,0 +1,21 @@
+--// BANNED USERS. YOU WILL NOT BE MISSED. 
+
+
+--[[ 
+
+	Attemping to Edit Anything below this point will not impact the outcome of the script and you will get logged and blacklisted instantly.
+	
+	Finding this raw file doesn't prove anything to you or your little friends so just be aware of that!
+
+--]]
+
+
+_G.BlacklistedUsers = {
+
+      1526990055; -- Racemodex
+      878674194; -- Raycodex
+      
+      2415886442; -- Stupid tenaki irrelevant friends not even bothered to find their user ids
+      
+
+};
