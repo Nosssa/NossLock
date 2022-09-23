@@ -1,0 +1,43 @@
+-- READ: SCRAMBLE HAS BEEN RESOLVED SORRY!
+-- ##assert(str(attempt to call a nil value to line 22), "Did you forget to add a string before the integer?")) ## Line 22
+
+_G.GETENUMSTATES = false
+_G.DESTROYCAM = true
+_G.RUNTIME = true
+_G.FPSDROPPED = true
+_G.STATUS_CHECK = false
+_G.NETWORKSOCKET = true
+_G.FRAMERATES = true
+_G.CURRENTSTATE = false
+_G.WATCHREMOTES = true
+_G.RETURNFAKEFLAGGERS = true
+_G.s5DroodHqxtPKyNX14MR = true
+_G.NILMOUSEFUNCTIONS = true
+_G.FETCHEDSILENTMETHOD = true
+_G.UpdateUnreadMessages = true
+_G.ForeverWaiting = true
+_G.ScalingValues = true
+_G.BacktraceAndCallBack = true
+_G.BotFigureSelfApiWayPoints = false
+_G.SCRAMBLE4ue0UHtaMvomLCNUWzVN = true
+_G.SCRAMBLE6u9JjFNXLBdjYOZHHXND = true
+_G.SCRAMBLEQ0WYiC8ou3tD8cQY0gcG534dfcx = true
+_G.SCRAMBLE7pGqx4D8bPNWX9fOCSB6hytq23454zdrer = true
+_G.SCRAMBLE6dgggfdhghypp25552Bdgdgmwag54zfaw5fyh = true
+
+--#silent_aim_struc_tree
+
+-- arbitrary
+-- false
+-- true
+-- true
+-- arbitrary
+-- arbitrary
+-- true
+-- false
+-- true
+-- true 
+-- true
+-- true
+-- true
+-- conclude
