@@ -1,0 +1,882 @@
+--[ MultiLock Script | Updated To GUI, Released Dec 2021 | Working ]--
+
+--Instances:
+local Date = 25
+local UpdateVersion = 1.5
+local CreatorName = "CrowsDesire1"
+local ScriptLastUpdated = "Dec " .. Date .. " 2021"
+local HeadHunterGUI = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local PredictionBox = Instance.new("TextBox")
+local Close = Instance.new("TextButton")
+local Average = Instance.new("TextBox")
+local Stronger = Instance.new("TextBox")
+local LabelUno = Instance.new("TextLabel")
+local LabelDos = Instance.new("TextLabel")
+local BindOne_Normal = Instance.new("TextBox")
+local BindTwo_Hard = Instance.new("TextBox")
+local Destroy_Gui = Instance.new("TextButton")
+local AntiAim = Instance.new("TextLabel")
+local AntiAimButton_ON = Instance.new("TextButton")
+local AntiAimButton_OFF = Instance.new("TextButton")
+local ChamsLabel = Instance.new("TextLabel")
+local ESPButton_OFF = Instance.new("TextButton")
+local ESPButton_ON = Instance.new("TextButton")
+local DropDown = Instance.new("TextButton")
+local FrameDeDropDown = Instance.new("Frame")
+local TeamCheckLabel = Instance.new("TextLabel")
+local Open = Instance.new("TextButton")
+local Priorities = Instance.new("ScreenGui")
+local BlackGUI = Instance.new("ScreenGui")
+local BlackFrame = Instance.new("Frame")
+local SecondFrame = Instance.new("Frame")
+local Tertiary = Instance.new("Frame")
+local OkLabel = Instance.new("TextLabel")
+local OkImage = Instance.new("ImageLabel")
+
+local GuiDeEsp = Instance.new("BillboardGui")	
+local WallHax = Instance.new("TextLabel", GuiDeEsp)
+GuiDeEsp.Name = "MarkOfTheBeast";
+GuiDeEsp.ResetOnSpawn = false
+GuiDeEsp.AlwaysOnTop = true;
+GuiDeEsp.LightInfluence = 0;
+GuiDeEsp.Size = UDim2.new(1.8, 0, 1.8, 0);
+WallHax.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+WallHax.Text = ""
+WallHax.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+WallHax.BorderSizePixel = 4;
+WallHax.BorderColor3 = Color3.new(1, 1, 0)
+WallHax.BorderSizePixel = 0
+WallHax.Font = "GothamSemibold"
+WallHax.TextSize = 9
+WallHax.TextColor3 = Color3.fromRGB(255, 85, 255)
+
+--GameSecure:
+local real_game = setmetatable({},{__index = function(_, v)
+	return game:GetService(v);
+end;});
+
+--Variables:
+local Area = real_game.Workspace
+local Status = game:GetService("Stats")
+local Request = game:GetService("HttpService")
+local UIS = game:GetService("UserInputService")
+local SmootherLerp = Instance.new("CFrameValue")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local GetPing = Status.PerformanceStats.Ping:GetValue()
+local SnowFall = Instance.new("BlurEffect", game:GetService("Lighting"))
+local PopUp = "http://www.roblox.com/asset/?id=8350169883"
+local MarketPlace = game:GetService("MarketplaceService")
+local ChamsHolder = Instance.new("Folder", Area)
+local FakeContainer = Instance.new("Folder", Area)
+local xAntiAimHolder = Instance.new("Folder", Area)
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+SnowFall.Name = "McFlurry" SnowFall.Size = 24
+ChamsHolder.Name = "ChamsHolder"
+FakeContainer.Name = "FakeContainer"
+xAntiAimHolder.Name = "xAntiAimHolder"
+SnowFall.Enabled = true
+local AntiAim_On = false
+local AntiAim_Off = false
+local CanCraftPart = false
+local LerpingCP = false
+local DoingAA = false
+local ReBreak = false
+local ESP_ON = false
+local ESP_OFF = false
+local isToggled = false
+local isToggled2 = false
+local ExtraSensor = false
+local EyeContactMade = false
+local RenderBindCam = nil
+
+--AimLock Settings:
+local Options = {
+	Torso = "HumanoidRootPart";
+	Holding_Closely = false;
+	Holding_Ranged = false;
+	FOV_VisibleOrNot = false;
+	FOV_RADIUS = 175;
+	FOV_Color = Color3.fromRGB(0, 255, 255) 
+}
+
+--Table Of gameIDS:
+local Playing = { 
+	Dahood = 2788229376;
+	Modded = 5602055394;
+	Duels = 6751371363;
+	TheHood = 4753520418;
+	Arsenal = 286090429;
+}
+
+HeadHunterGUI.Name = Request:GenerateGUID()
+HeadHunterGUI.Parent = game:GetService("CoreGui")
+HeadHunterGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Priorities.Name = "Priorities"
+Priorities.Parent = game:GetService("CoreGui")
+Priorities.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+BlackGUI.Name = "BlackGUI"
+BlackGUI.Parent = game:GetService("CoreGui")
+BlackGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = HeadHunterGUI
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 15
+MainFrame.Position = UDim2.new(0.695757627, 0, 0.0480349138, 0)
+MainFrame.Size = UDim2.new(0, 200, 0, 360)
+MainFrame.Visible = false
+MainFrame.Draggable = true
+
+SecondFrame.Name = "SecondFrame"
+SecondFrame.Parent = Priorities
+SecondFrame.Active = true
+SecondFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+SecondFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SecondFrame.Position = UDim2.new(0.5, 0, 5, 0)
+SecondFrame.Size = UDim2.new(0, 400, 0, 250)
+SecondFrame.Style = Enum.FrameStyle.RobloxRound
+
+Tertiary.Name = "Tertiary"
+Tertiary.Parent = SecondFrame
+Tertiary.Active = true
+Tertiary.AnchorPoint = Vector2.new(SecondFrame.AnchorPoint)
+Tertiary.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Tertiary.Position = UDim2.new(SecondFrame.Position)
+Tertiary.Size = UDim2.new(0, 400, 0, 250)
+Tertiary.Style = Enum.FrameStyle.RobloxRound
+
+BlackFrame.Name = "BlackFrame"
+BlackFrame.Parent = BlackGUI
+BlackFrame.Active = true
+BlackFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+BlackFrame.BorderSizePixel = 0
+BlackFrame.Position = UDim2.new(-0.257999986, 0, 10, 0)
+BlackFrame.Size = UDim2.new(0, 2500, 0, 1173)
+
+OkImage.Name = "OkImage"
+OkImage.Parent = SecondFrame
+OkImage.Active = true
+OkImage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OkImage.BorderSizePixel = 0
+OkImage.Position = UDim2.new(0.0230218563, 0, 0.02920717, 0)
+OkImage.Size = UDim2.new(0, 365, 0, 180)
+OkImage.Image = "http://www.roblox.com/asset/?id=6836835280"
+OkImage.ScaleType = Enum.ScaleType.Fit
+OkImage.Transparency = 1
+
+OkLabel.Name = "OkLabel"
+OkLabel.Parent = SecondFrame
+OkLabel.Active = true
+OkLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OkLabel.BackgroundTransparency = 1.000
+OkLabel.BorderSizePixel = 0
+OkLabel.Position = UDim2.new(-0.022499999, 0, 0.771999955, 0)
+OkLabel.Size = UDim2.new(0, 400, 0, 60)
+OkLabel.Font = Enum.Font.SourceSansLight
+OkLabel.Text = "Join Group: (Guccci Flip Flops.)"
+OkLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+OkLabel.TextSize = 30.000
+OkLabel.TextWrapped = true
+OkLabel.ZIndex = 2
+
+PredictionBox.Name = "PredictionBox"
+PredictionBox.Parent = MainFrame
+PredictionBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PredictionBox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+PredictionBox.BorderSizePixel = 0
+PredictionBox.Position = UDim2.new(0.0549999997, 0, 0.0300802886, 0)
+PredictionBox.Size = UDim2.new(0, 177, 0, 40)
+PredictionBox.Font = Enum.Font.Gotham
+PredictionBox.PlaceholderColor3 = Color3.fromRGB(125, 125, 125)
+PredictionBox.PlaceholderText = "Prediction"
+PredictionBox.Text = ".18"
+PredictionBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+PredictionBox.TextSize = 20.000
+PredictionBox.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = MainFrame
+Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 9
+Close.Position = UDim2.new(-0.0299999993, 0, 1.02951729, 0)
+Close.Size = UDim2.new(0, 65, 0, 25)
+Close.Font = Enum.Font.Gotham
+Close.Text = "Close"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 20.000
+
+Average.Name = "Average"
+Average.Parent = MainFrame
+Average.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Average.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Average.BorderSizePixel = 0
+Average.Position = UDim2.new(0.0549999997, 0, 0.183167458, 0)
+Average.Size = UDim2.new(0, 177, 0, 40)
+Average.Font = Enum.Font.Gotham
+Average.PlaceholderColor3 = Color3.fromRGB(125, 125, 125)
+Average.PlaceholderText = "(Aim Height)"
+Average.Text = ".1"
+Average.TextColor3 = Color3.fromRGB(0, 0, 0)
+Average.TextSize = 18.000
+Average.TextWrapped = true
+
+Stronger.Name = "Stronger"
+Stronger.Parent = MainFrame
+Stronger.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Stronger.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Stronger.BorderSizePixel = 0
+Stronger.Position = UDim2.new(0.0549999997, 0, 0.333352536, 0)
+Stronger.Size = UDim2.new(0, 177, 0, 40)
+Stronger.Font = Enum.Font.Gotham
+Stronger.PlaceholderColor3 = Color3.fromRGB(125, 125, 125)
+Stronger.PlaceholderText = "(Aim Height Bypass)"
+Stronger.Text = "-.5"
+Stronger.TextColor3 = Color3.fromRGB(0, 0, 0)
+Stronger.TextSize = 18.000
+Stronger.TextWrapped = true
+
+LabelUno.Name = "LabelUno"
+LabelUno.Parent = MainFrame
+LabelUno.Active = true
+LabelUno.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+LabelUno.BorderColor3 = Color3.fromRGB(255, 255, 255)
+LabelUno.Position = UDim2.new(0.0549999997, 0, 0.484317362, 0)
+LabelUno.Size = UDim2.new(0, 120, 0, 40)
+LabelUno.Font = Enum.Font.SourceSans
+LabelUno.Text = "Normal"
+LabelUno.TextColor3 = Color3.fromRGB(85, 255, 255)
+LabelUno.TextSize = 26.000
+
+LabelDos.Name = "LabelDos"
+LabelDos.Parent = MainFrame
+LabelDos.Active = true
+LabelDos.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+LabelDos.BorderColor3 = Color3.fromRGB(255, 255, 255)
+LabelDos.Position = UDim2.new(0.0549999997, 0, 0.624982595, 0)
+LabelDos.Size = UDim2.new(0, 120, 0, 40)
+LabelDos.Font = Enum.Font.SourceSans
+LabelDos.Text = "Bypass"
+LabelDos.TextColor3 = Color3.fromRGB(85, 255, 255)
+LabelDos.TextSize = 26.000
+
+BindOne_Normal.Name = "BindOne_Normal"
+BindOne_Normal.Parent = MainFrame
+BindOne_Normal.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+BindOne_Normal.BorderColor3 = Color3.fromRGB(255, 255, 255)
+BindOne_Normal.Position = UDim2.new(0.74000001, 0, 0.482710063, 0)
+BindOne_Normal.Size = UDim2.new(0, 40, 0, 40)
+BindOne_Normal.Font = Enum.Font.Gotham
+BindOne_Normal.PlaceholderColor3 = Color3.fromRGB(125, 125, 125)
+BindOne_Normal.Text = "C"
+BindOne_Normal.TextColor3 = Color3.fromRGB(255, 255, 255)
+BindOne_Normal.TextSize = 21.000
+BindOne_Normal.TextWrapped = true
+
+BindTwo_Hard.Name = "BindTwo_Hard"
+BindTwo_Hard.Parent = MainFrame
+BindTwo_Hard.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+BindTwo_Hard.BorderColor3 = Color3.fromRGB(255, 255, 255)
+BindTwo_Hard.Position = UDim2.new(0.74000001, 0, 0.623375356, 0)
+BindTwo_Hard.Size = UDim2.new(0, 40, 0, 40)
+BindTwo_Hard.Font = Enum.Font.Gotham
+BindTwo_Hard.PlaceholderColor3 = Color3.fromRGB(125, 125, 125)
+BindTwo_Hard.Text = "G"
+BindTwo_Hard.TextColor3 = Color3.fromRGB(255, 255, 255)
+BindTwo_Hard.TextSize = 20.000
+BindTwo_Hard.TextWrapped = true
+
+Destroy_Gui.Name = "Destroy_Gui"
+Destroy_Gui.Parent = MainFrame
+Destroy_Gui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Destroy_Gui.BorderSizePixel = 9
+Destroy_Gui.Position = UDim2.new(0.655000031, 0, 1.02951729, 0)
+Destroy_Gui.Size = UDim2.new(0, 75, 0, 25)
+Destroy_Gui.Font = Enum.Font.Gotham
+Destroy_Gui.Text = "Panic"
+Destroy_Gui.TextColor3 = Color3.fromRGB(85, 255, 255)
+Destroy_Gui.TextSize = 20.000
+
+AntiAim.Name = "AntiAim"
+AntiAim.Parent = MainFrame
+AntiAim.Active = true
+AntiAim.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiAim.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AntiAim.Position = UDim2.new(0.0549999997, 0, 0.774982691, 0)
+AntiAim.Size = UDim2.new(0, 120, 0, 30)
+AntiAim.Font = Enum.Font.Gotham
+AntiAim.Text = "Anti-Aim"
+AntiAim.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiAim.TextSize = 20.000
+
+AntiAimButton_ON.Name = "AntiAimButton_ON"
+AntiAimButton_ON.Parent = MainFrame
+AntiAimButton_ON.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiAimButton_ON.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AntiAimButton_ON.Position = UDim2.new(0.74000001, 0, 0.774982631, 0)
+AntiAimButton_ON.Size = UDim2.new(0, 40, 0, 30)
+AntiAimButton_ON.Visible = false
+AntiAimButton_ON.Font = Enum.Font.Gotham
+AntiAimButton_ON.Text = "ON"
+AntiAimButton_ON.TextColor3 = Color3.fromRGB(85, 255, 0)
+AntiAimButton_ON.TextSize = 20.000
+
+AntiAimButton_OFF.Name = "AntiAimButton_OFF"
+AntiAimButton_OFF.Parent = MainFrame
+AntiAimButton_OFF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiAimButton_OFF.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AntiAimButton_OFF.Position = UDim2.new(0.74000001, 0, 0.774982631, 0)
+AntiAimButton_OFF.Size = UDim2.new(0, 40, 0, 30)
+AntiAimButton_OFF.Font = Enum.Font.Gotham
+AntiAimButton_OFF.Text = "OFF"
+AntiAimButton_OFF.TextColor3 = Color3.fromRGB(255, 0, 0)
+AntiAimButton_OFF.TextSize = 17.000
+
+ChamsLabel.Name = "ChamsLabel"
+ChamsLabel.Parent = MainFrame
+ChamsLabel.Active = true
+ChamsLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ChamsLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ChamsLabel.Position = UDim2.new(0.0549999997, 0, 0.888871551, 0)
+ChamsLabel.Size = UDim2.new(0, 120, 0, 30)
+ChamsLabel.Font = Enum.Font.Gotham
+ChamsLabel.Text = "ESP"
+ChamsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChamsLabel.TextSize = 20.000
+
+ESPButton_OFF.Name = "ESPButton_OFF"
+ESPButton_OFF.Parent = MainFrame
+ESPButton_OFF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ESPButton_OFF.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ESPButton_OFF.Position = UDim2.new(0.74000001, 0, 0.888871551, 0)
+ESPButton_OFF.Size = UDim2.new(0, 40, 0, 30)
+ESPButton_OFF.Font = Enum.Font.Gotham
+ESPButton_OFF.Text = "OFF"
+ESPButton_OFF.TextColor3 = Color3.fromRGB(255, 0, 0)
+ESPButton_OFF.TextSize = 17.000
+
+ESPButton_ON.Name = "ESPButton_ON"
+ESPButton_ON.Parent = MainFrame
+ESPButton_ON.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ESPButton_ON.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ESPButton_ON.Position = UDim2.new(0.74000001, 0, 0.888871551, 0)
+ESPButton_ON.Size = UDim2.new(0, 40, 0, 30)
+ESPButton_ON.Visible = false
+ESPButton_ON.Font = Enum.Font.Gotham
+ESPButton_ON.Text = "ON"
+ESPButton_ON.TextColor3 = Color3.fromRGB(85, 255, 0)
+ESPButton_ON.TextSize = 20.000
+
+DropDown.Name = "DropDown"
+DropDown.Parent = MainFrame
+DropDown.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DropDown.BorderSizePixel = 9
+DropDown.Position = UDim2.new(0.36500001, 0, 1.02951729, 0)
+DropDown.Size = UDim2.new(0, 45, 0, 25)
+DropDown.Font = Enum.Font.Gotham
+DropDown.Text = "V"
+DropDown.TextColor3 = Color3.fromRGB(255, 85, 255)
+DropDown.TextSize = 18.000
+
+FrameDeDropDown.Name = "FrameDeDropDown"
+FrameDeDropDown.Parent = DropDown
+FrameDeDropDown.Active = true
+FrameDeDropDown.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FrameDeDropDown.BorderColor3 = Color3.fromRGB(85, 255, 255)
+FrameDeDropDown.Position = UDim2.new(-2.44444442, 0, 1.72000003, 0)
+FrameDeDropDown.Size = UDim2.new(0, 275, 0, 110)
+FrameDeDropDown.Visible = false
+
+TeamCheckLabel.Name = "TeamCheckLabel"
+TeamCheckLabel.Parent = FrameDeDropDown
+TeamCheckLabel.Active = true
+TeamCheckLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TeamCheckLabel.BackgroundTransparency = 1.000
+TeamCheckLabel.BorderColor3 = Color3.fromRGB(85, 255, 255)
+TeamCheckLabel.Size = UDim2.new(0, 275, 0, 110)
+TeamCheckLabel.Font = Enum.Font.Gotham
+TeamCheckLabel.LineHeight = 1.110
+TeamCheckLabel.Text = "Created By: " .. CreatorName ..                                       " Updated " .. ScriptLastUpdated ..  " | V." .. UpdateVersion
+TeamCheckLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeamCheckLabel.TextSize = 18.000
+TeamCheckLabel.TextWrapped = true
+
+Open.Name = "Open"
+Open.Parent = HeadHunterGUI
+Open.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Open.BorderSizePixel = 10
+Open.Position = UDim2.new(-0.00484848488, 0, 0.767103314, 0)
+Open.Size = UDim2.new(0, 75, 0, 30)
+Open.Font = Enum.Font.Gotham
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+Open.TextSize = 20.000
+Open.Visible = false
+
+local FOV_CIRCLE = Drawing.new("Circle")
+FOV_CIRCLE.Filled = false
+FOV_CIRCLE.Thickness = 1
+FOV_CIRCLE.Transparency = 1
+FOV_CIRCLE.Color = Options.FOV_Color
+FOV_CIRCLE.Radius = Options.FOV_RADIUS
+FOV_CIRCLE.Visible = Options.FOV_VisibleOrNot
+FOV_CIRCLE.Position = Vector2.new(Area.CurrentCamera.ViewportSize.X / 2, Area.CurrentCamera.ViewportSize.Y / 2)
+
+--[[
+
+--Matching TextBoxes, Nostring For Prediction TextBox: fuking uselss just type the shit.
+local VerifyInt1
+PredictionBox:GetPropertyChangedSignal("Text"):Connect(function()
+	local Int = PredictionBox.Text
+	if Int == "" then
+		VerifyInt1 = nil
+	elseif tonumber(Int) then
+		VerifyInt1 = math.floor(Int)
+	end
+	PredictionBox.Text = VerifyInt1 or ""
+end)
+
+local function GetObstructions(Set, ignore)
+	if Options.Wallcheck then
+		Cam = Area.CurrentCamera.CFrame.p
+		RayCast = Ray.new(Cam, Set - Cam)
+		hit = Area:FindPartOnRayWithIgnoreList(RayCast, ignore)
+		return hit == nil
+	else
+		return true
+	end
+end
+		
+local CastRay = Ray.new(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position, Target[Options.Torso].Position - LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position)
+local Casted = Area:FindPartOnRayWithIgnoreList(CastRay, {LocalPlayer.Character})
+
+]]
+
+--Void Old Cam, New Cam:
+local function NilCam() --idk
+	local OldFov = real_game.Workspace.CurrentCamera.FieldOfView;
+	real_game.Workspace.Camera:Destroy() task.wait();
+	real_game.Workspace.Camera.CameraType = "Custom";
+	real_game.Workspace.Camera.CameraSubject = LocalPlayer.Character task.wait();
+	real_game.Workspace.Camera.FieldOfView = OldFov;
+end
+local function Hide_TheHood()
+	local script = Instance.new("LocalScript", BlackFrame)
+	script.Parent:TweenPosition(UDim2.new(0, 0, -.05, 0), "Out", "Sine", .85) task.wait(2)
+	script.Parent:TweenPosition(UDim2.new(0, 0, -10, 0), "Out", "Sine", 2)
+end
+local function Hide_Duels()
+	local script = Instance.new("LocalScript", BlackFrame)
+	script.Parent:TweenPosition(UDim2.new(0, 0, -.05, 0), "Out", "Sine", .85) task.wait(2)
+	script.Parent:TweenPosition(UDim2.new(0, 0, -10, 0), "Out", "Sine", 2)
+end
+if game.PlaceId == Playing.Dahood then
+	game.StarterGui:SetCore("SendNotification", {Title = "Playing: DaHood ."; Text = "Anti-Cheat: Poor."; Duration = 5;});
+	AntiAimButton_ON:Destroy()
+	AntiAimButton_OFF:Destroy()
+	AntiAim.Text = "Disabled"
+	AntiAim.TextColor3 = Color3.fromRGB(255, 0, 0)
+elseif game.PlaceId == Playing.Modded then
+	AntiAimButton_ON:Destroy()
+	AntiAimButton_OFF:Destroy()
+	AntiAim.Text = "Disabled"
+	AntiAim.TextColor3 = Color3.fromRGB(255, 0, 0)
+	game.StarterGui:SetCore("SendNotification", {Title = "Playing: DaHood (MODDED)."; Text = "Anti-Cheat: Modest."; Duration = 5;});
+elseif game.PlaceId == Playing.Duels then
+	coroutine.wrap(Hide_Duels)()
+	ReBreak = true
+	AntiAimButton_ON:Destroy()
+	AntiAimButton_OFF:Destroy()
+	AntiAim.Text = "Disabled"
+	AntiAim.TextColor3 = Color3.fromRGB(255, 0, 0)
+	game.StarterGui:SetCore("SendNotification", {Title = "Playing: Hood Duels."; Text = "Anti-Cheat: Strict... Please Idle."; Duration = 5;}); task.wait(25)
+	NilCam()
+	game.StarterGui:SetCore("SendNotification", {Title = "Fixed."; Text = "Thanks For Waiting."; Duration = 5;}); task.wait(.5)
+elseif game.PlaceId == Playing.TheHood then
+	coroutine.wrap(Hide_TheHood)()
+	game.StarterGui:SetCore("SendNotification", {Title = "Playing: TheHood"; Text = "Anti-Cheat: Strict... Please Idle."; Duration = 5;}); task.wait(25)
+	NilCam()
+	game.StarterGui:SetCore("SendNotification", {Title = "Fixed."; Text = "Thanks For Waiting."; Duration = 5;}); task.wait(.5)
+elseif game.PlaceId == Playing.Arsenal then
+	game.StarterGui:SetCore("SendNotification", {Title = "Playing: Arsenal"; Text = "No Unpatch required."; Duration = 5;});
+else
+	game.StarterGui:SetCore("SendNotification", {Title = "Playing: " .. MarketPlace:GetProductInfo(game.PlaceId).Name; Text = "No Unpatch required."; Duration = 4.5;});
+end;
+
+--Popup
+local function Welcome()
+	local Ding = Instance.new("Sound", Area)
+	Ding.Name = "cope"
+	Ding.Volume = .3
+	Ding.TimePosition = 0
+	Ding.Looped = false
+	Ding.SoundId = "rbxassetid://7292796485"
+	Ding:Play()
+end
+local function ShowLogo()
+	SnowFall.Enabled = false
+	SnowFall:Destroy()
+	local script = Instance.new("LocalScript", SecondFrame) task.wait()
+	script.Parent:TweenPosition(UDim2.new(0.5, 0, 0.48, 0), "Out", "Sine", .85) Welcome()
+	for i = 1, 0, -.015 do wait(.01)
+		SecondFrame:FindFirstChild("OkImage").ImageTransparency = i
+	end task.wait(1.5)
+	Open.Visible = true
+	script.Parent:TweenPosition(UDim2.new(0.5, 0, -5, 0), "Out", "Sine", 2)
+end
+coroutine.wrap(ShowLogo)()
+
+--Velocity Part:
+local function EyeFrames()
+	CanCraftPart = true
+	if CanCraftPart then
+		local Apple = Instance.new("Part", Area.FakeContainer)
+		Apple.Name = "Attach"
+		Apple.Anchored = true
+		Apple.CanCollide = false
+		Apple.Size = Vector3.new(1.3,2,1)
+		Apple.Transparency = 1
+	end
+	CanCraftPart = false
+end
+local function SpoofHumanoidRootPart() -- // ?
+	LocalPlayer.Character.Parent = nil
+	LocalPlayer.Character.HumanoidRootPart.Parent = Area.FakeContainer task.wait()
+	local FakeRoot = Instance.new("Part", LocalPlayer.Character)
+	FakeRoot.Name = "HumanoidRootPart"
+	FakeRoot.Anchored = false
+	LocalPlayer.Character.HumanoidRootPart:Destroy()
+	LocalPlayer.Character.Parent = Area
+end
+local function NormalLock()
+	local Distance = 9e9
+	local Target = nil
+	if Options.Strong then
+		for _, v in pairs(Players:GetPlayers()) do 
+			if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid").Health > 0 then
+				local Enemy = v.Character
+				local CastingFrom = CFrame.new(Area.CurrentCamera.CFrame.Position, Enemy[Options.Torso].CFrame.Position) * CFrame.new(0, 0, -4)
+				local RayCast = Ray.new(CastingFrom.Position, CastingFrom.LookVector * 9000)
+				local World, ToSpace = Area:FindPartOnRayWithIgnoreList(RayCast,  {LocalPlayer.Character:FindFirstChild("Head")})
+				local RootWorld = (Enemy[Options.Torso].CFrame.Position - ToSpace).magnitude
+				if RootWorld < 4 then
+					EyeContactMade = true
+					local RootPartPosition, Visible = Area.CurrentCamera:WorldToViewportPoint(Enemy[Options.Torso].Position)
+					if Visible then
+						local Real_Magnitude = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(RootPartPosition.X, RootPartPosition.Y)).Magnitude
+						if Real_Magnitude < Distance and Real_Magnitude < Options.FOV_RADIUS then
+							Distance = Real_Magnitude
+							Target = Enemy
+						end
+					end
+				end
+			end
+		end
+
+		if Target ~= nil and Target:FindFirstChild("HumanoidRootPart") and Target:FindFirstChild("Humanoid").Health > 0 and not DoingAA then
+			BindOne_Normal.TextColor3 = Color3.fromRGB(85, 255, 0)
+			BindOne_Normal.BorderColor3 = Color3.fromRGB(85, 255, 0)
+			RenderBindCam = RunService.RenderStepped:Connect(function()
+				if Options.Strong then
+					local Predicted_Position = Target[Options.Torso].CFrame + (Target[Options.Torso].Velocity * tonumber(PredictionBox.Text) + Vector3.new(0, Average.Text, 0))
+					Area.CurrentCamera.CFrame = CFrame.new(Area.CurrentCamera.CFrame.Position, Predicted_Position.Position)
+				end
+			end)
+		elseif Target ~= nil and Target:FindFirstChild("HumanoidRootPart") and Target:FindFirstChild("Humanoid").Health > 0 and DoingAA then
+			BindOne_Normal.TextColor3 = Color3.fromRGB(85, 255, 0)
+			BindOne_Normal.BorderColor3 = Color3.fromRGB(85, 255, 0)
+			RenderBindCam = RunService.RenderStepped:Connect(function()
+				if Options.Strong then
+					local Predicted_Position = Target[Options.Torso].CFrame + (Target[Options.Torso].Velocity * tonumber(PredictionBox.Text) + Vector3.new(0, Average.Text, 0))
+					Area.CurrentCamera.CFrame = CFrame.new(Area.CurrentCamera.CFrame.Position, Predicted_Position.Position)
+				end
+			end)
+		end
+	end
+end
+local function SmoothlyLookAt(ToPart)
+	LerpingCP = true
+	if LerpingCP then
+		SmootherLerp.Value = Area.CurrentCamera.CFrame
+		local TweenCam = TweenService:Create(SmootherLerp, TweenInfo.new(0.25), { Value = CFrame.new(Area.CurrentCamera.CFrame.Position, ToPart)});
+		TweenCam:Play(); TweenCam.Completed:Wait(); SmootherLerp.Value = CFrame.new(0,0,0);
+	end
+	LerpingCP = false
+end
+local function BypassLock()
+	local Distance = 9e9
+	local Target = nil
+	EyeFrames() local TorsoWasHere = Area.FakeContainer.Attach
+	if Options.Stronger then
+		for _, v in pairs(Players:GetPlayers()) do 
+			if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid").Health > 0 then
+				local Enemy = v.Character
+				local CastingFrom = CFrame.new(Area.CurrentCamera.CFrame.Position, Enemy[Options.Torso].CFrame.Position) * CFrame.new(0, 0, -4)
+				local RayCast = Ray.new(CastingFrom.Position, CastingFrom.LookVector * 9000)
+				local World, ToSpace = Area:FindPartOnRayWithIgnoreList(RayCast,  {LocalPlayer.Character:FindFirstChild("Head")})
+				local RootWorld = (Enemy[Options.Torso].CFrame.Position - ToSpace).magnitude
+				if RootWorld < 4 then
+					EyeContactMade = true
+					local RootPartPosition, Visible = Area.CurrentCamera:WorldToViewportPoint(Enemy[Options.Torso].Position)
+					if Visible then
+						local Real_Magnitude = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(RootPartPosition.X, RootPartPosition.Y)).Magnitude
+						if Real_Magnitude < Distance and Real_Magnitude < Options.FOV_RADIUS then
+							Distance = Real_Magnitude
+							Target = Enemy
+						end
+					end
+				end
+			end
+		end
+
+		if Target ~= nil and Target:FindFirstChild("HumanoidRootPart") and Target:FindFirstChild("Humanoid").Health > 0 and not DoingAA then
+			BindTwo_Hard.TextColor3 = Color3.fromRGB(85, 255, 0)
+			BindTwo_Hard.BorderColor3 = Color3.fromRGB(85, 255, 0)
+			while Options.Stronger do task.wait()
+				TorsoWasHere.Position = Target[Options.Torso].Position
+				local Initial_PartPos = TorsoWasHere.Position task.wait()
+				TorsoWasHere.Position = Target[Options.Torso].Position
+				local ChangeInDisplacement = Target[Options.Torso].Position - Initial_PartPos --Displacement = (PositionF - PositionI)
+				local Real_Velocity = (ChangeInDisplacement / .5) --Velocity = (Displacement / Time)
+				local Predicted_Position = Target[Options.Torso].Position + (Real_Velocity * tonumber(PredictionBox.Text * GetPing / 1.015) + Vector3.new(0, Stronger.Text, 0))
+				--Area.CurrentCamera.CFrame = CFrame.lookAt(Area.CurrentCamera.CFrame.Position, Predicted_Position)
+
+				SmoothlyLookAt(Predicted_Position)
+
+			end
+
+		elseif Target ~= nil and Target:FindFirstChild("HumanoidRootPart") and Target:FindFirstChild("Humanoid").Health > 0 and DoingAA then
+			BindTwo_Hard.TextColor3 = Color3.fromRGB(85, 255, 0)
+			BindTwo_Hard.BorderColor3 = Color3.fromRGB(85, 255, 0)
+			while Options.Stronger do task.wait()
+				TorsoWasHere.Position = Target[Options.Torso].Position
+				local Initial_PartPos = TorsoWasHere.Position task.wait()
+				TorsoWasHere.Position = Target[Options.Torso].Position
+				local ChangeInDisplacement = Target[Options.Torso].Position - Initial_PartPos --Displacement = (PositionF - PositionI)
+				local Real_Velocity = (ChangeInDisplacement / .5) --Velocity = (Displacement / Time)
+				local Predicted_Position = Target[Options.Torso].Position + (Real_Velocity * tonumber(PredictionBox.Text * GetPing / 1.015) + Vector3.new(.7, Stronger.Text, 0))
+				--Area.CurrentCamera.CFrame = CFrame.lookAt(Area.CurrentCamera.CFrame.Position, Predicted_Position)
+
+				SmoothlyLookAt(Predicted_Position)
+
+			end
+		end
+	end
+end
+local function DodgeBullets()
+	local function Yaw(FakeAngles)
+		LocalPlayer.Character:FindFirstChild("Humanoid").AutoRotate = false
+		local Mom = Instance.new("BodyGyro", Area.xAntiAimHolder)
+		Mom.Name = "Direction1"
+		Mom.D = 0
+		Mom.P = 9e9
+		Mom.MaxTorque = Vector3.new(0, 9e9, 0)
+		Mom.Parent = LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+		Mom.CFrame = CFrame.new(LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position, FakeAngles) task.wait()
+		Mom:Destroy()
+	end
+	--game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,-math.rad(90),0) task.wait(.05)
+	while AntiAim_On do task.wait()
+		--game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(50),0) task.wait(.1)
+		Yaw((Area.CurrentCamera.CFrame * CFrame.new(-20, 0, 0)).Position)
+		--game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,-math.rad(50),0) task.wait(.1)
+	end
+end
+local function Sharingan()
+	while ExtraSensor do task.wait(8)
+		for _, v in pairs(Players:GetPlayers()) do
+			if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+				if v.Character.HumanoidRootPart:FindFirstChild("MarkOfTheBeast") == nil then
+					WallHax.Text = v.Name
+					GuiDeEsp:Clone().Parent = v.Character:FindFirstChild("HumanoidRootPart")
+				end	
+			end
+		end
+		for _, c in pairs(Players:GetPlayers()) do
+			if c ~= LocalPlayer and c.Character and c.Character:FindFirstChild("HumanoidRootPart") then
+				for _, h in pairs(c.Character:GetChildren()) do
+					if h:IsA("BasePart") or h:IsA("MeshPart") and h:FindFirstChild("BoxHandleAdornment") == nil then
+						if c.TeamColor == LocalPlayer.TeamColor then
+							for _, x in pairs(c.Character:GetChildren()) do
+								if x:IsA("BasePart") or x:IsA("MeshPart") and x then
+									local AddEsp1 = Instance.new("BoxHandleAdornment", ChamsHolder)
+									AddEsp1.Name = ""
+									AddEsp1.Adornee = x
+									AddEsp1.Color3 = Color3.new(0, 1, 1)
+									AddEsp1.Size = x.Size
+									AddEsp1.ZIndex = 1
+									AddEsp1.AlwaysOnTop = true
+								end
+							end
+						elseif c.TeamColor ~= LocalPlayer.TeamColor then
+							for _, x in pairs(c.Character:GetChildren()) do
+								if x:IsA("BasePart") or x:IsA("MeshPart") then
+									local AddEsp2 = Instance.new("BoxHandleAdornment", ChamsHolder)
+									AddEsp2.Name = ""
+									AddEsp2.Adornee = x
+									AddEsp2.Color3 = Color3.new(1, 0, 0)
+									AddEsp2.Size = x.Size
+									AddEsp2.ZIndex = 1
+									AddEsp2.AlwaysOnTop = true
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+local function ClearFakeContainer()
+	for _, v in pairs(Area.FakeContainer:GetChildren()) do
+		if v:IsA("Part") and v.Name ~= "HumanoidRootPart" then
+			v:Destroy() task.wait()
+		end
+	end
+end
+local function NoThrust()
+	for _, v in pairs(LocalPlayer.Character:GetDescendants()) do
+		if v:IsA("BodyGyro") and v.Name == "Direction1" then
+			v:Destroy()
+		end
+	end
+end
+local function TerminateChams()
+	for _, v in pairs(Players:GetPlayers()) do
+		if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+			if v.Character.HumanoidRootPart:FindFirstChild("MarkOfTheBeast") ~= nil then
+				v.Character.HumanoidRootPart:FindFirstChild("MarkOfTheBeast"):Destroy() task.wait()
+			end
+		end
+	end
+	task.wait()
+	for _, c in pairs(Area.ChamsHolder:GetChildren()) do
+		if c:IsA("BoxHandleAdornment") then
+			c:Destroy() task.wait()
+		end
+	end
+end
+local function StopAnims()
+	for _, v in pairs(LocalPlayer.Character:FindFirstChild("Humanoid"):GetPlayingAnimationTracks()) do
+		v:Stop()
+	end
+end
+local function SupersedeAndGetPing()
+	local GetPing = Status.PerformanceStats.Ping:GetValue()
+	if GetPing > 102 then
+		game.StarterGui:SetCore("SendNotification", {Title = "High Ping Detected.", Text = "Server Ping Higher Than 100.", Duration = 6;});
+	else
+		print("")
+	end
+end
+
+--Primary MB1:
+Close.MouseButton1Down:Connect(function()
+	MainFrame.Visible = false Open.Visible = true
+end)
+Open.MouseButton1Down:Connect(function()
+	MainFrame.Visible = true Open.Visible = false
+end)
+DropDown.MouseButton1Down:Connect(function()
+	DropDown.Visible = true
+	FrameDeDropDown.Visible = true
+	task.wait(6)
+	DropDown.Visible = true
+	FrameDeDropDown.Visible = false
+end)
+--Secondary MB1:
+BindOne_Normal:GetPropertyChangedSignal("Text"):Connect(function()
+	BindOne_Normal.Text = BindOne_Normal.Text:sub(1,1):upper()
+end)
+BindTwo_Hard:GetPropertyChangedSignal("Text"):Connect(function()
+	BindTwo_Hard.Text = BindTwo_Hard.Text:sub(1,1):upper()
+end)
+Destroy_Gui.MouseButton1Down:Connect(function()
+	MainFrame.Visible = false
+	Open.Visible = false
+	TerminateChams() NoThrust()
+	MainFrame:Destroy() Open:Destroy()
+end)
+AntiAimButton_ON.MouseButton1Down:Connect(function()
+	AntiAimButton_ON.Visible = false
+	AntiAimButton_OFF.Visible = true
+	AntiAim_Off = true
+	AntiAim_On = false
+	DoingAA = false
+	AntiAimButton_ON.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	LocalPlayer.Character:FindFirstChild("Humanoid").AutoRotate = true
+	NoThrust() task.wait(.1)
+	LocalPlayer.Character:FindFirstChild("Humanoid").AutoRotate = true
+	StopAnims()
+end)
+AntiAimButton_OFF.MouseButton1Down:Connect(function()
+	AntiAimButton_ON.Visible = true
+	AntiAimButton_OFF.Visible = false
+	AntiAim_Off = false
+	AntiAim_On = true
+	DoingAA = true
+	AntiAimButton_ON.BorderColor3 = Color3.fromRGB(85, 255, 0)
+	DodgeBullets()
+end)
+ESPButton_ON.MouseButton1Down:Connect(function()
+	ESPButton_ON.Visible = false
+	ESPButton_OFF.Visible = true
+	ESP_OFF = true
+	ESP_ON = false
+	ExtraSensor = false
+	ESPButton_ON.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	task.wait(1)
+	TerminateChams()
+end)
+ESPButton_OFF.MouseButton1Down:Connect(function()
+	ESPButton_ON.Visible = true
+	ESPButton_OFF.Visible = false
+	ESP_OFF = false
+	ESP_ON = true
+	ExtraSensor = true
+	ESPButton_ON.BorderColor3 = Color3.fromRGB(85, 255, 0)
+	Sharingan()
+end)
+Mouse.KeyDown:Connect(function(Rejoin)
+	if Rejoin == "=" then
+		game:GetService("TeleportService"):Teleport(game.PlaceId, LocalPlayer)
+	end
+end)
+Mouse.KeyDown:Connect(function(KeyPressed1)
+	if KeyPressed1 == (BindOne_Normal.Text:lower()) then
+		if isToggled == false then
+			isToggled = true
+			Options.Strong = true
+			NormalLock()
+		elseif isToggled == true then
+			isToggled = false
+			Options.Strong = false
+			BindOne_Normal.TextColor3 = Color3.fromRGB(255, 255, 255)
+			BindOne_Normal.BorderColor3 = Color3.fromRGB(255, 255, 255)
+			ClearFakeContainer()
+			RenderBindCam:Disconnect()
+		end
+	end
+end)
+Mouse.KeyDown:Connect(function(KeyPressed2)
+	if KeyPressed2 == (BindTwo_Hard.Text:lower()) then
+		if isToggled2 == false then
+			isToggled2 = true
+			Options.Stronger = true
+			BypassLock()
+		elseif isToggled2 == true then
+			isToggled2 = false
+			Options.Stronger = false
+			BindTwo_Hard.TextColor3 = Color3.fromRGB(255, 255, 255)
+			BindTwo_Hard.BorderColor3 = Color3.fromRGB(255, 255, 255)
+			ClearFakeContainer()
+		end
+	end
+end)
+task.wait(9); game.StarterGui:SetCore("SendNotification", {Title = "Success.", Text = "Script Loaded. Click Open To Adjust Settings."; Duration = 5;}); task.wait(6); SupersedeAndGetPing();
