@@ -1,0 +1,449 @@
+--[[
+
+	Do not edit anything beyond this point.
+
+--]]
+
+
+local DarkMode = false
+local Spooked = false
+local OrderBoombox = true
+local AbilityCooldowns = .45
+local World = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Camera = World.CurrentCamera
+
+
+local CharBodyParts = {
+	"Head";
+	"HumanoidRootPart";
+	"UpperTorso";
+	"RightHand";
+	"RightLowerArm";
+	"RightUpperArm";
+	"LeftUpperArm";
+	"LeftLowerArm";
+	"LeftHand";
+	"LowerTorso";
+	"LeftUpperLeg";
+	"LeftLowerLeg";
+	"LeftFoot";
+	"RightUpperLeg";
+	"RightLowerLeg";
+	"RightFoot";
+};
+
+
+local MimicBodyParts = {
+	"Health";
+	"Animate";
+	"Humanoid";
+
+	"Head";
+	"HumanoidRootPart";
+	"UpperTorso";
+	"RightHand";
+	"RightLowerArm";
+	"RightUpperArm";
+	"LeftUpperArm";
+	"LeftLowerArm";
+	"LeftHand";
+	"LowerTorso";
+	"LeftUpperLeg";
+	"LeftLowerLeg";
+	"LeftFoot";
+	"RightUpperLeg";
+	"RightLowerLeg";
+	"RightFoot";
+};
+
+
+local MageIdle1 = "http://www.roblox.com/asset/?id=707742142"
+local MageIdle2 = "http://www.roblox.com/asset/?id=707742142"
+local MageWalk = "http://www.roblox.com/asset/?id=707861613"
+local MageRun = "http://www.roblox.com/asset/?id=707861613"
+
+local AllPowerful = Instance.new("Animation")
+AllPowerful.AnimationId = MageIdle1
+
+local Being = Instance.new("Animation")
+Being.AnimationId = MageIdle2
+
+local QuickFeet = Instance.new("Animation")
+QuickFeet.AnimationId = MageWalk
+
+local SuperArmor = Instance.new("Animation")
+SuperArmor.AnimationId = MageRun
+
+
+local JumpScareScreams = {
+	8280196339,
+	7588947168
+}
+
+
+local ScareNoise1 = {
+	[1] = "Boombox",
+	[2] = JumpScareScreams[1],
+}
+
+local ScareNoise2 = {
+	[1] = "Boombox",
+	[2] = JumpScareScreams[2],
+}
+
+
+local StopPlayBack = {
+	[1] = "BoomboxStop",
+}
+
+
+
+local Whispers = Instance.new("Sound", game:GetService("SoundService"))
+Whispers.Name = "TimeErase"
+Whispers.SoundId = "rbxassetid://8776429995"
+Whispers.TimePosition = 0
+Whispers.Volume = .06
+Whispers.RollOffMode = Enum.RollOffMode.InverseTapered
+
+
+function ClearWhisper()
+	pcall(function()
+		for _, v in pairs(game:GetService("SoundService"):GetChildren()) do
+			if v:IsA("Sound") and v then
+				v:Destroy()
+			end
+		end
+	end)
+end
+
+
+local ForceRun = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/RunningShortcut", true))();
+local ForceJump = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/JumpShortcut", true))();
+
+
+function TakeBoomboxOutOfBackpack()
+	pcall(function()
+		if OrderBoombox then
+			for _, v in pairs(LocalPlayer.Backpack:GetChildren()) do
+				if v:IsA("Tool") and v.Name == "[Boombox]" then
+					v.Parent = LocalPlayer.Character
+				end
+			end
+			task.wait(Players.RespawnTime - 3)
+		end
+	end)
+end coroutine.wrap(TakeBoomboxOutOfBackpack)()
+
+
+function InvisBoombox()
+	pcall(function()
+		if OrderBoombox then
+			for _, v in pairs(LocalPlayer.Character:GetChildren()) do
+				if v:IsA("Tool") and v.Name == "[Boombox]" then
+					if v:FindFirstChild("Handle") and v then
+						v.RequiresHandle = false
+						v:Destroy()
+					end
+				end
+			end
+			task.wait(Players.RespawnTime - 3)
+		end
+	end)
+end coroutine.wrap(InvisBoombox)()
+
+
+function ParentBoombox() -- unmuteable?
+	pcall(function()
+		if OrderBoombox then
+			for _, v in pairs(LocalPlayer.Character:GetChildren()) do
+				if v:IsA("Tool") and v.Name == "[Boombox]" then
+					v.Parent = game:GetService("SoundService")
+				end
+			end
+			task.wait(Players.RespawnTime + 2)
+		end
+	end)
+end --coroutine.wrap(ParentBoombox)()
+
+
+function ReturnParentBoombox()
+	pcall(function()
+		for _, v in pairs(game:GetService("SoundService"):GetChildren()) do
+			if v:IsA("Tool") and v.Name == "[Boombox]" then
+				repeat task.wait()
+					v.Parent = LocalPlayer.Character
+				until v.Parent == LocalPlayer.Character
+			end
+		end
+		ReplicatedStorage.MainEvent:FireServer(unpack(StopPlayBack))
+	end)
+end
+
+
+function PlayAScaryNoise()
+	local Outcome = math.random(1,2)
+	if Outcome == 1 then	
+		local Hold = LocalPlayer.Character:FindFirstChild("[Boombox]")
+		LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):EquipTool(Hold)
+		ReplicatedStorage.MainEvent:FireServer(unpack(ScareNoise1))
+	elseif Outcome == 2 then
+		local Hold = LocalPlayer.Character:FindFirstChild("[Boombox]")
+		LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):EquipTool(Hold)
+		ReplicatedStorage.MainEvent:FireServer(unpack(ScareNoise2))
+	end
+end
+
+
+local NoClipRender = nil
+function NoClip()
+	NoClipRender = RunService.Stepped:Connect(function()
+		for _, v in pairs(LocalPlayer.Character:GetChildren()) do
+			if v:IsA("BasePart") and v.CanCollide and v then
+				v.CanCollide = false
+			end
+		end
+	end)
+end
+
+
+local MimicModel = nil
+local CreatedFakeChar = false
+local TransferIntoMimicModel = nil
+function CloneAid()
+	pcall(function()
+		if CreatedFakeChar then
+
+			MimicModel = Instance.new("Model", World)
+			MimicModel.Name = tostring("_MimicBody")
+
+			local Insert = nil
+			for _, AllMimicParts in pairs(MimicBodyParts) do
+				TransferIntoMimicModel = LocalPlayer.Character[AllMimicParts]
+				Insert = TransferIntoMimicModel:Clone()
+				Insert.Parent = MimicModel
+			end
+
+			local FindAllBaseParts = nil
+			for _, GrabAllParts in pairs(CharBodyParts) do
+				FindAllBaseParts = MimicModel[GrabAllParts]
+				FindAllBaseParts.Material = Enum.Material.ForceField
+				FindAllBaseParts.Color = Color3.fromRGB(0, 0, 0)
+				FindAllBaseParts.CFrame = CFrame.new(0,9e9,0)
+			end
+
+			CreatedFakeChar = false
+		end
+	end)
+end
+
+
+local function FixCamera()
+	pcall(function()
+		Camera.CameraSubject = LocalPlayer.Character
+	end)
+end
+
+
+local focus = Instance.new("Part", game:GetService("Workspace").MAP)
+focus.Name = "focus"
+focus.Anchored = true
+focus.Transparency = 1
+
+
+local CarryPlayerPart = Instance.new("Part", World)
+CarryPlayerPart.Anchored = true
+CarryPlayerPart.CFrame = CFrame.new(0,9e9,0)
+CarryPlayerPart.Size = Vector3.new(35,5,35)
+CarryPlayerPart.Transparency = 1
+
+
+local ClonedPlayer = nil
+function DoInvis()
+	if DarkMode then
+		
+		focus.CFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+		Camera.CameraSubject = focus task.wait(.015)
+
+		local FindAllBaseParts = nil
+		CreatedFakeChar = true
+
+		CloneAid()
+		
+		ClonedPlayer = World:FindFirstChild("_MimicBody")
+		ClonedPlayer:FindFirstChildOfClass("Humanoid").DisplayName = ""
+		ClonedPlayer:FindFirstChildOfClass("Humanoid").DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+
+		for _, GrabAllParts in pairs(CharBodyParts) do
+			FindAllBaseParts = ClonedPlayer[GrabAllParts]
+			FindAllBaseParts.CFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,180)
+		end
+
+		_G.WalkSpeed = _G.WalkingSpeed
+		ClonedPlayer.Name = ""
+		Camera.CameraSubject = ClonedPlayer:FindFirstChildOfClass("Humanoid")
+		
+		local TheLastOfUs = LocalPlayer.Character:FindFirstChild("Animate")
+		
+		local OldIdle1 = TheLastOfUs.idle.Animation1.AnimationId
+		local OldIdle2 = TheLastOfUs.idle.Animation2.AnimationId
+		local OldWalk = TheLastOfUs.walk.WalkAnim.AnimationId
+		local OldRun = TheLastOfUs.run.RunAnim.AnimationId
+		
+		TheLastOfUs.idle.Animation1.AnimationId = MageIdle1
+		TheLastOfUs.idle.Animation2.AnimationId = MageIdle2
+		TheLastOfUs.walk.WalkAnim.AnimationId = MageWalk
+		TheLastOfUs.run.RunAnim.AnimationId = MageRun
+		
+		Whispers.TimePosition = 0
+		Whispers.Playing = true
+		
+		ClonedPlayer:FindFirstChild("HumanoidRootPart").CFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+		LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-180,0) task.wait(.01)
+		LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+
+		task.spawn(function()
+			pcall(function()
+				while DarkMode do task.wait()
+					
+					CarryPlayerPart.CFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-5.5,0)
+					
+					ClonedPlayer:FindFirstChild("HumanoidRootPart").CFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,180,0)
+					LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = ClonedPlayer:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-180,0)
+					
+					ClonedPlayer:FindFirstChild("Head").Orientation = LocalPlayer.Character:FindFirstChild("Head").Orientation
+					ClonedPlayer:FindFirstChild("HumanoidRootPart").Orientation = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Orientation
+					ClonedPlayer:FindFirstChild("UpperTorso").Orientation = LocalPlayer.Character:FindFirstChild("UpperTorso").Orientation
+					ClonedPlayer:FindFirstChild("RightHand").Orientation = LocalPlayer.Character:FindFirstChild("RightHand").Orientation
+					ClonedPlayer:FindFirstChild("RightUpperArm").Orientation = LocalPlayer.Character:FindFirstChild("RightUpperArm").Orientation
+					ClonedPlayer:FindFirstChild("RightLowerArm").Orientation = LocalPlayer.Character:FindFirstChild("RightLowerArm").Orientation
+					ClonedPlayer:FindFirstChild("LeftUpperArm").Orientation = LocalPlayer.Character:FindFirstChild("LeftUpperArm").Orientation
+					ClonedPlayer:FindFirstChild("LeftLowerArm").Orientation = LocalPlayer.Character:FindFirstChild("LeftLowerArm").Orientation
+					ClonedPlayer:FindFirstChild("LeftHand").Orientation = LocalPlayer.Character:FindFirstChild("LeftHand").Orientation
+					ClonedPlayer:FindFirstChild("LowerTorso").Orientation = LocalPlayer.Character:FindFirstChild("LowerTorso").Orientation
+					ClonedPlayer:FindFirstChild("LeftUpperLeg").Orientation = LocalPlayer.Character:FindFirstChild("LeftUpperLeg").Orientation
+					ClonedPlayer:FindFirstChild("LeftLowerLeg").Orientation = LocalPlayer.Character:FindFirstChild("LeftLowerLeg").Orientation
+					ClonedPlayer:FindFirstChild("LeftFoot").Orientation = LocalPlayer.Character:FindFirstChild("LeftFoot").Orientation
+					ClonedPlayer:FindFirstChild("RightUpperLeg").Orientation = LocalPlayer.Character:FindFirstChild("RightUpperLeg").Orientation
+					ClonedPlayer:FindFirstChild("RightLowerLeg").Orientation = LocalPlayer.Character:FindFirstChild("RightLowerLeg").Orientation
+					ClonedPlayer:FindFirstChild("RightFoot").Orientation = LocalPlayer.Character:FindFirstChild("RightFoot").Orientation
+					
+					if DarkMode == false then
+						
+						_G.WalkSpeed = 20
+						LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = ClonedPlayer:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,1,0)
+						CarryPlayerPart.CFrame = CFrame.new(9e9,9e9,0)
+						
+						TheLastOfUs.idle.Animation1.AnimationId = OldIdle1
+						TheLastOfUs.idle.Animation2.AnimationId = OldIdle2
+						TheLastOfUs.walk.WalkAnim.AnimationId = OldWalk
+						TheLastOfUs.run.RunAnim.AnimationId = OldRun
+						
+						LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Jump = true
+						
+						task.wait(.26)
+
+						ClonedPlayer.Name = "_MimicBody"
+						ClonedPlayer:Destroy() task.wait(.01)
+						
+						NoClipRender:Disconnect()
+						
+						break
+					end
+				end
+			end)
+		end)
+	end
+end
+
+
+function Fear()
+	pcall(function()
+		Camera.CameraSubject = nil
+
+		local OldClonedPlayer = ClonedPlayer
+		local OldPos = ClonedPlayer:FindFirstChild("HumanoidRootPart").CFrame
+		ClonedPlayer:FindFirstChild("HumanoidRootPart").CFrame = LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+		LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = OldPos * CFrame.new(0,0,0)
+		DarkMode = false
+
+		FixCamera()
+		
+		PlayAScaryNoise()
+
+		DarkMode = true
+		Spooked = false task.wait(.27)
+
+		ClonedPlayer = nil
+		OldClonedPlayer:Destroy()
+		DoInvis()
+	end)
+end
+
+
+function RemoveIncase()
+	pcall(function()
+		World:FindFirstChild("_MimicBody"):Destroy()
+	end)
+end
+
+
+function Plug(Thing, Index) 
+	if Thing ~= nil then 
+		Index(Thing)
+	end
+end
+Mouse.KeyDown:Connect(function(KeyPressed)
+	if KeyPressed == Enum.KeyCode.Space then
+		if DarkMode then
+			Plug(LocalPlayer.Character:FindFirstChildOfClass("Humanoid"), function(What)
+				if What:GetState() == Enum.HumanoidStateType.Jumping or What:GetState() == Enum.HumanoidStateType.Freefall then
+					Plug(What.Parent.HumanoidRootPart, function(What)
+						What.AssemblyLinearVelocity = Vector3.new(0, 50, 0)
+					end)
+				end
+			end)
+		end
+	end
+end)
+Mouse.KeyDown:Connect(function(KeyPressed)
+	if KeyPressed == string.lower(_G.JumpScareKey) then
+		if DarkMode then
+			if Spooked == false then
+				Spooked = true
+				Fear()
+			elseif Spooked == true then
+				Spooked = false
+			end
+		end
+	end
+end)
+Mouse.KeyDown:Connect(function(KeyPressed)
+	if KeyPressed == string.lower(_G.InvisiblityKey) then
+		if DarkMode == false then
+			DarkMode = true
+			NoClip()
+			DoInvis()
+		elseif DarkMode == true then
+			DarkMode = false
+			RemoveIncase()
+			ClearWhisper()
+			FixCamera()
+		end
+	end
+end)
+local DisabledRejoin = false
+Mouse.KeyDown:Connect(function(KeyPressed)
+	if DisabledRejoin then return end
+	if DisabledRejoin == false then
+		if KeyPressed == "=" then
+			game:GetService("TeleportService"):Teleport(game.PlaceId, LocalPlayer) 
+			DisabledRejoin = true task.wait()
+		end
+	end
+end)
