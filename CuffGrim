@@ -1,0 +1,9 @@
+local LinkInfo = "https://pastebin.com/raw/DLmveS11"
+
+pcall(function()
+		setclipboard(LinkInfo)
+		toclipboard(LinkInfo)
+end)
+
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATED LINK!", Text = "SCRIPT LINK COPIED!", Duration = 10,}); task.wait(15)
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATED LINK!", Text = "SCRIPT LINK COPIED!", Duration = 10,}); task.wait(15)
