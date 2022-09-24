@@ -1,3 +1,3 @@
-task.wait(25)
+task.wait(23)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Hey There.", Text = "Check out the blatant section for Lag-Server its OP!", Duration = 10,});
