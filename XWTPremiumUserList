@@ -83,7 +83,7 @@ _G.WinterTimeVIP = {
 	1434836978;
         2328538154;
         148001559;
-	2817836624;
+	--2817836624; --vlruriz is a mod now
 	42074213;
 	834137939;
 	--1639218381; -- temporary, 1 week whitelist, removed
