@@ -1,5 +1,5 @@
 --// #Yield_Spawned_Notifications
-task.wait(25)
+task.wait(22)
 
 --// #Randomize_Strings
 local DripOrDrown = math.random(1, 5);
