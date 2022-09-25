@@ -26,6 +26,7 @@ local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 local RatingHeader = "Rate WinterTime";
 local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
 
+--// Flip_Coin
 if DripOrDrown == 1 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
 elseif DripOrDrown == 2 then
