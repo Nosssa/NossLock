@@ -6,14 +6,14 @@ _G.UsingSynapse = false
 _G.UsingMain = false
 _G.UsingOther = false
 
---// Assert_Identity_Pass
+--// Ascertain_Identity
 if not identifyexecutor() then
 	LocalPlayer:Kick("Error: Unsupported Executor or Use Old Krnl not Beta.") task.wait(9e9)
 end
 
 local RetrieveExecutor = identifyexecutor()
 
---// Index, For Each Typeof(executor)
+--// Assign, For Each Typeof(executor)
 pcall(function()
 	if RetrieveExecutor == "Synapse X" then
 
