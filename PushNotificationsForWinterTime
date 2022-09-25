@@ -1,9 +1,10 @@
+--// #Yield_Spawned_Notifications
 task.wait(25)
 
 --// #Randomize_Strings
 local DripOrDrown = math.random(1, 5);
 
---// Notification_Duration
+--// #Notification_Duration
 local BaseLabelDuration = 10;
 
 --// Fake_Macro_Notification
