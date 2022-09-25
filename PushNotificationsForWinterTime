@@ -25,7 +25,7 @@ local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 
 --// Commands_List_Notification
 local CommandsListHeader = "Commands";
-local CommandsListBody = "Say ".Cmds" with Premium to check out the FULL Commands list.";
+local CommandsListBody = "Say '.Cmds' with Premium to check out the FULL Commands list.";
 
 --// Rate_WinterTime_Notification
 local RatingHeader = "Rate WinterTime";
