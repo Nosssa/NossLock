@@ -2,7 +2,7 @@
 task.wait(22)
 
 --// #Randomize_Strings
-local DripOrDrown = math.random(1, 5);
+local DripOrDrown = math.random(1, 6);
 
 --// #Notification_Duration
 local BaseLabelDuration = 10;
@@ -23,6 +23,10 @@ local SilentAimBody = "Enabling Silent-Aim may or may not STOP you from toggling
 local GUIChangesHeader = "GUI-Changes";
 local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 
+--// Commands_List_Notification
+local CommandsListHeader = "Commands";
+local CommandsListBody = "Say ".Cmds" with Premium to check out the FULL Commands list.";
+
 --// Rate_WinterTime_Notification
 local RatingHeader = "Rate WinterTime";
 local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
@@ -37,5 +41,7 @@ elseif DripOrDrown == 3 then
 elseif DripOrDrown == 4 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(GUIChangesHeader), Text = tostring(GUIChangesBody), Duration = tonumber(BaseLabelDuration),});
 elseif DripOrDrown == 5 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(CommandsListHeader), Text = tostring(CommandsListBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 6 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
 end;
