@@ -17,7 +17,7 @@ local ServerLaggerBody = "Check out the Server-Lagger option in the BLATANT SECT
 
 --// Fake_Macro_Notification
 local SilentAimHeader = "Silent-Aim";
-local SilentAimBody = "Enabling Silent-Aim may or not STOP you from toggling OTHER OPTIONS.";
+local SilentAimBody = "Enabling Silent-Aim may or may not STOP you from toggling OTHER OPTIONS.";
 
 --// Fake_Macro_Notification
 local GUIChangesHeader = "GUI-Changes";
