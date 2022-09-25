@@ -1,3 +1,39 @@
-task.wait(23)
+task.wait(25)
 
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Small Notice", Text = "Fake macro doesn't work on fat character", Duration = 10,});
+--// #Randomize_Strings
+local DripOrDrown = math.random(1, 5);
+
+--// Notification_Duration
+local BaseLabelDuration = 10;
+
+--// Fake_Macro_Notification
+local FakeMacroHeader = "Fake-Macro";
+local FakeMacroBody = "Fake macro DOESN'T work on FAT CHARACTERS!";
+
+--// Fake_Macro_Notification
+local ServerLaggerHeader = "Server-Lagger";
+local ServerLaggerBody = "Check out the Server-Lagger option in the BLATANT SECTION.";
+
+--// Fake_Macro_Notification
+local SilentAimHeader = "Silent-Aim";
+local SilentAimBody = "Enabling Silent-Aim may or not STOP you from toggling OTHER OPTIONS.";
+
+--// Fake_Macro_Notification
+local GUIChangesHeader = "GUI-Changes";
+local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
+
+--// Fake_Macro_Notification
+local RatingHeader = "Rate WinterTime";
+local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
+
+if DripOrDrown == 1 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 2 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(ServerLaggerHeader), Text = tostring(ServerLaggerBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 3 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(SilentAimHeader), Text = tostring(SilentAimBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 4 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(GUIChangesHeader), Text = tostring(GUIChangesBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 5 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
+end;
