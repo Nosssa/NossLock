@@ -11,19 +11,19 @@ local BaseLabelDuration = 10;
 local FakeMacroHeader = "Fake-Macro";
 local FakeMacroBody = "Fake macro DOESN'T work on FAT CHARACTERS!";
 
---// Fake_Macro_Notification
+--// Server_Lagger_Notification
 local ServerLaggerHeader = "Server-Lagger";
 local ServerLaggerBody = "Check out the Server-Lagger option in the BLATANT SECTION.";
 
---// Fake_Macro_Notification
+--// Silent_Aim_Notification
 local SilentAimHeader = "Silent-Aim";
 local SilentAimBody = "Enabling Silent-Aim may or may not STOP you from toggling OTHER OPTIONS.";
 
---// Fake_Macro_Notification
+--// GUI_Changes_Notification
 local GUIChangesHeader = "GUI-Changes";
 local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 
---// Fake_Macro_Notification
+--// Rate_WinterTime_Notification
 local RatingHeader = "Rate WinterTime";
 local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
 
