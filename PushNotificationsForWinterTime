@@ -1,10 +1,10 @@
 --// #Yield_Spawned_Notifications
 task.wait(22)
 
---// #Randomize_Strings
+--// #Y_Min_Max
 local DripOrDrown = math.random(1, 8);
 
---// #Notification_Duration
+--// #Base_Notification_Duration
 local BaseLabelDuration = 10;
 
 --// Fake_Macro_Notification
@@ -27,11 +27,11 @@ local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 local CommandsListHeader = "Commands";
 local CommandsListBody = 'Say ".Cmds" with Premium to check out the FULL Commands list.';
 
---// RemindPremium_Notification
+--// Remind_Premium_Notification
 local RemindPremiumHeader = "Reminder";
 local RemindPremiumBody = "You don't have to execute WinterTime in order to use premium commands!";
 
---// NeedHelp_Notification
+--// Need_Help_Notification
 local NeedHelpHeader = "Need help?";
 local NeedHelpBody = "Join the discord, and create a ticket to request assistance for something.";
 
