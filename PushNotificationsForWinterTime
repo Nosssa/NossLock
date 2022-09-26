@@ -2,7 +2,7 @@
 task.wait(22)
 
 --// #Randomize_Strings
-local DripOrDrown = math.random(1, 7);
+local DripOrDrown = math.random(1, 8);
 
 --// #Notification_Duration
 local BaseLabelDuration = 10;
@@ -17,7 +17,7 @@ local ServerLaggerBody = "Check out the Server-Lagger option in the BLATANT SECT
 
 --// Silent_Aim_Notification
 local SilentAimHeader = "Silent-Aim";
-local SilentAimBody = "Enabling Silent-Aim may or may not STOP you from toggling OTHER OPTIONS.";
+local SilentAimBody = "Enabling Silent-Aim MAY or MAY NOT STOP you from toggling OTHER OPTIONS.";
 
 --// GUI_Changes_Notification
 local GUIChangesHeader = "GUI-Changes";
@@ -27,15 +27,19 @@ local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 local CommandsListHeader = "Commands";
 local CommandsListBody = 'Say ".Cmds" with Premium to check out the FULL Commands list.';
 
+--// RemindPremium_Notification
+local RemindPremiumHeader = "Reminder";
+local RemindPremiumBody = "You don't have to execute WinterTime in order to use premium commands!";
+
 --// NeedHelp_Notification
 local NeedHelpHeader = "Need help?";
-local NeedHelpBody = "Join the discord to check out the latest updates and information for scripts";
+local NeedHelpBody = "Join the discord, and create a ticket to request assistance for something.";
 
 --// Rate_WinterTime_Notification
-local RatingHeader = "Rate WinterTime";
+local RatingHeader = "Like WinterTime?";
 local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
 
---// Flip_Coin
+--// Start_Coin_Flip
 if DripOrDrown == 1 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
 elseif DripOrDrown == 2 then
@@ -49,5 +53,7 @@ elseif DripOrDrown == 5 then
 elseif DripOrDrown == 6 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(NeedHelpHeader), Text = tostring(NeedHelpBody), Duration = tonumber(BaseLabelDuration),});
 elseif DripOrDrown == 7 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RemindPremiumHeader), Text = tostring(RemindPremiumBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 8 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
 end;
