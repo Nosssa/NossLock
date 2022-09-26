@@ -2,7 +2,7 @@
 task.wait(22)
 
 --// #Randomize_Strings
-local DripOrDrown = math.random(1, 6);
+local DripOrDrown = math.random(1, 7);
 
 --// #Notification_Duration
 local BaseLabelDuration = 10;
@@ -27,6 +27,10 @@ local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 local CommandsListHeader = "Commands";
 local CommandsListBody = 'Say ".Cmds" with Premium to check out the FULL Commands list.';
 
+--// NeedHelp_Notification
+local NeedHelpHeader = "Need help?";
+local NeedHelpBody = "Join the discord to check out the latest updates and information for scripts";
+
 --// Rate_WinterTime_Notification
 local RatingHeader = "Rate WinterTime";
 local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
@@ -43,5 +47,7 @@ elseif DripOrDrown == 4 then
 elseif DripOrDrown == 5 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(CommandsListHeader), Text = tostring(CommandsListBody), Duration = tonumber(BaseLabelDuration),});
 elseif DripOrDrown == 6 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(NeedHelpHeader), Text = tostring(NeedHelpBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 7 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
 end;
