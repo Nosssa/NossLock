@@ -29,6 +29,7 @@ _G.WetSticks = false
 _G.TumericMM = true
 _G.DOWNED = true -- 2X8SELBMARCS-esuom-tac-laever-sgatgod-denosiop-hsahllup-wolla
 _G.TAKESCREENSHOT = true -- SCRAMBLE5
+_G.INTERNALLUAHEAP = true
 
 -- #silent_aim_struc_tree
 
