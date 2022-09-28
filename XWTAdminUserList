@@ -1,6 +1,6 @@
 --// WinterTime Admins & Owners Whitelist
 
---// '[⛄] .. " str.empty " .. <DisplayName>'
+--// '[👑] .. " str.empty " .. <DisplayName>'
 
 --[[ 
 
@@ -19,7 +19,8 @@ _G.ColdKingz = {
 	630576; -- ImBeast, Nosss, Owner
 	
 	1836826832; -- Kacper, Co-Owner
-	
+	1166477638; -- Kacper, Co-Owner
+
 	2817836624; -- Vlrurizz, Head Of Staff
         
         149290866; -- Snuskebazn, Staff
