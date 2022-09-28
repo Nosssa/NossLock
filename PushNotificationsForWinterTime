@@ -2,7 +2,7 @@
 task.wait(22)
 
 --// #Y_Min_Max
-local DripOrDrown = math.random(1, 8);
+local DripOrDrown = math.random(1, 9);
 
 --// #Base_Notification_Duration
 local BaseLabelDuration = 10;
@@ -35,6 +35,10 @@ local RemindPremiumBody = "You don't have to execute WinterTime in order to use 
 local NeedHelpHeader = "Need help?";
 local NeedHelpBody = "Join the discord, and create a ticket to request assistance for something.";
 
+--// Group_Suggest_Notification
+local GroupSuggestHeader = "Copied Group";
+local GroupSuggestBody = "NEW GROUP link has been COPIED, We are switching soon!";
+
 --// Rate_WinterTime_Notification
 local RatingHeader = "Like WinterTime?";
 local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
@@ -55,5 +59,7 @@ elseif DripOrDrown == 6 then
 elseif DripOrDrown == 7 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RemindPremiumHeader), Text = tostring(RemindPremiumBody), Duration = tonumber(BaseLabelDuration),});
 elseif DripOrDrown == 8 then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(GroupSuggestHeader), Text = tostring(GroupSuggestBody), Duration = tonumber(BaseLabelDuration),});
+elseif DripOrDrown == 9 then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
 end;
