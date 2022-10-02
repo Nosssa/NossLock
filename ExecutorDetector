@@ -5,6 +5,7 @@ _G.StopSynapseTempK = true
 _G.UsingSynapse = false
 _G.UsingMain = false
 _G.UsingOther = false
+_G.UsingUnknown = false
 
 --// Ascertain_Identity
 if not identifyexecutor() then
@@ -43,7 +44,7 @@ pcall(function()
 
 		IdentifyExecutor = true
 		
-		_G.UsingOther = true
+		_G.UsingUnknown = true
 		
 	elseif RetrieveExecutor == "Coco Z" then
 
@@ -71,13 +72,11 @@ pcall(function()
 		
 	elseif RetrieveExecutor == "jit" then
 
-		IdentifyExecutor = true
+		IdentifyExecutor = false
 
-		_G.UsingOther = true -- test
+		LocalPlayer:Kick("Error: Stop Using JJSploit.")
 
-		--LocalPlayer:Kick("Error: Stop Using JJSploit.")
-
-		--task.wait(9e9)
+		task.wait(9e9)
 		
 	else
 
@@ -85,7 +84,7 @@ pcall(function()
 		
 		IdentifyExecutor = true
 
-		_G.UsingOther = true
+		_G.UsingUnknown = true
 		
 	end
 end)
