@@ -71,11 +71,13 @@ pcall(function()
 		
 	elseif RetrieveExecutor == "jit" then
 
-		IdentifyExecutor = false
+		IdentifyExecutor = true
 
-		LocalPlayer:Kick("Error: Stop Using JJSploit.")
+		_G.UsingOther = true -- test
 
-		task.wait(9e9)
+		--LocalPlayer:Kick("Error: Stop Using JJSploit.")
+
+		--task.wait(9e9)
 		
 	else
 
