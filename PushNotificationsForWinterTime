@@ -1,65 +1,73 @@
---// #Yield_Spawned_Notifications
-task.wait(22)
+pcall(function()
+	
+	--// #Yield_Spawned_Notifications
+	task.wait(1)
 
---// #Y_Min_Max
-local DripOrDrown = math.random(1, 9);
+	--// #Y_Min_Max
+	local DripOrDrown = math.random(1, 9);
 
---// #Base_Notification_Duration
-local BaseLabelDuration = 10;
+	--// #Base_Notification_Duration
+	local BaseLabelDuration = 10;
 
---// Fake_Macro_Notification
-local FakeMacroHeader = "Fake-Macro";
-local FakeMacroBody = "Fake macro DOESN'T work on FAT CHARACTERS!";
+	--// Fake_Macro_Notification
+	local FakeMacroHeader = "Fake-Macro";
+	local FakeMacroBody = "Fake macro DOESN'T work on FAT CHARACTERS!";
 
---// Server_Lagger_Notification
-local ServerLaggerHeader = "Server-Lagger";
-local ServerLaggerBody = "Check out the Server-Lagger option in the BLATANT SECTION.";
+	--// Server_Lagger_Notification
+	local ServerLaggerHeader = "Server-Lagger";
+	local ServerLaggerBody = "Check out the Server-Lagger option in the BLATANT SECTION.";
 
---// Silent_Aim_Notification
-local SilentAimHeader = "Silent-Aim";
-local SilentAimBody = "Enabling Silent-Aim MAY or MAY NOT STOP you from toggling OTHER OPTIONS.";
+	--// Silent_Aim_Notification
+	local SilentAimHeader = "Silent-Aim";
+	local SilentAimBody = "Enabling Silent-Aim MAY or MAY NOT STOP you from toggling OTHER OPTIONS.";
 
---// GUI_Changes_Notification
-local GUIChangesHeader = "GUI-Changes";
-local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
+	--// GUI_Changes_Notification
+	local GUIChangesHeader = "GUI-Changes";
+	local GUIChangesBody = "WinterTime will be recieving a GUI Width Re-Size soon.";
 
---// Commands_List_Notification
-local CommandsListHeader = "Commands";
-local CommandsListBody = 'Say ".Cmds" with Premium to check out the FULL Commands list.';
+	--// Commands_List_Notification
+	local CommandsListHeader = "Commands";
+	local CommandsListBody = 'Say ".Cmds" with Premium to check out the FULL Commands list.';
 
---// Remind_Premium_Notification
-local RemindPremiumHeader = "Reminder";
-local RemindPremiumBody = "You don't have to execute WinterTime in order to use premium commands!";
+	--// Remind_Premium_Notification
+	local RemindPremiumHeader = "Reminder";
+	local RemindPremiumBody = "You don't have to execute WinterTime in order to use premium commands!";
 
---// Need_Help_Notification
-local NeedHelpHeader = "Need help?";
-local NeedHelpBody = "Join the discord, and create a ticket to request assistance for something.";
+	--// Need_Help_Notification
+	local NeedHelpHeader = "Need help?";
+	local NeedHelpBody = "Join the discord, and create a ticket to request assistance for something.";
 
---// Group_Suggest_Notification
-local GroupSuggestHeader = "Copied Group";
-local GroupSuggestBody = "NEW GROUP link has been COPIED, We are switching soon!";
+	--// Ingest_Premium_Status_Notification
+	local PremiumIngestHeader = "Corrections";
+	local PremiumIngestBody = "If you have bought premium, make sure to send your user ID again incase, thanks.";
 
---// Rate_WinterTime_Notification
-local RatingHeader = "Like WinterTime?";
-local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
+	--// Rate_WinterTime_Notification
+	local RatingHeader = "Like WinterTime?";
+	local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
 
---// Start_Coin_Flip
-if DripOrDrown == 1 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 2 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(ServerLaggerHeader), Text = tostring(ServerLaggerBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 3 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(SilentAimHeader), Text = tostring(SilentAimBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 4 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(GUIChangesHeader), Text = tostring(GUIChangesBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 5 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(CommandsListHeader), Text = tostring(CommandsListBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 6 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(NeedHelpHeader), Text = tostring(NeedHelpBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 7 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RemindPremiumHeader), Text = tostring(RemindPremiumBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 8 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(GroupSuggestHeader), Text = tostring(GroupSuggestBody), Duration = tonumber(BaseLabelDuration),});
-elseif DripOrDrown == 9 then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
-end;
+	--// Start_Coin_Flip
+	pcall(function()
+		
+		if DripOrDrown == 1 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 2 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(ServerLaggerHeader), Text = tostring(ServerLaggerBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 3 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(SilentAimHeader), Text = tostring(SilentAimBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 4 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(GUIChangesHeader), Text = tostring(GUIChangesBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 5 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(CommandsListHeader), Text = tostring(CommandsListBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 6 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(NeedHelpHeader), Text = tostring(NeedHelpBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 7 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RemindPremiumHeader), Text = tostring(RemindPremiumBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 8 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(PremiumIngestHeader), Text = tostring(PremiumIngestBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 9 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
+		end;
+		
+	end)
+	
+end)
