@@ -1,7 +1,7 @@
 pcall(function()
 	
 	--// #Yield_Spawned_Notifications
-	task.wait(1)
+	task.wait(22)
 
 	--// #Y_Min_Max
 	local DripOrDrown = math.random(1, 9);
