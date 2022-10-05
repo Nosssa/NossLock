@@ -1,6 +1,6 @@
 --// WHO CAN EDIT: Nosss, Atman, Kacper, Vlruriz, Snuskebazn
 
---// Silent-Aim Users Whitelist
+--// SILENT-AIM Users Whitelist
 
 
 
@@ -15,9 +15,40 @@
 
 _G.SilentVIP = {
 
+	--// Admins & Owners
+	33414923; -- GRIEFWOODS, Group Holder
+	
+	2887631667; -- QSTOMPER, Atman, Owner / Group Holder
+	630576; -- ImBeast, Nosss, Owner
+	
+	1836826832; -- Kacper, Co-Owner
+	1166477638; -- Kacper, Co-Owner
+
+	2817836624; -- Vlrurizz, Manager
+        
+        149290866; -- Snuskebazn, Head Of Staff
+	
+	2753093941; -- iwuvvmawwioo, Mods
+	79825365; -- AimLockPsycho, Mods
+	1768433698; -- SpoofV4, Mods
+	
+	3164690709; -- Spintheblo3k, Alt
+	2574437929; -- KidFallsOnCurry, Alt
+	3140236611; -- YourBadAtChest, Alt
+	--1198916131; -- MrSpyr, Alt
+	1564902533; -- nCopn, Alt
+	849941503; -- 9_G0, Alt
+	45039147; -- Spvros, Alt
 	1254640776; -- sourcecode14, Alt
-  
-  
+	
+        1323801258; -- Zion, Staff
+	3516722784; -- Zion, Alt
+	
+	3506642278; -- Hollow, Staff
+	
+	1679879194; -- Caiden, Staff
+  	
+  	
   
   
   
