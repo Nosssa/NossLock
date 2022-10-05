@@ -1,6 +1,8 @@
---// WHO CAN EDIT: Nosss, Atman, Kacper
+--// WHO CAN EDIT: Nosss, Atman, Kacper, Vlruriz, Snuzkebazn
 
 --// WinterTime Admins & Owners Whitelist
+
+--// No king emoji confuses for real mods
 
 --// '[⛄] .. " str.empty " .. <DisplayName>'
 
@@ -23,9 +25,9 @@ _G.ColdKingz = {
 	1836826832; -- Kacper, Co-Owner
 	1166477638; -- Kacper, Co-Owner
 
-	--2817836624; -- Vlrurizz, Head Of Staff, quit?
+	2817836624; -- Vlrurizz, Manager
         
-        149290866; -- Snuskebazn, Staff
+        149290866; -- Snuskebazn, Head Of Staff
 	
 	2753093941; -- iwuvvmawwioo, Mods
 	79825365; -- AimLockPsycho, Mods
@@ -46,5 +48,6 @@ _G.ColdKingz = {
 	
 	3506642278; -- Hollow, Staff
 	
-	1679879194; -- Caiden, Staff	
+	1679879194; -- Caiden, Staff
+
 };
