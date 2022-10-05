@@ -17,12 +17,10 @@
 
 _G.WinterTimeVIP = {
 
-
-	--// Admins, Alt Accounts
+	--// Admins & Owners, Alt Accounts
 	1850024979; -- Nosssa's Premium Tester, Alt Account : 1 
 	2989323679; -- Nosssa's Premium Tester, Alt Account : 2
 
-	
 	--// Premium Users
 	--14145859;
 	--38024462;
