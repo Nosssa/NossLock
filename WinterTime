@@ -8,6 +8,10 @@ local RetrieveExecutor = identifyexecutor()
 
 pcall(function()
 	local INTERNAL_SCREW_SOURCE_DUMP = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/FetchInternalVersion", true))(); task.wait()
+	
+	if game.PlaceId == 6751371363 then
+		local ClientByp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/AntiPopupsHDClient", true))(); task.wait()
+	end
 end)
 
 if RetrieveExecutor == "Synapse X" then
