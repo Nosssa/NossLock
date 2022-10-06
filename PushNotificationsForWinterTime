@@ -42,8 +42,8 @@ pcall(function()
 	local PremiumIngestBody = "If you have bought premium, make sure to send your user ID again incase, thanks.";
 
 	--// Rate_WinterTime_Notification
-	local RatingHeader = "Like WinterTime?";
-	local RatingBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
+	local RatingWinterTimeHeader = "Like WinterTime?";
+	local RatingWinterTimeBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
 
 	--// Start_Coin_Flip
 	pcall(function()
@@ -65,7 +65,7 @@ pcall(function()
 		elseif DripOrDrown == 8 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(PremiumIngestHeader), Text = tostring(PremiumIngestBody), Duration = tonumber(BaseLabelDuration),});
 		elseif DripOrDrown == 9 then
-			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingHeader), Text = tostring(RatingBody), Duration = tonumber(BaseLabelDuration),});
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingWinterTimeHeader), Text = tostring(RatingWinterTimeBody), Duration = tonumber(BaseLabelDuration),});
 		end;
 		
 	end)
