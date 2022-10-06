@@ -44,7 +44,9 @@ pcall(function()
 
 		IdentifyExecutor = true
 		
-		_G.UsingUnknown = true
+		_G.UsingOther = true
+		
+		_G.UsingUnknown = false
 		
 	elseif RetrieveExecutor == "Coco Z" then
 
