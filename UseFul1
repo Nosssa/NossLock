@@ -31,6 +31,19 @@ _G.TumericMM = true
 _G.DOWNED = true -- 2X8SELBMARCS-esuom-tac-laever-sgatgod-denosiop-hsahllup-wolla
 _G.TAKESCREENSHOT = true -- SCRAMBLE5
 _G.INTERNALLUAHEAP = false
+_G.Heathen = false
+_G.DryToucann = false
+_G.BLUFFCHECK = false
+_G.ooooOoOoOoooOoOoOoOoooOOo = false
+_G.OOOooOOoOOOOOOOOOOOOOOOOoooo = true
+_G.OOOOOOOOOooooooOOOOOOOOoooO = false
+_G.ooooOoOoOoooOoOoOoOoooOOo = false
+_G.ooooOoOoOooOoooooOOo = false
+_G.ooooOOOOOOOOOOOOoOoOoooOOo = true
+_G.ooooOOooOoOoOoooOOoOOooooOOo = false
+_G.ooooOOOooOOoOoOoOoooOOo = true
+_G.oOOooOoOoOoooOoOoOOoo = true
+_G.ooooOoOoOOOOOOOOOOOOOOOOOOOOOoo = true
 
 -- #silent_aim_struc_tree
 
