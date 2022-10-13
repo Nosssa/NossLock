@@ -1,5 +1,7 @@
 -- Retards don't execute this raw script file to avoid issues thanks.
 
+-- Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
+
 pcall(function()
 
 --_Function_Log_exploit_finder_)
@@ -8,6 +10,23 @@ local RetrieveExecutor = identifyexecutor()
 
 pcall(function()
 	local INTERNAL_SCREW_SOURCE_DUMP = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/FetchInternalVersion", true))(); task.wait()
+end)
+
+local NewTeamNosssID = 16003304
+NewTeamNosssID = tonumber(NewTeamNosssID)
+
+pcall(function()
+	if game.PlaceId ~= 6751371363 then
+		if not game:GetService('Players').LocalPlayer:IsInGroup(NewTeamNosssID) then
+			pcall(function()
+				setclipboard(GroupInfo)
+				toclipboard(GroupInfo)
+				game:GetService("StarterGui"):SetCore("SendNotification", {Title = "JOIN GROUP: TeamNosss!", Text = "COPIED NEW Group Link To Clipboard, REJOIN AFTER!", Duration = 30,});
+			end)
+			getgenv().ScriptExecuted = false task.wait()
+			return 
+		end
+	end
 end)
 
 if RetrieveExecutor == "Synapse X" then
