@@ -13,19 +13,21 @@
 
 _G.SilentVIP = {
 
-
 	--// Admins & Owners
 	2887631667; -- QSTOMPER, Atman, Owner / Group Holder
 	33414923; -- GRIEFWOODS, OLD Group Holder
 	630576; -- ImBeast, Nosss, Owner
 	
-	1836826832; -- Kacper, Co-Owner
-	3483288604; -- Kacper, Co-Owner
+	1836826832; -- kacper, Co owner
+	1166477638; -- kacper, Co owner
+	
         149290866; -- Snuskebazn, Head Of Staff
-	714271201; -- Snuskebazn, Alt
+	2557947673; -- Snuskebazn, Alt Girlfriend
+	
 	2753093941; -- iwuvvmawwioo, Mods
 	79825365; -- AimLockPsycho, Mods
 	1768433698; -- SpoofV4, Mods
+	
 	3164690709; -- Spintheblo3k, Alt
 	2574437929; -- KidFallsOnCurry, Alt
 	3140236611; -- YourBadAtChest, Alt
@@ -34,12 +36,14 @@ _G.SilentVIP = {
 	849941503; -- 9_G0, Alt
 	45039147; -- Spvros, Alt
 	1254640776; -- sourcecode14, Alt
-  	1679879194; -- Caiden, Staff
+	
+	1679879194; -- Caiden, Staff
 	993776565; -- Caiden, Alt
+	
 	3065382921; -- Gavin, Staff
 	
 	
-  	--// Whitelisted Users
+  	--// Normal Whitelisted Users
 	3065382921;
 	1850024979;
   	2237139665;
