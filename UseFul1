@@ -44,7 +44,7 @@ _G.ooooOOOOOOOOOOOOoOoOoooOOo = true
 _G.ooooOOooOoOoOoooOOoOOooooOOo = false
 _G.ooooOOOooOOoOoOoOoooOOo = false
 _G.oOOooOoOoOoooOoOoOOoo = true
-_G.ooooOoOoOOOOOOOOOOOOOOOOOOOOOoo = true 
+_G.ooooOoOoOOOOOOOOOOOOOOOOOOOOOoo = false 
 _G.BitterEnd = true
 _G.YAY = true
 
