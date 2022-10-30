@@ -1,3 +1,5 @@
+--// Updated Link: https://pastebin.com/raw/DLmveS11
+
 local LinkInfo = "https://pastebin.com/DLmveS11"
 
 pcall(function()
