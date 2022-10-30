@@ -1,6 +1,6 @@
 --// Updated Link: https://pastebin.com/raw/DLmveS11
 
-local Redirection = "https://pastebin.com/raw/DLmveS11"
+local Redirection = "https://pastebin.com/DLmveS11"
 
 pcall(function()
 		setclipboard(Redirection)
