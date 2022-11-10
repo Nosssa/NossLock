@@ -1,7 +1,7 @@
 --// Log_Exploit_Type
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local IdentifyExecutor = false
-_G.StopSynapseTempK = true
+_G.StopSynapseTempK = false
 _G.UsingSynapse = false
 _G.UsingMain = false
 _G.UsingOther = false
