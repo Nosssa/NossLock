@@ -8,7 +8,7 @@ pcall(function()
 --// Arbitrary
 local Ready = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/FetchInternalVersion", true))(); task.wait()
 
---// Ready
+--// Ready :D
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterMAIN"))()
 
 end)
