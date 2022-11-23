@@ -1,3 +1,6 @@
+--// ## !DO NOT EDIT SCRIPT MATERIAL IT WILL BREAK! ##
+
+
 --// Debounce
 local UpdatingWinterTime = false
 
