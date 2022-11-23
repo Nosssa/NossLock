@@ -1,21 +1,25 @@
--- Retards don't execute this raw script file to avoid issues thanks.
+--// Debounce
+local UpdatingWinterTime = false
 
--- Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
 
-pcall(function()
-
---_Function_Log_exploit_finder_)
-local READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
-local RetrieveExecutor = identifyexecutor()
-
-pcall(function()
-	local INTERNAL_SCREW_SOURCE_DUMP = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/FetchInternalVersion", true))(); task.wait()
-end)
-
-if RetrieveExecutor == "Synapse X" then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterSYNAPSE"))()
-else
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/IndexWinterMAIN"))()
+--// Awaiting_Update
+function Is_Updating()
+	pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/WinterTimeCURRENTLYUPDATING"))()
+	end)
 end
 
-end)
+--// Playable_State
+function Update_Complete()
+	pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/WinterTimeBOOTSTRAPPER"))()
+	end)
+end
+
+
+--// Sort_Debounce
+if UpdatingWinterTime == false then
+	Update_Complete()
+elseif UpdatingWinterTime == true then
+	Is_Updating()
+end
