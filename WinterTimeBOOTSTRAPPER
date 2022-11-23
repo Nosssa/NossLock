@@ -1,10 +1,10 @@
--- Retards don't execute this raw script file to avoid issues thanks.
+--// Retards don't execute this raw script file to avoid issues thanks!
 
--- Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
+--// Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
 
 pcall(function()
 
---_Function_Log_exploit_finder_)
+--// Function_Log_exploit_finder
 local READ_EXECUTOR = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ExecutorDetector", true))();
 local RetrieveExecutor = identifyexecutor()
 
