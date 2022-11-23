@@ -1,5 +1,5 @@
 --// Debounce
-local UpdatingWinterTime = false
+local UpdatingWinterTime = true
 
 
 --// Awaiting_Update
