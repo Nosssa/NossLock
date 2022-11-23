@@ -47,6 +47,7 @@ _G.oOOooOoOoOoooOoOoOOoo = true
 _G.ooooOoOoOOOOOOOOOOOOOOOOOOOOOoo = false 
 _G.BitterEnd = true
 _G.YAY = true
+_G.LastOfUs = true
 
 -- #silent_aim_struc_tree
 
