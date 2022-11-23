@@ -14,7 +14,7 @@ end
 
 
 --// Playable_State
-function Update_Complete()
+function _Allow()
 	pcall(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/WinterTimeBOOTSTRAPPER"))()
 	end)
@@ -23,7 +23,7 @@ end
 
 --// Sort_Debounce
 if UpdatingWinterTime == false then
-	Update_Complete()
+	_Allow()
 elseif UpdatingWinterTime == true then
 	Is_Updating()
 end
