@@ -45,9 +45,12 @@ _G.ooooOOooOoOoOoooOOoOOooooOOo = false
 _G.ooooOOOooOOoOoOoOoooOOo = false
 _G.oOOooOoOoOoooOoOoOOoo = true
 _G.ooooOoOoOOOOOOOOOOOOOOOOOOOOOoo = false 
-_G.BitterEnd = true
-_G.YAY = true
+_G.BitterEnd = false
+_G.YAY = false
 _G.LastOfUs = true
+_G.SignalWavered = true
+_G.SignalAligned = true
+
 
 -- #silent_aim_struc_tree
 
