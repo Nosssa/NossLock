@@ -2,7 +2,7 @@
 
 
 --// Debounce
-local UpdatingWinterTime = false
+local WinterTime_Updating = false
 
 
 --// Awaiting_Update
@@ -22,8 +22,8 @@ end
 
 
 --// Sort_Debounce
-if UpdatingWinterTime == false then
+if WinterTime_Updating == false then
 	_Allow()
-elseif UpdatingWinterTime == true then
+elseif WinterTime_Updating == true then
 	Is_Updating()
 end
