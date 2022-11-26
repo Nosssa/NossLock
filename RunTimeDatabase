@@ -1,5 +1,5 @@
 --// ref: _G.NETWORKSOCKET = _G.PRIV_HANDLE_HANDOVER
-_G.PRIV_HANDLE_HANDOVER = _G.NETWORKSOCKET
+_G.PRIV_HANDLE_HANDOVER = true (--_G.NETWORKSOCKET)
 
 --local TryCatch = true -- awhs
 --local onSpyHandcuffedMsg = '1' -- voila XD
