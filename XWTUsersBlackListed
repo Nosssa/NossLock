@@ -34,5 +34,6 @@ _G.BlacklistedUsers = {
       -- Entire Tenaki crew and friends they're all irrelevant to me but I had to put them here for a few reasons.
       2415886442; -- Tenaki, irrelevant kid who needs attention.
       3167131767;
+      1234581483;
       
 };
