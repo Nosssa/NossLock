@@ -4,7 +4,7 @@ pcall(function()
 	task.wait(22)
 
 	--// #Y_Min_Max
-	local DripOrDrown = math.random(1, 9);
+	local DripOrDrown = math.random(1, 10);
 
 	--// #Base_Notification_Duration
 	local BaseLabelDuration = 10;
@@ -40,6 +40,10 @@ pcall(function()
 	--// Ingest_Premium_Status_Notification
 	local PremiumIngestHeader = "Corrections";
 	local PremiumIngestBody = "If you have bought premium, make sure to send your user ID again incase, thanks.";
+	
+	--// WinterTime_Advanced_Notification
+	local WinterTimeAdvancedHeader = "WinterTime-Advanced";
+	local WinterTimeAdvancedBody = "WinterTime will be recieving an "Enhanced" GUI update in a short time period from now!";
 
 	--// Rate_WinterTime_Notification
 	local RatingWinterTimeHeader = "Like WinterTime?";
@@ -65,6 +69,8 @@ pcall(function()
 		elseif DripOrDrown == 8 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(PremiumIngestHeader), Text = tostring(PremiumIngestBody), Duration = tonumber(BaseLabelDuration),});
 		elseif DripOrDrown == 9 then
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(WinterTimeAdvancedHeader), Text = tostring(WinterTimeAdvancedBody), Duration = tonumber(BaseLabelDuration),});
+		elseif DripOrDrown == 10 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingWinterTimeHeader), Text = tostring(RatingWinterTimeBody), Duration = tonumber(BaseLabelDuration),});
 		end;
 		
