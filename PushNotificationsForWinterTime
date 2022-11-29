@@ -1,3 +1,5 @@
+local CWGameID = 4282985734
+
 pcall(function()
 	
 	--// #Yield_Spawned_Notifications
@@ -8,6 +10,10 @@ pcall(function()
 
 	--// #Base_Notification_Duration
 	local BaseLabelDuration = 10;
+
+	--// Auto_Parry_Notification
+	local AutoParryHeader = "Auto-Parry";
+	local AutoParryBody = "Auto Parry is to be added next update!";
 
 	--// Fake_Macro_Notification
 	local FakeMacroHeader = "Fake-Macro";
@@ -52,6 +58,8 @@ pcall(function()
 	--// Start_Coin_Flip
 	pcall(function()
 		
+	if game.PlaceId ~= CWGameID then
+
 		if DripOrDrown == 1 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
 		elseif DripOrDrown == 2 then
@@ -73,6 +81,11 @@ pcall(function()
 		elseif DripOrDrown == 10 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingWinterTimeHeader), Text = tostring(RatingWinterTimeBody), Duration = tonumber(BaseLabelDuration),});
 		end;
+
+		else
+			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(AutoParryHeader), Text = tostring(AutoParryBody), Duration = tonumber(BaseLabelDuration),});
+	
+		end
 		
 	end)
 	
