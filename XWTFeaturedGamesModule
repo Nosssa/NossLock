@@ -1,8 +1,8 @@
 --// Featured_Games
 
 _G.GameLogic = {
-	
-	
+
+
 	--// Game_Ids
 	IsPlaying = {
 
@@ -24,7 +24,7 @@ _G.GameLogic = {
 
 
 	--// Flags_Camera
-	WillDetectCamera = { -- False = Detected / NaN
+	WillDetectCamera = { -- [ true = Detected / NaN ] --
 
 		Dahood = true;
 		HoodModded = true;
@@ -43,20 +43,20 @@ _G.GameLogic = {
 
 
 	--// Flags_Silent
-	WillDetectSilent = { -- False = Detected / NaN
+	WillDetectSilent = { -- [ true = Detected / NaN ] --
 
-		Dahood = true;
-		HoodModded = true;
-		HoodDuels = false;
-		TheHood = false;
-		UntitledHood = true;
-		HoodCustoms = false;
-		HoodAimTrainer = false;
-		DatHood = false;
-		CombatWarriors = false;
+		Dahood = false;
+		HoodModded = false;
+		HoodDuels = true;
+		TheHood = true;
+		UntitledHood = false;
+		HoodCustoms = true;
+		HoodAimTrainer = true;
+		DatHood = true;
+		CombatWarriors = true;
 
-		PhantomForces = false;
-		UknownGame = false;
+		PhantomForces = true;
+		UknownGame = true;
 
 	};
 
