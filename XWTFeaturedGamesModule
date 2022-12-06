@@ -24,7 +24,7 @@ _G.GameLogic = {
 
 
 	--// Flags_Camera
-	WillDetectCamera = { -- [ true = Detected / NaN ] --
+	WillDetectCamera = { -- [ true = Fetch Method (2) / Detected / NaN ] --
 
 		Dahood = true;
 		HoodModded = true;
@@ -43,7 +43,7 @@ _G.GameLogic = {
 
 
 	--// Flags_Silent
-	WillDetectSilent = { -- [ true = Detected / NaN ] --
+	WillDetectSilent = { -- [ true = Fetch Method (2) / Detected / NaN ] --
 
 		Dahood = false;
 		HoodModded = false;
