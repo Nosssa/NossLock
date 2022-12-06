@@ -37,7 +37,7 @@ _G.GameLogic = {
 		CombatWarriors = true;
 
 		PhantomForces = false;
-		Others = false;
+		UknownGame = false;
 
 	};
 
@@ -56,7 +56,7 @@ _G.GameLogic = {
 		CombatWarriors = false;
 
 		PhantomForces = false;
-		Others = false;
+		UknownGame = false;
 
 	};
 
