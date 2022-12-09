@@ -1,0 +1,8 @@
+--// Incase they try to change the names of these shits
+
+_G.MousePostionSignatures = {
+
+  "BodyEffects";
+  "I_LOADED_I";
+
+};
