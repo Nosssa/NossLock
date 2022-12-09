@@ -1,6 +1,6 @@
 --// Incase they try to change the names of these shits
 
-_G.MousePostionSignatures = {
+_G.MousePositionSignatures = {
 
   "BodyEffects"; -- basically all hood games use this 
   "I_LOADED_I"; -- only hood modded
