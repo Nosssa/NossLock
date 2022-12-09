@@ -2,7 +2,7 @@
 
 _G.MousePostionSignatures = {
 
-  "BodyEffects";
-  "I_LOADED_I";
+  "BodyEffects"; -- basically all hood games use this 
+  "I_LOADED_I"; -- only hood modded
 
 };
