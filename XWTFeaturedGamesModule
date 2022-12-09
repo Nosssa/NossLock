@@ -31,7 +31,7 @@ _G.GameLogic = {
 
 
 	--// Flags_Camera
-	WillDetectCamera = { -- [ "true" = Fetch_Method_Global(Classic) / Detected / NaN ] --
+	WillDetectCamera = { -- [ "true" OR "false" = Fetch_Method_Global(Classic) / Detected / NaN ] --
 
 		Dahood = true;
 		HoodModded = true;
