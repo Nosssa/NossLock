@@ -1,5 +1,12 @@
 --// Featured_Games
 
+--[[
+
+Create_Method2_CAMERA = _Aliases("Classic", "Spoof")
+Create_Method2_SILENT = _Aliases("RemoteEvent", "MouseProperties", "LoadBypass", "Spoof")
+
+--]]
+
 _G.GameLogic = {
 
 
@@ -24,7 +31,7 @@ _G.GameLogic = {
 
 
 	--// Flags_Camera
-	WillDetectCamera = { -- [ true = Fetch Method (2) / Detected / NaN ] --
+	WillDetectCamera = { -- [ "true" = Fetch_Method_Global(Classic) / Detected / NaN ] --
 
 		Dahood = true;
 		HoodModded = true;
@@ -43,7 +50,7 @@ _G.GameLogic = {
 
 
 	--// Flags_Silent
-	WillDetectSilent = { -- [ true = Fetch Method (2) / Detected / NaN ] --
+	WillDetectSilent = { -- [ "true" = Fetch_Method_Select(LoadBypass, Spoof, MouseProperties) / Detected / NaN ] --
 
 		Dahood = false;
 		HoodModded = false;
