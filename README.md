@@ -1,4 +1,4 @@
-## NosssLock
+## NosssLock - Created by Nosss
 
 ### Information
 * The Scripts listed above Are Semi-Universal minus the ones that are named after a specific game.
