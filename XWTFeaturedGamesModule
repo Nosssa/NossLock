@@ -21,8 +21,10 @@ _G.GameLogic = {
 		HoodCustoms = 9825515356;
 		HoodAimTrainer = 9824221333;
 		DatHood = 10968324786;
+		DahHood = 11709866664;
 
 		CombatWarriors = 4282985734;
+		
 		PhantomForces = 292439477;
 
 		UknownGame = false;
@@ -41,6 +43,8 @@ _G.GameLogic = {
 		HoodCustoms = true;
 		HoodAimTrainer = true;
 		DatHood = true;
+		DahHood = true;
+		
 		CombatWarriors = true;
 
 		PhantomForces = false;
@@ -60,6 +64,8 @@ _G.GameLogic = {
 		HoodCustoms = true;
 		HoodAimTrainer = true;
 		DatHood = true;
+		DahHood = true;
+		
 		CombatWarriors = true;
 
 		PhantomForces = true;
