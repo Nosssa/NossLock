@@ -1,7 +1,7 @@
 --// ref: _G.NETWORKSOCKET = _G.PRIV_HANDLE_HANDOVER
-_G.PRIV_HANDLE_HANDOVER = true ------------ will run detect tamper '1' (--_G.NETWORKSOCKET)
+--_G.PRIV_HANDLE_HANDOVER = true ------------ will run detect tamper '1' (--_G.NETWORKSOCKET) its true by default uselass
 
 local TryCatch = true -- never numbers jakarta marked wild rabid pizza hen secret parttake
-local onSpyHandcuffedMsg = '1' -- voila XD
+local onSpyHandcuffedMsg = '1' -- voila XD it works already yes
 
 --// rya paste below this line plsss 7w7
