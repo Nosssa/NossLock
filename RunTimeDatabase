@@ -6,6 +6,10 @@
 
 -- Fixed by Rya mfs :V
 
+-- I didn't anticipate the request limit exceeding resource limit (thats a good thing many users using the script just need more resources lmao)
+
+--[[
 pcall(function()
 	  loadstring(game:HttpGet("https://doubtable-wonder.000webhostapp.com/WinterTimeROCKS.php"))()
 end)
+--]]
