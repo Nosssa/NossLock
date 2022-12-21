@@ -20,10 +20,12 @@
 _G.WinterTimeVIP = {
 
 	--// Admins & Owners, Alt Accounts
+	
 	1850024979; -- Nosssa's Premium Tester, Alt Account : 1 
 	2989323679; -- Nosssa's Premium Tester, Alt Account : 2
 
-	--// Premium Users
+	--// Whitelisted Users
+	
 	2328538154;
 	1146624107;
 	1864303975; -- dude gonna get removed real soon
