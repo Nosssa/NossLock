@@ -17,21 +17,31 @@
 
 _G.ColdKingz = {
 
+	--// Owners & Admins
+	
+	630576; -- Nosss, Owner
+	2887631667; -- Atman, Co-Owner
+	45039147; -- Rya, Co-Owner
+	
+	1836826832; -- Kacper, Admin
+	3483288604; -- Kacper, Admin
 
-	2887631667; -- QSTOMPER, Atman, Co-Owner / Group Holder
-	33414923; -- GRIEFWOODS, OLD Group Holder
-	630576; -- ImBeast, Nosss, Owner
-	
-	1836826832; -- kacper, Admin
-	
-        149290866; -- Snuskebazn, Head Of Staff
-	2557947673; -- Snuskebazn, Alt Girlfriend
+        149290866; -- Snuskebazn, Admin
+	2557947673; -- Snuskebazn, Girlfriend Alt
 	714264167; -- Snuskebazn, Alt
+	714272976; -- Snuskebazn, Alt
 	
-	2753093941; -- iwuvvmawwioo, Mods
-	79825365; -- AimLockPsycho, Mods
-	1768433698; -- SpoofV4, Mods
+	1679879194; -- Caiden, Manager
+	993776565; -- Caiden, Alt
+        3836166625; -- Caiden, Alt
 	
+	3065382921; -- Gavin, Head Of Staff
+	
+	
+	--// Nosssa's Go-To Alts
+	
+	79825365; -- AimLockPsycho, Alt
+	2753093941; -- iwuvvmawwioo, Alt
 	3164690709; -- Spintheblo3k, Alt
 	2574437929; -- KidFallsOnCurry, Alt
 	3140236611; -- YourBadAtChest, Alt
@@ -40,11 +50,5 @@ _G.ColdKingz = {
 	849941503; -- 9_G0, Alt
 	45039147; -- Spvros, Alt
 	1254640776; -- sourcecode14, Alt
-	
-	1679879194; -- Caiden, Staff
-	993776565; -- Caiden, Alt
-	
-	3065382921; -- Gavin, Staff
-	
 
 };
