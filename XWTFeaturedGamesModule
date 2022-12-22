@@ -1,9 +1,13 @@
---// Featured_Games
+--// REFRESH THIS LIST BEFORE YOU MAKE CHANGES
+
+--// WHO CAN EDIT: Nosss, Atman, Rya
+
+--// SILENT-AIM Users Whitelist
 
 --[[
 
-Create_Method2_CAMERA = _Aliases("Classic", "Spoof")
-Create_Method2_SILENT = _Aliases("RemoteEvent", "MouseProperties", "LoadBypass", "Spoof")
+	Create_Method2_CAMERA = _Aliases("Classic", "Spoof")
+	Create_Method2_SILENT = _Aliases("RemoteEvent", "MouseProperties", "LoadBypass", "Spoof")
 
 --]]
 
