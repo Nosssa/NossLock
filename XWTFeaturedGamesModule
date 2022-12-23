@@ -64,11 +64,11 @@ _G.GameLogic = {
 	--// Flags_Silent
 	WillDetectSilent = { -- [ "true" = Fetch_Method_Select(LoadBypass, Spoof, MouseProperties) / Detected / NaN ] --
 
-		Dahood = false;
+		Dahood = true;
 		HoodModded = false;
 		HoodDuels = true;
 		TheHood = true;
-		UntitledHood = false;
+		UntitledHood = true;
 		HoodCustoms = true;
 		HoodAimTrainer = true;
 		DatHood = true;
