@@ -27,6 +27,7 @@ _G.GameLogic = {
 		DatHood = 10968324786;
 		DatHoodOG = 9800641846;
 		DahHood = 11709866664;
+		DaHoodTrainer = 10773759206;
 
 		CombatWarriors = 4282985734;
 		
@@ -50,6 +51,7 @@ _G.GameLogic = {
 		DatHood = true;
 		DatHoodOG = true;
 		DahHood = true;
+		DaHoodTrainer = true;
 		
 		CombatWarriors = true;
 
@@ -72,6 +74,7 @@ _G.GameLogic = {
 		DatHood = true;
 		DatHoodOG = true;
 		DahHood = true;
+		DaHoodTrainer = true;
 		
 		CombatWarriors = true;
 
