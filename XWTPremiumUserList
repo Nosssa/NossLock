@@ -4,8 +4,6 @@
 
 --// WINTERTIME PREMIUM Users Whitelist
 
---// Admins you may add up to 3 alt accounts as premium, not including the user id in the admin whitelist.
-
 --// '[🌟] .. " str.empty " .. <DisplayName>'
 
 --[[ 
@@ -255,7 +253,7 @@ _G.WinterTimeVIP = {
 	1970617147;
 	138388718;
 	2502067330;
-	3884145514;
+	3837575527;
 	1504756797;
 	111883004;
 	3913146243;
