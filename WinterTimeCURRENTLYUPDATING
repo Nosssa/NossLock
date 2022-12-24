@@ -1,3 +1,1 @@
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "SOMETHING BROKE!", Text = "WinterTime is going to be fixed soon...", Duration = 15,}) task.wait(5)
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "SOMETHING BROKE!", Text = "WinterTime is going to be fixed soon...", Duration = 15,}) task.wait(5)
---game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATING", Text = "Updating please wait 1-2 Minutes, and THEN REJOIN -TeamNosss", Duration = 15,})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATING", Text = "Updating please wait 1-2 Minutes, and THEN REJOIN -TeamNosss", Duration = 30,})
