@@ -1,0 +1,305 @@
+--// RayCodex Player Framer Script | CRACKED!
+
+--// Created By Nosssa mostly, all hood games!
+ 
+--// Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
+
+
+Target_Name = "NOOB12345" -- [ Player you are framing | NAME / DISPLAY NEEDED ]
+
+Spoof_Into = "Nex5us" -- [ Who you want to turn them into | NAME / DISPLAY NEEDED ]
+
+ContinueToSpoofEvenAfterTheyDie = false -- [ On "true"; Continue to spoof their character after they die ]
+
+FatSpoof = true -- [ On "true"; Make Them fat like as if they never ate lettuce ]
+
+ShowEmoji = true  -- [ On "true"; Shows emoji below this ]
+
+Emoji = "⭐" -- [ Any emoji ]
+
+
+
+--[[
+
+	DO NOT EDIT ANYTHING BELOW THIS IF YOU DO NOT UNDERSTAND
+
+--]]
+
+
+
+local Stalled1 = false
+local Stalled2 = false
+local Stalled3 = false
+local Stalled4 = false
+
+if typeof(Target_Name) ~= "string" then
+	Stalled1 = true
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Error.", Text = "Fix that name or add back the quotation marks.", Duration = 5,});
+end
+
+if typeof(Spoof_Into) ~= "string" then
+	Stalled2 = true
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Error.", Text = "Fix that name or add back the quotation marks.", Duration = 5,});
+end
+
+if (Target_Name) == "" then
+	Stalled3 = true
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Idiot.", Text = "How can you spoof someone that has no name?", Duration = 5,});
+end
+
+if (Spoof_Into) == "" then
+	Stalled4 = true
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Idiot.", Text = "How can you spoof someone that has no name?", Duration = 5,});
+end
+
+if Stalled1 then
+	warn('"Target_Name" MUST be a NAME / DISPLAY')
+	return
+elseif Stalled2 then
+	warn('"Spoof_Into" MUST be a NAME / DISPLAY')
+	return
+elseif Stalled3 then
+	warn('You left: "Target_Name" EMPTY')
+	return
+elseif Stalled4 then
+	warn('You left: "Spoof_Into" EMPTY')
+	return
+end
+
+local HttpService = game:GetService("HttpService")
+local InsertService = game:GetService("InsertService")
+local UserService = game:GetService("UserService")
+local PlayersService = game:GetService("Players")
+local LocalPlayer = PlayersService.LocalPlayer
+
+function FetchUserIdFromNameAsync(Ecoli)
+	local Target = nil
+	Target = PlayersService:GetUserIdFromNameAsync(Ecoli)
+	return Target
+end
+
+local Args = ({...})
+Args[1], Args[2], Args[3], Args[4] = nil, nil, nil, nil
+
+function SplayInformationYieldUserIdAsync(RawNameInput)
+	local UserIdAsync = FetchUserIdFromNameAsync(RawNameInput)
+	local ID = UserIdAsync
+	local S, RetrievedProperties
+	S, RetrievedProperties = pcall(function()
+		return UserService:GetUserInfosByUserIdsAsync({ID})
+	end)
+	local CharAppearanceUserIdReplica = UserIdAsync
+	local UserId, Name, DisplayName, CharacterAppearanceId = nil, nil, nil, nil
+	UserId, Name, DisplayName, CharacterAppearanceId = UserIdAsync, RawNameInput, RetrievedProperties[1].DisplayName, CharAppearanceUserIdReplica
+	Args[1], Args[2], Args[3], Args[4] = UserId, Name, DisplayName, CharacterAppearanceId
+end
+
+function DestroyCurrentOutfit(Char)
+	if Char.Parent ~= nil and Char ~= nil then
+		for _, v in pairs(Char:GetDescendants()) do
+			if v:IsA("Accessory") or v:IsA("Shirt") or v:IsA("Pants") or v:IsA("ShirtGraphic") or v:IsA("Decal") and v then
+				v:Destroy()
+			end
+		end
+	end
+end
+
+function WeldTogether(Nail, Hammer)
+	local Weld = Instance.new("Weld")
+	Weld.Part0 = Nail.Parent
+	Weld.Part1 = Hammer.Parent
+	Weld.C0 = Nail.CFrame
+	Weld.C1 = Hammer.CFrame
+	Weld.Parent = Nail.Parent
+	return Weld
+end
+
+function WeldAccessory(Parent, P0, P1, C0, C1)
+	local Weld = Instance.new("Weld")
+	Weld.Name = "Meld"
+	Weld.Part0 = P0
+	Weld.Part1 = P0
+	Weld.C0 = C0
+	Weld.C1 = C1
+	Weld.Parent = Parent
+	return Weld
+end
+
+function MatchAttachment(Char, InputRawName)
+	for _, v in pairs(Char:GetChildren()) do
+		if v:IsA("Attachment") and v.Name == InputRawName and v then
+			return v
+		elseif not v:IsA("Accoutrement") and not v:IsA("Tool") then
+			local Matched = MatchAttachment(v, InputRawName)
+			if Matched then
+				return Matched
+			end
+		end
+	end
+end
+
+function SortAttachmentsFor(Char, Accessory)  
+	Accessory.Parent = Char
+	local Handle = Accessory:FindFirstChild("Handle")
+	if Handle ~= nil then
+		local HandleAttachment = Handle:FindFirstChildOfClass("Attachment")
+		if HandleAttachment then
+			local Attachment = MatchAttachment(Char, HandleAttachment.Name)
+			if Attachment then
+				WeldTogether(Attachment, HandleAttachment)
+			end
+		else
+			local Head = Char:FindFirstChild("Head")
+			if Head ~= nil then
+				local Offset = CFrame.new(0,.5,0)
+				local Glue = Accessory.AttachmentPoint
+				WeldAccessory(Head, Head, Handle, Offset, Glue)
+			end
+		end
+	end
+end
+
+function OverrideOutfit(Char, RawUserIdInput)
+	if Char ~= nil then
+
+		local S, RetrievedProperties = pcall(PlayersService.GetCharacterAppearanceAsync, PlayersService, RawUserIdInput)
+
+		if S and RetrievedProperties then
+
+			DestroyCurrentOutfit(Char)
+
+			if Char:FindFirstChild("Head") and Char:FindFirstChild("Head"):FindFirstChild("face") then
+				Char:FindFirstChild("Head").face:Destroy()
+			end
+
+			local DefaultRobloxBody1point0 = PlayersService:CreateHumanoidModelFromDescription(PlayersService:GetHumanoidDescriptionFromUserId(RawUserIdInput), Enum.HumanoidRigType.R15) task.wait(.25)
+
+			if FatSpoof == true then
+				Char:FindFirstChildOfClass("Humanoid").BodyTypeScale.Value = DefaultRobloxBody1point0:FindFirstChildOfClass("Humanoid").BodyTypeScale.Value
+			end
+
+			for _, BasePart in pairs(DefaultRobloxBody1point0:GetChildren()) do
+				if BasePart:IsA("BasePart") and  BasePart.Name ~= "HumanoidRootPart" then
+					Char:FindFirstChildOfClass("Humanoid"):ReplaceBodyPartR15(Enum.BodyPartR15[BasePart.Name], BasePart)	
+				end
+			end
+
+			if not RetrievedProperties:FindFirstChild("face") then
+				local Face = Instance.new("Decal")
+				Face.Texture = "rbxasset://textures/face.png"
+				Face.Face = "Front"
+				Face.Name = "face"
+				Face.Parent = Char:FindFirstChild("Head")
+			end
+
+			for _, v in pairs(RetrievedProperties:GetChildren()) do
+				if v:IsA("Pants") or v:IsA("Shirt") or v:IsA("ShirtGraphic") then
+					v.Parent = Char
+				end
+				if v.Name == "R15Fixed" then
+					for _, v in pairs(v:GetChildren()) do
+						if Char:FindFirstChild("Humanoid") then
+							Char:FindFirstChildOfClass("Humanoid"):ReplaceBodyPartR15(Enum.BodyPartR15[v.Name], v)
+						end
+					end
+				end
+				if v.Name == "Body Colors" then
+					if Char:FindFirstChild("Body Colors") then
+						Char["Body Colors"]:Destroy()
+					end
+					v:Clone().Parent = Char:FindFirstChild("Head")
+					v.Parent = Char
+				end
+				if v.Name == "face" then
+					v.Parent = Char:FindFirstChild("Head")
+				end
+				if v:IsA("Accessory") then
+					if Char:FindFirstChild("Head") then
+						SortAttachmentsFor(Char, v)
+					end
+				end
+			end
+		end
+	end
+end
+
+function TransformPlayerToObject(Object1, Object2)
+	pcall(function()
+		SplayInformationYieldUserIdAsync(Object1) task.wait(.1)
+		if Args[1] ~= nil and  Args[2] ~= nil and  Args[3] ~= nil and Args[4] ~= nil then
+			local FakePlayer = Instance.new("Player", nil) task.wait(.1)
+			FakePlayer.UserId, FakePlayer.Name, FakePlayer.DisplayName, FakePlayer.CharacterAppearanceId = Args[1], Args[2], Args[3], Args[4]
+
+			local MarkedPlayer = nil
+			for _, v in pairs(PlayersService:GetPlayers()) do
+				if v ~= LocalPlayer and v then
+					if v.Name:lower() == Object2:lower() then
+						if v ~= nil then
+							MarkedPlayer = v
+						end
+					elseif v.DisplayName:lower() == Object2:lower() then
+						if v ~= nil then
+							MarkedPlayer = v
+						end
+					end
+				end
+			end
+
+			FakePlayer.Parent = PlayersService
+
+			if MarkedPlayer ~= nil and MarkedPlayer.Character and MarkedPlayer.Character:FindFirstChildOfClass("Humanoid") then
+				if ShowEmoji == true then
+					local Intial = FakePlayer.DisplayName
+					MarkedPlayer.Character:FindFirstChildOfClass("Humanoid").DisplayName = "[" .. tostring(Emoji) .. "]" .. "" .. Intial -- or .. string.empty .. Intial
+				else
+					local Intial = FakePlayer.DisplayName
+					MarkedPlayer.Character:FindFirstChildOfClass("Humanoid").DisplayName = Intial
+				end
+			end
+
+			OverrideOutfit(MarkedPlayer.Character, FakePlayer.UserId)
+
+		else
+			warn("VarArg is missing or nil")
+		end
+	end)
+end
+
+if ContinueToSpoofEvenAfterTheyDie == true then
+	pcall(function()
+		local MarkedPlayer = nil
+		for _, v in pairs(PlayersService:GetPlayers()) do
+			if v ~= LocalPlayer and v then
+				if v.Name == Spoof_Into then
+					if v ~= nil then
+						MarkedPlayer = v
+					end
+				end
+			end
+		end
+		TransformPlayerToObject(Spoof_Into, Target_Name)
+		MarkedPlayer.CharacterAdded:Connect(function() task.wait()
+			TransformPlayerToObject(Spoof_Into, Target_Name)
+		end)
+		MarkedPlayer.CharacterRemoving:Connect(function(Who) task.wait()
+			for _, v in pairs(PlayersService:GetPlayers()) do
+				if not v:FindFirstChildOfClass("Backpack") then
+					v:Destroy()
+				end
+			end
+		end)
+		PlayersService.PlayerRemoving:Connect(function(Who) task.wait()
+			if Who.Name == Spoof_Into then
+				for _, v in pairs(PlayersService:GetPlayers()) do
+					if not v:FindFirstChildOfClass("Backpack") then
+						v:Destroy()
+					end
+				end
+			end
+		end)
+	end)
+elseif ContinueToSpoofEvenAfterTheyDie == false then
+	pcall(function()
+		TransformPlayerToObject(Spoof_Into, Target_Name)
+	end)
+end
