@@ -1,7 +1,7 @@
 --// RayCodex Player Framer Script | CRACKED!
 
 --// Created By Nosssa mostly, all hood games!
- 
+
 --// Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
 
 
@@ -270,7 +270,11 @@ if ContinueToSpoofEvenAfterTheyDie == true then
 		local MarkedPlayer = nil
 		for _, v in pairs(PlayersService:GetPlayers()) do
 			if v ~= LocalPlayer and v then
-				if v.Name == Spoof_Into then
+				if v.Name:lower() == Spoof_Into:lower() then
+					if v ~= nil then
+						MarkedPlayer = v
+					end
+				elseif v.DisplayName:lower() == Spoof_Into:lower() then
 					if v ~= nil then
 						MarkedPlayer = v
 					end
