@@ -11,7 +11,7 @@ Spoof_Into = "Nex5us" -- [ Who you want to turn them into | NAME / DISPLAY NEEDE
 
 ContinueToSpoofEvenAfterTheyDie = false -- [ On "true"; Continue to spoof their character after they die ]
 
-FatSpoof = true -- [ On "true"; Make Them fat like as if they never ate lettuce ]
+FatSpoof = false -- [ On "true"; Make Them fat like as if they never ate lettuce ]
 
 ShowEmoji = true  -- [ On "true"; Shows emoji below this ]
 
