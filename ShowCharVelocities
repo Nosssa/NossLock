@@ -1,0 +1,35 @@
+local Prediction = .18
+
+local RunService = game:GetService("RunService")
+local PlayersService = game:GetService("Players")
+local LocalPlayer = PlayersService.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+
+Drawing = Drawing
+
+local Draw = Drawing.new
+local Square = Drawing.new("Circle")
+Square.Visible = true
+Square.Filled = true
+Square.Thickness = 1
+Square.Transparency = 1
+Square.Color = Color3.new(0.65, 0.65, 1)
+Square.Radius = 5
+
+function ShowVelocityOf(User)
+	local Camera = game:GetService("Workspace").CurrentCamera
+	local Vector, OnScreen = Camera:WorldToViewportPoint(User.Character:FindFirstChild("HumanoidRootPart").Position + (User.Character:FindFirstChild("HumanoidRootPart").AssemblyLinearVelocity * Prediction))
+	if OnScreen then
+		Square.Radius = 5
+		Square.Position = Vector2.new(Vector.X,Vector.Y)
+	else
+		Square.Radius = 0
+	end
+end
+
+local Stapel = nil
+Stapel = RunService.RenderStepped:Connect(function()
+	pcall(function()
+		ShowVelocityOf(LocalPlayer)
+	end)
+end)
