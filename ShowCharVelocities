@@ -28,7 +28,7 @@ function ShowVelocityOf(User)
 end
 
 local Stapel = nil
-Stapel = RunService.RenderStepped:Connect(function()
+Stapel = RunService.Heartbeat:Connect(function()
 	pcall(function()
 		ShowVelocityOf(LocalPlayer)
 	end)
