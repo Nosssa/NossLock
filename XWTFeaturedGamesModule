@@ -80,7 +80,7 @@ _G.GameLogic = {
 		DatHoodOG = true;
 		DahHood = true;
 		DahHood2 = true;
-		DahHood2 = true;
+		DahHood3 = true;
 		DaHoodTrainer = true;
 		
 		CombatWarriors = true;
