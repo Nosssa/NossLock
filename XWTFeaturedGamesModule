@@ -95,59 +95,61 @@ _G.GameLogic = {
 
 
 --// Game_ID_Verification_Process 
-if (game.PlaceId == _G.GameLogic.IsPlaying.Dahood) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.Dahood
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.Dahood
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahoodVC) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahoodVC
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahoodVC
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodModded) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodModded
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodModded 
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodDuels) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodDuels
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodDuels 
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.TheHood) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.TheHood
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.TheHood
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.UntitledHood) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.UntitledHood
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.UntitledHood
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodCustoms) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodCustoms
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodCustoms
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodAimTrainer) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodAimTrainer
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodAimTrainer
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.DatHood) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DatHood
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DatHood
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.DatHoodOG) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DatHoodOG
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DatHoodOG
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahHood) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahHood
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahHood
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahHood2) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahHood2
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahHood2
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahHood3) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahHood3
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahHood3
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.DaHoodTrainer) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaHoodTrainer
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaHoodTrainer
+pcall(function()
+	if (game.PlaceId == _G.GameLogic.IsPlaying.DaHood) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaHood
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaHood
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DaHoodVC) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaHoodVC
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaHoodVC
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodModded) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodModded
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodModded 
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodDuels) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodDuels
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodDuels 
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.TheHood) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.TheHood
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.TheHood
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.UntitledHood) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.UntitledHood
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.UntitledHood
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodCustoms) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodCustoms
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodCustoms
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodAimTrainer) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodAimTrainer
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodAimTrainer
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DatHood) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DatHood
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DatHood
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DatHoodOG) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DatHoodOG
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DatHoodOG
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahHood) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahHood
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahHood
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahHood2) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahHood2
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahHood2
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahHood3) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahHood3
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahHood3
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DaHoodTrainer) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaHoodTrainer
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaHoodTrainer
 
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.CombatWarriors) then
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.CombatWarriors
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.CombatWarriors
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.CombatWarriors) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.CombatWarriors
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.CombatWarriors
 
-elseif (game.PlaceId == _G.GameLogic.IsPlaying.PhantomForces) then
-	_G.GameLogic.IsPlaying.UknownGame = true
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.PhantomForces
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.PhantomForces
-else
-	_G.GameLogic.IsPlaying.UknownGame = true
-	_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.UknownGame
-	_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.UknownGame
-end
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.PhantomForces) then
+		_G.GameLogic.IsPlaying.UknownGame = true
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.PhantomForces
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.PhantomForces
+	else
+		_G.GameLogic.IsPlaying.UknownGame = true
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.UknownGame
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.UknownGame
+	end
+end)
