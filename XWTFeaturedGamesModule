@@ -15,8 +15,8 @@ _G.GameLogic = {
 	--// Game_Ids
 	IsPlaying = {
 
-		Dahood = 2788229376;
-		DahoodVC = 7213786345;
+		DaHood = 2788229376;
+		DaHoodVC = 7213786345;
 		HoodModded = 5602055394;
 		HoodDuels = 6751371363;
 		TheHood = 4753520418;
@@ -42,8 +42,8 @@ _G.GameLogic = {
 	--// Flags_Camera
 	WillDetectCamera = { -- [ "true" or "false" = Fetch_Method_Global(Classic) / Detected / NaN ] --
 
-		Dahood = true;
-		DahoodVC = true;
+		DaHood = true;
+		DaHoodVC = true;
 		HoodModded = true;
 		HoodDuels = true;
 		TheHood = true;
@@ -68,8 +68,8 @@ _G.GameLogic = {
 	--// Flags_Silent
 	WillDetectSilent = { -- [ "true" = Fetch_Method_Select(LoadBypass, Spoof, MouseProperties) / Detected / NaN ] --
 
-		Dahood = true;
-		DahoodVC = true;
+		DaHood = true;
+		DaHoodVC = true;
 		HoodModded = false;
 		HoodDuels = true;
 		TheHood = true;
