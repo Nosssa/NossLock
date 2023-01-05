@@ -155,6 +155,7 @@ pcall(function()
 		_G.GameLogic.IsPlaying.UknownGame = true
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.PhantomForces
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.PhantomForces
+		
 	else
 		_G.GameLogic.IsPlaying.UknownGame = true
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.UknownGame
