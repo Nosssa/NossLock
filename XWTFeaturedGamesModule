@@ -91,7 +91,7 @@ _G.GameLogic = {
 
 		PhantomForces = true;
 		
-		UknownGame = false;
+		UknownGame = true;
 
 	};
 
