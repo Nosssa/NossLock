@@ -1,3 +1,11 @@
+--// Updated Link: https://pastebin.com/fxfWDyh8
+
+local LinkInfo = "https://pastebin.com/fxfWDyh8"
+
 pcall(function()
-	  loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/WinterTime"))()
+		setclipboard(LinkInfo)
+		toclipboard(LinkInfo)
 end)
+
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATED LINK!", Text = "SCRIPT LINK COPIED!", Duration = 10,}); task.wait(15)
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "UPDATED LINK!", Text = "SCRIPT LINK COPIED!", Duration = 10,}); task.wait(15)
