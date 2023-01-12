@@ -4,6 +4,8 @@
 
 --// Retards don't execute this raw script file to avoid issues thanks!
 
+--// PASTEBIN: https://pastebin.com/fxfWDyh8
+
 
 --// Debounce
 local WinterTime_Updating = false -- [ false = can execute ]--
