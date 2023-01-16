@@ -18,7 +18,6 @@ _G.FoulMouthTerms = {
   	"It's just me and this kill-tech";
 	"Just uninstall";
 	"leave the game";
-	"Imma fry your router";
 	"Mix it up with some moonrock";
 	"shot him so many times...";
 	"TURN AROUND BRUH";
@@ -211,7 +210,12 @@ _G.FoulMouthTerms = {
 	"im finna let these demons in";
 	"I feel like DRose";
 	"Pull up with this beamer";
-	"Wear this vlone once and throw it away";
+	"Wear this vlone once and throw it away for good";
+	"Might as well call me AIR JORDAN how i'm hitting all these air shots!";
 	"Aim sweeter than a bag full of apple fritters";
+	"I spent close to rack on these Margielas, How much did your kicks cost?";
+	"Feel like Stephen Curry how i'm hitting all these dimers!";
+	"Is this unfair to you? Good.";
+	"Got this aim out the woodworks";
 
 };
