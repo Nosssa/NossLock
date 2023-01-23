@@ -24,9 +24,11 @@ _G.WinterTimeVIP = {
 
 	--// Whitelisted Users
 	
-	1643455442; -- 1 F0, Youtuber Showcaser
-	871689195; -- Angxlzz, Youtuber Showcaser
-	3814122588; -- Angxlzz, Youtuber Showcaser
+	1643455442; -- 1 F0, Youtube Showcaser
+	871689195; -- Angxlzz, Youtube Showcaser
+	3814122588; -- Angxlzz, Youtube Showcaser
+	982177828; -- URL, Youtube Showcaser
+	
 	2328538154;
 	1146624107;
 	37271653;
@@ -292,7 +294,6 @@ _G.WinterTimeVIP = {
 	165857516;
 	393026113;
 	222502658;
-	982177828;
 	
 	
 	
