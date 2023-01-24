@@ -34,6 +34,8 @@ _G.GameLogic = {
 		CombatWarriorsBEGINNERS = 11979315221;
 		
 		PhantomForces = 292439477;
+		
+		HoodWorldTESTPLACE = 11761426261;
 
 		UknownGame = false;
 
@@ -63,6 +65,8 @@ _G.GameLogic = {
 
 		PhantomForces = false;
 		
+		HoodWorldTESTPLACE = true;
+		
 		UknownGame = false;
 
 	};
@@ -90,6 +94,8 @@ _G.GameLogic = {
 		CombatWarriorsBEGINNERS = true;
 
 		PhantomForces = true;
+		
+		HoodWorldTESTPLACE = true;
 		
 		UknownGame = true;
 
@@ -155,6 +161,11 @@ pcall(function()
 		_G.GameLogic.IsPlaying.UknownGame = true
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.PhantomForces
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.PhantomForces
+		
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodWorldTESTPLACE) then
+		_G.GameLogic.IsPlaying.UknownGame = true
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodWorldTESTPLACE
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodWorldTESTPLACE
 		
 	else
 		_G.GameLogic.IsPlaying.UknownGame = true
