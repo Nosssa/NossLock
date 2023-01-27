@@ -163,7 +163,7 @@ pcall(function()
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.PhantomForces
 		
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodWorldTESTPLACE) then
-		_G.GameLogic.IsPlaying.UknownGame = true
+		_G.GameLogic.IsPlaying.UknownGame = false
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodWorldTESTPLACE
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodWorldTESTPLACE
 		
