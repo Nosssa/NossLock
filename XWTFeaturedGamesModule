@@ -18,6 +18,7 @@ _G.GameLogic = {
 		DaHood = 2788229376;
 		DaHoodVC = 7213786345;
 		HoodModded = 5602055394;
+		HoodModdedVC = 7951883376;
 		HoodDuels = 6751371363;
 		TheHood = 4753520418;
 		UntitledHood = 9183932460;
@@ -48,6 +49,7 @@ _G.GameLogic = {
 		DaHood = true;
 		DaHoodVC = true;
 		HoodModded = true;
+		HoodModdedVC = true;
 		HoodDuels = true;
 		TheHood = true;
 		UntitledHood = true;
@@ -78,6 +80,7 @@ _G.GameLogic = {
 		DaHood = true;
 		DaHoodVC = true;
 		HoodModded = false;
+		HoodModdedVC = false;
 		HoodDuels = true;
 		TheHood = true;
 		UntitledHood = true;
@@ -115,7 +118,10 @@ pcall(function()
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaHoodVC
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodModded) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodModded
-		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodModded 
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodModded
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodModdedVC) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodModdedVC
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodModdedVC
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodDuels) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodDuels
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodDuels 
