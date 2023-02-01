@@ -1,0 +1,14 @@
+if game.PlaceId == 2788229376 then
+	local MainEvent = game:GetService("ReplicatedStorage"):FindFirstChild("MainEvent")
+	local Detections = {"CHECKER_1", "TeleportDetect", "OneMoreTime"}
+	local oldNamecall = nil
+	oldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
+		local Calling = {...}
+		local self = Calling[1]
+		local Method = getnamecallmethod()
+		if Method == "FireServer" and self == MainEvent and table.find(Detections, Calling[2]) then
+			return
+		end
+		return oldNamecall(...)
+	end))
+end
