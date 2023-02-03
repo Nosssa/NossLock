@@ -34,6 +34,8 @@ _G.GameLogic = {
 		CombatWarriors = 4282985734;
 		CombatWarriorsBEGINNERS = 11979315221;
 		
+		SaitamaGame = 10449761463;
+		
 		PhantomForces = 292439477;
 		
 		HoodWorldTESTPLACE = 11761426261;
@@ -65,6 +67,8 @@ _G.GameLogic = {
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
 
+		SaitamaGame = true;
+
 		PhantomForces = false;
 		
 		HoodWorldTESTPLACE = true;
@@ -95,6 +99,8 @@ _G.GameLogic = {
 		
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
+
+		SaitamaGame = true;
 
 		PhantomForces = true;
 		
@@ -162,6 +168,10 @@ pcall(function()
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.CombatWarriorsBEGINNERS) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.CombatWarriorsBEGINNERS
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.CombatWarriorsBEGINNERS
+
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.SaitamaGame) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.SaitamaGame
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.SaitamaGame
 
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.PhantomForces) then
 		_G.GameLogic.IsPlaying.UknownGame = true
