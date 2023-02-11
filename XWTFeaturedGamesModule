@@ -30,6 +30,7 @@ _G.GameLogic = {
 		DahHood2 = 11866898599;
 		DahHood3 = 11926383797;
 		DaHoodTrainer = 10773759206;
+		DaHoodAimTrainer = 12442317726;
 
 		CombatWarriors = 4282985734;
 		CombatWarriorsBEGINNERS = 11979315221;
@@ -63,6 +64,7 @@ _G.GameLogic = {
 		DahHood2 = true;
 		DahHood3 = true;
 		DaHoodTrainer = true;
+		DaHoodAimTrainer = true;
 		
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
@@ -96,6 +98,7 @@ _G.GameLogic = {
 		DahHood2 = true;
 		DahHood3 = true;
 		DaHoodTrainer = true;
+		DaHoodAimTrainer = true;
 		
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
@@ -161,6 +164,9 @@ pcall(function()
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DaHoodTrainer) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaHoodTrainer
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaHoodTrainer
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DaHoodAimTrainer) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaHoodAimTrainer
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaHoodAimTrainer
 
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.CombatWarriors) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.CombatWarriors
