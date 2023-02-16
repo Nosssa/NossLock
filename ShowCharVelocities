@@ -1,4 +1,13 @@
-local Prediction = .18
+--[[
+ 
+    Created By Nosssa supports, all hood games!
+ 
+    Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
+ 
+--]]
+
+
+local Prediction = .18 -- Standard Prediction Value ( Don't recommend to change this since its accurate 95% )
 
 local RunService = game:GetService("RunService")
 local PlayersService = game:GetService("Players")
@@ -7,7 +16,6 @@ local Mouse = LocalPlayer:GetMouse()
 
 Drawing = Drawing
 
-local Draw = Drawing.new
 local Square = Drawing.new("Circle")
 Square.Visible = true
 Square.Filled = true
