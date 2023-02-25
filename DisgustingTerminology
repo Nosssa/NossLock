@@ -1,4 +1,5 @@
---// WinterTime_Foul_Language
+--// WinterTime_Trash_Talk
+
 _G.FoulMouthTerms = {
 
 	"Got this aim out the woodworks";
@@ -223,6 +224,5 @@ _G.FoulMouthTerms = {
 	"ay someone come clean up this mess!";
 	"Fake lambo";
 	"I don't like to sag, but these money bags ain't giving my belt a chance!";
-	
 
 };
