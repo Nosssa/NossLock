@@ -8,7 +8,7 @@
 	Camera_LookAt_Method_2 = _Current_Camera(Input, Spoof_Camera(Current_Camera), LookAt)
 	
 	Mouse_PointAt_Method_1 = _Client_Mouse(RemoteEvent, Input, PointAt)
-	Mouse_PointAt_Method_2 = _Client_Mouse(Input, SetPrevPosition(Input:Objects(Mouse)), LoadBypass(Mouse), OnMouseSpoofBegan(PrevPosition), Spoof_Mouse(Mouse), PointAt, OnMouseSpoofEnded(PrevPosition))
+	Mouse_PointAt_Method_2 = _Client_Mouse(Input, SetPrevPosition(Input:Objects(Mouse)), LoadBypass(Mouse), Spoof_Mouse(Mouse), OnMouseSpoofBegan(PrevPosition), PointAt, OnMouseSpoofEnded(PrevPosition))
 	
 --]]
 
