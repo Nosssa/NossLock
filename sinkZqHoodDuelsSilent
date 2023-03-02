@@ -1,0 +1,129 @@
+--// Idk why he made this open source, this is a different silent aim method that is pretty easy to patch but idc, not made by me. ( nosssa )
+
+-- Repport any bugs to sinkZ#6982 [me]
+
+--[[
+	Build : @none
+	Date : 2023 - 02 - 07 [22:22]
+	Finished Date : 2023 - 02 - 12 [14:08]
+	Things to fix : nothing
+	Things to add : Fov circle, possibly esp
+
+]]
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+	
+local Get = setmetatable({},{
+    __index = function(n, k)
+        return game:GetService(k)
+    end,
+})
+
+getgenv().Settings = {
+	Enabled = false,
+
+	__TargetPart = "HumanoidRootPart",
+	__SilentAimToggled = true,
+	__PredictionAmount = 8,
+
+	__FpsUnlockerToggled = true
+}
+
+if getgenv().ScriptExecuted then 
+	return
+end
+
+getgenv().ScriptExecuted = true
+
+local RunService = Get.RunService
+local UserInputService = Get.UserInputService
+local Players = Get.Players
+
+local Player = Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+
+local Mouse = Player:GetMouse()
+	
+for i,v in next, getnilinstances() do
+	if v.ClassName == "LocalScript" and v:FindFirstChild("Module") then
+		LocalAnti = v
+	end
+end
+
+local InstanceTable = LocalAnti:GetDescendants()
+
+local AntiModule = InstanceTable[1]
+local FiOneModule = InstanceTable[2]
+local YueliangModule = InstanceTable[3]
+
+if getscripthash(AntiModule) ~= "b20dcd59db7fbb9c837bbd25a8200de2310b037a0681eb606f807742668e76c0fd42096fcaeed6f644998403dc34dbd8" or getscripthash(FiOneModule) ~= "3519cbcae24c979f3b48502fd1ee6069f6be2eac421baae132ce915ed2800d6aa13cba1e45e6e284e54386de6679ba13" or getscripthash(YueliangModule) ~= "7b077b522b97d4cb76f860b2b08e90c842c2373fc49c644eaeffd46a7e2e64626095bf667665bccfe026a151236e40a1" then
+	Player:Kick("Anti exploit has been updated")
+else
+	workspace.ChildAdded:Connect(function(Object : Instance?) 
+		if Object.ClassName == "Camera" then
+			Camera = Object
+		end
+	end)
+
+	task.wait(1)
+
+	Character.Humanoid.Health = 0
+
+	PlayerLoaded = function(TargetPlayer : Instance?) 
+		if TargetPlayer ~= Player
+		and TargetPlayer.Character
+		and TargetPlayer.Character:FindFirstChild("HumanoidRootPart")
+		and TargetPlayer.Character:FindFirstChild("Humanoid")
+		and TargetPlayer.Character.Humanoid.Health ~= 0 then
+			return true 
+		else
+			return false 
+		end
+	end
+
+	GetClosestPlayer = function()
+		local ClosestPlayer = nil
+		local ClosestDistance = math.huge
+
+		for i,v in next, Players:GetPlayers() do 
+			if PlayerLoaded(v) then 
+				local ScreenPosition, OnScreen = Camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position) 
+				local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(ScreenPosition.X, ScreenPosition.Y)).Magnitude
+
+				if OnScreen then
+					if Distance < ClosestDistance then  
+						ClosestPlayer = v
+						ClosestDistance = Distance    
+					end
+				end
+			end
+		end
+		return ClosestPlayer
+	end
+
+	SetPrediction = function()
+		return (GetClosestPlayer().Character.HumanoidRootPart.Velocity / getgenv().Settings.__PredictionAmount)
+	end
+
+	local OldIndex = nil   
+	 OldIndex = hookmetamethod(game, "__index", newcclosure(function(Self, Index) 
+		if Self:IsA("Mouse") and Index == "Hit" or Index == "Target" and getgenv().Settings.__SilentAimToggled  then
+			return (Index == "Hit" and GetClosestPlayer().Character:FindFirstChild(getgenv().Settings.__TargetPart).CFrame + SetPrediction())
+		end
+		return OldIndex(Self, Index)
+	end))
+
+	task.spawn(function()
+		while task.wait() do
+			if getgenv().Settings.__FpsUnlockerToggled then
+				setfpscap(240)
+			else
+				setfpscap(60)
+			end
+		end
+	end)
+
+	print("Executed sinkZ#6982's Hood Duels Script")
+end
