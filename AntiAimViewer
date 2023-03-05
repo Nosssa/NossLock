@@ -1,3 +1,3 @@
 --// PATCHED DONT EVEN BOTHER
 
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "HURRR HURRR", Text = "ITS PATCHED NOOOOOOOO THIS CANT BE HAPPENING TO MEEE!!!", Duration = 30,})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "HURRR HURRR", Text = "ITS PATCHED NOOOOOOOO THIS CANT BE HAPPENING TO MEEE!!!", Duration = 10,})
