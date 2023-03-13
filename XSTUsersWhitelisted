@@ -754,7 +754,7 @@ _G.SilentVIP = {
 	2532051742;
 	4089845986;
 	663289006;
-	3239553061;
+	--3239553061; -- Script has failed to work for this person, gave them a refund
 	3661653848;
 	2707992637;
 	53294411;
