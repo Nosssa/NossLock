@@ -4,5 +4,6 @@ _G.MousePositionSignatures = { -- read_signature_from_parent_thingy
 
   "BodyEffects"; -- basically all hood games use this 
   "I_LOADED_I"; -- only hood modded
+  "AimingAt"; -- only dat
 
 };
