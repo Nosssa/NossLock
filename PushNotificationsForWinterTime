@@ -1,31 +1,17 @@
-local CWGameID = 4282985734
-
 pcall(function()
-	
+
 	--// #Yield_Spawned_Notifications
 	task.wait(22)
 
 	--// #Y_Min_Max
-	local DripOrDrown = math.random(1, 10);
+	local DripOrDrown = math.random(1, 6);
 
 	--// #Base_Notification_Duration
 	local BaseLabelDuration = 10;
 
-	--// Auto_Parry_Notification
-	local AutoParryHeader = "Auto-Parry";
-	local AutoParryBody = "Auto Parry is to be added next update!";
-
 	--// Fake_Macro_Notification
 	local FakeMacroHeader = "Fake-Macro";
 	local FakeMacroBody = "Fake macro DOESN'T work on FAT CHARACTERS!";
-
-	--// Server_Lagger_Notification
-	local ServerLaggerHeader = "Server-Lagger";
-	local ServerLaggerBody = "Check out the Server-Lagger option in the BLATANT SECTION.";
-
-	--// Silent_Aim_Notification
-	local SilentAimHeader = "Silent-Aim";
-	local SilentAimBody = "Enabling Silent-Aim MAY or MAY NOT STOP you from toggling OTHER OPTIONS.";
 
 	--// GUI_Changes_Notification
 	local GUIChangesHeader = "GUI-Changes";
@@ -46,48 +32,23 @@ pcall(function()
 	--// Ingest_Premium_Status_Notification
 	local PremiumIngestHeader = "Corrections";
 	local PremiumIngestBody = "If you have bought premium, make sure to send your user ID again incase, thanks.";
-	
-	--// WinterTime_Advanced_Notification
-	local WinterTimeAdvancedHeader = "WinterTime-Advanced";
-	local WinterTimeAdvancedBody = "WinterTime will be recieving an "Enhanced" GUI update in a short time period from now!";
-
-	--// Rate_WinterTime_Notification
-	local RatingWinterTimeHeader = "Like WinterTime?";
-	local RatingWinterTimeBody = "Tell us what we could improve on and what you would like to see changed in the discord.";
 
 	--// Start_Coin_Flip
 	pcall(function()
-		
-	if game.PlaceId ~= CWGameID then
 
 		if DripOrDrown == 1 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
 		elseif DripOrDrown == 2 then
-			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(ServerLaggerHeader), Text = tostring(ServerLaggerBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 3 then
-			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(SilentAimHeader), Text = tostring(SilentAimBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 4 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(GUIChangesHeader), Text = tostring(GUIChangesBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 5 then
+		elseif DripOrDrown == 3 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(CommandsListHeader), Text = tostring(CommandsListBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 6 then
+		elseif DripOrDrown == 4 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(NeedHelpHeader), Text = tostring(NeedHelpBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 7 then
+		elseif DripOrDrown == 5 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RemindPremiumHeader), Text = tostring(RemindPremiumBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 8 then
+		elseif DripOrDrown == 6 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(PremiumIngestHeader), Text = tostring(PremiumIngestBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 9 then
-			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(WinterTimeAdvancedHeader), Text = tostring(WinterTimeAdvancedBody), Duration = tonumber(BaseLabelDuration),});
-		elseif DripOrDrown == 10 then
-			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(RatingWinterTimeHeader), Text = tostring(RatingWinterTimeBody), Duration = tonumber(BaseLabelDuration),});
 		end;
 
-		else
-		
-			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(AutoParryHeader), Text = tostring(AutoParryBody), Duration = tonumber(BaseLabelDuration),});
-	
-		end
-		
 	end)
-	
 end)
