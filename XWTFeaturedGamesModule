@@ -28,6 +28,7 @@ _G.GameLogic = {
 		UntitledHood = 9183932460;
 		HoodCustoms = 9825515356;
 		HoodAimTrainer = 9824221333;
+		HoodAimTrainer2 = 7242996350;
 		Dat = 11990988287;
 		DatHood = 10968324786;
 		DatHoodOG = 9800641846;
@@ -65,6 +66,7 @@ _G.GameLogic = {
 		UntitledHood = true;
 		HoodCustoms = true;
 		HoodAimTrainer = true;
+		HoodAimTrainer2 = true;
 		Dat = true;
 		DatHood = true;
 		DatHoodOG = true;
@@ -102,6 +104,7 @@ _G.GameLogic = {
 		UntitledHood = true;
 		HoodCustoms = true;
 		HoodAimTrainer = true;
+		HoodAimTrainer2 = true;
 		Dat = true;
 		DatHood = true;
 		DatHoodOG = true;
@@ -161,6 +164,9 @@ pcall(function()
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodAimTrainer) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodAimTrainer
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodAimTrainer
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.HoodAimTrainer2) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.HoodAimTrainer2
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.HoodAimTrainer2
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.Dat) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.Dat
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.Dat
