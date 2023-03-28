@@ -37,3 +37,5 @@ if SummerTime_Updating == false then
 elseif SummerTime_Updating == true then
 	Is_Updating()
 end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Beta", Text = "This script is incomplete lul", Duration = 10,})
