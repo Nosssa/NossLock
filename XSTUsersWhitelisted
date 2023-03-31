@@ -838,8 +838,17 @@ _G.SilentVIP = {
 	2591230645;
 	757095495;
 	1478498477;
-	1835822;
+	1835822; -- Last known whitelist before the server got 404'd
+	1241867584; -- Whitelisted without a vouche
+	3159802592; -- Whitelisted without a vouche
 	
+	--[[
+	
+	Last whitelist, until a server is online
+	
+	END END END END END END END
+	
+	--]]
 	
 	
 	
