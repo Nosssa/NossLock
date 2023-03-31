@@ -33,9 +33,17 @@ pcall(function()
 	local PremiumIngestHeader = "Corrections";
 	local PremiumIngestBody = "If you have bought premium, make sure to send your user ID again incase, thanks.";
 
+	--// FAST_NOTICE
+	local fri = "NOTICE";
+	local ck = "OUR SERVER HAS BEEN DELETED, MAKING NEW SOON!";
+
 	--// Start_Coin_Flip
 	pcall(function()
 
+		game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(fri), Text = tostring(ck), Duration = tonumber(BaseLabelDuration),});
+
+
+--[[
 		if DripOrDrown == 1 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(FakeMacroHeader), Text = tostring(FakeMacroBody), Duration = tonumber(BaseLabelDuration),});
 		elseif DripOrDrown == 2 then
@@ -49,6 +57,7 @@ pcall(function()
 		elseif DripOrDrown == 6 then
 			game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(PremiumIngestHeader), Text = tostring(PremiumIngestBody), Duration = tonumber(BaseLabelDuration),});
 		end;
+--]]
 
 	end)
 end)
