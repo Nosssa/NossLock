@@ -12,7 +12,7 @@
 
 
 --// Debounce
-local WinterTime_Updating = true -- [ false = can execute ]--
+local WinterTime_Updating = false -- [ false = can execute ]--
 
 
 --// Awaiting_Update
