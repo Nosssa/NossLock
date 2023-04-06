@@ -34,8 +34,8 @@ pcall(function()
 	local PremiumIngestBody = "If you have bought premium, make sure to send your user ID again incase, thanks.";
 
 	--// FAST_NOTICE
-	local fri = "NOTICE";
-	local ck = "OUR SERVER HAS BEEN DELETED, MAKING NEW SOON!";
+	local fri = "NEW SERVER UP";
+	local ck = "https://discord.gg/FfDxynKagk";
 
 	--// Start_Coin_Flip
 	pcall(function()
