@@ -35,7 +35,7 @@ pcall(function()
 
 	--// FAST_NOTICE
 	local fri = "NEW SERVER UP";
-	local ck = "https://discord.gg/FfDxynKagk";
+	local ck = "discord.gg/FfDxynKagk";
 
 	--// Start_Coin_Flip
 	pcall(function()
