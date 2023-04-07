@@ -841,8 +841,8 @@ _G.SilentVIP = {
 	1835822; -- Last known whitelist before the server got 404'd
 	
 	
-	1241867584; -- Whitelisted without a vouche
-	3159802592; -- Whitelisted without a vouche
+	1241867584; -- Whitelisted without a vouche - ( not required server was deleted )
+	3159802592; -- Whitelisted without a vouche - ( not required server was deleted )
         1225204787;
         1432606844; -- Transferred by Snuskebazn
 	145878169;
