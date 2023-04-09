@@ -38,6 +38,7 @@ _G.GameLogic = {
 		DaHoodTrainer = 10773759206;
 		DaHoodAimTrainer = 12442317726;
 		FiveDuels = 11883610532;
+		DahAimTrainer = 12927359803;
 
 		CombatWarriors = 4282985734;
 		CombatWarriorsBEGINNERS = 11979315221;
@@ -76,6 +77,7 @@ _G.GameLogic = {
 		DaHoodTrainer = true;
 		DaHoodAimTrainer = true;
 		FiveDuels = true;
+		DahAimTrainer = true;
 		
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
@@ -114,6 +116,7 @@ _G.GameLogic = {
 		DaHoodTrainer = true;
 		DaHoodAimTrainer = true;
 		FiveDuels = true;
+		DahAimTrainer = true;
 		
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
@@ -194,7 +197,9 @@ pcall(function()
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.FiveDuels) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.FiveDuels
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.FiveDuels
-
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DahAimTrainer) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DahAimTrainer
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DahAimTrainer
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.CombatWarriors) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.CombatWarriors
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.CombatWarriors
