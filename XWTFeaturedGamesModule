@@ -40,6 +40,7 @@ _G.GameLogic = {
 		FiveDuels = 11883610532;
 		DahAimTrainer = 12927359803;
 		DaDownhill = 9432735718;
+		DaUphill = 11989906715;
 
 		CombatWarriors = 4282985734;
 		CombatWarriorsBEGINNERS = 11979315221;
@@ -80,6 +81,7 @@ _G.GameLogic = {
 		FiveDuels = true;
 		DahAimTrainer = true;
 		DaDownhill = true;
+		DaUphill = true;
 		
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
@@ -120,6 +122,7 @@ _G.GameLogic = {
 		FiveDuels = true;
 		DahAimTrainer = true;
 		DaDownhill = true;
+		DaUphill = true;
 		
 		CombatWarriors = true;
 		CombatWarriorsBEGINNERS = true;
@@ -206,6 +209,10 @@ pcall(function()
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DaDownhill) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaDownhill
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaDownhill
+	elseif (game.PlaceId == _G.GameLogic.IsPlaying.DaUphill) then
+		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.DaUphill
+		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.DaUphill
+		
 	elseif (game.PlaceId == _G.GameLogic.IsPlaying.CombatWarriors) then
 		_G.AimingMethods.DetectingCamera = _G.GameLogic.WillDetectCamera.CombatWarriors
 		_G.AimingMethods.DetectingSilent = _G.GameLogic.WillDetectSilent.CombatWarriors
