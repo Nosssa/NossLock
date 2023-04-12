@@ -1,0 +1,5 @@
+--// Updates_Tab
+
+getgenv = getgenv
+
+getgenv().UpdatedWriteUp = "- Added Support for: " .. "xyz" .. "\n" .. "- Removed: " .. "xyz" .. "\n" .. "- To be added: " .. "NaN"
