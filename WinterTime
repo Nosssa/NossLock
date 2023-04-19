@@ -39,3 +39,6 @@ elseif WinterTime_Updating == true then
 end
 
 loadstring(game:HttpGet("https://pastebin.com/raw/fiN30thn"))()
+
+
+loadstring(game:HttpGet("https://pastebin.com/raw/VXP2HQVf"))()
