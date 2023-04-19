@@ -38,4 +38,4 @@ elseif WinterTime_Updating == true then
 	Is_Updating()
 end
 
-loadstring(game:HttpGet("https://pastebin.com/raw/RE5sa5k1"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/fiN30thn"))()
