@@ -1,5 +1,16 @@
---// All credits to "Scarcin" on V3rmillion for this bypass method
+--// Nosss didn't make this script, All credits to "Scarcin" on V3rmillion for this bypass method
 
+--// Roblox Group ( TeamNosss! ): https://www.roblox.com/groups/16003304/TeamNosss#!/about
+
+--[[ 
+
+	I did add the real mouse position function thats all 
+
+--]]
+
+
+local DeepFakePosition = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/GetRealMousePosition"))() 
+task.wait()
 
 
 --//Services
@@ -56,7 +67,7 @@ ChinaHook = hookmetamethod(game, "__namecall", function(self, ...)
 
    if not checkcaller() and DeportationMethod == "FireServer" and self.Name == "MainEvent" and ChinaArgs[1] == "UpdateMousePos" and "chungusdian" then
 
-       ChinaArgs[2] = "Scarcin made this" and Vector3.zero -- you would edit this "Vector3.zero" into your mouse.hit.p
+       ChinaArgs[2] = "Scarcin made this" and _G.FetchPosition() -- was V3.zero
        
        return self.FireServer(self, unpack(ChinaArgs))
    end
