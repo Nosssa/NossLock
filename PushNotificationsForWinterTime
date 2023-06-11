@@ -40,7 +40,7 @@ pcall(function()
 	--// Start_Coin_Flip
 	pcall(function()
 
-		game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(fri), Text = tostring(ck), Duration = tonumber(BaseLabelDuration),});
+		--game:GetService("StarterGui"):SetCore("SendNotification", {Title = tostring(fri), Text = tostring(ck), Duration = tonumber(BaseLabelDuration),});
 
 
 --[[
